@@ -5,5 +5,5 @@
 
 Enterprise asset management (EAM) is the optimal lifecycle management of the physical assets of an organization. It covers subjects including the design, construction, commissioning, operations, maintenance and decommissioning/replacement of plant, equipment and facilities. 
 
-[Power by Wikipedia](https://en.wikipedia.org/wiki/Enterprise_asset_management)
+[Powered by Wikipedia](https://en.wikipedia.org/wiki/Enterprise_asset_management)
 
