@@ -29,7 +29,6 @@
         <Data AD_Column_ID="547" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="544" Column="Created">2016-05-14 16:45:05.556</Data>
         <Data AD_Column_ID="100" Column="AD_Table_ID">54103</Data>
-        <Data AD_Column_ID="64711" Column="SQLStatement" isNewNull="true"/>
         <Data AD_Column_ID="356" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
@@ -651,7 +650,6 @@ There are two reasons for de-activating and not deleting records:
         <Data AD_Column_ID="547" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="544" Column="Created">2016-05-14 16:48:39.009</Data>
         <Data AD_Column_ID="100" Column="AD_Table_ID">54104</Data>
-        <Data AD_Column_ID="64711" Column="SQLStatement" isNewNull="true"/>
         <Data AD_Column_ID="356" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
@@ -1546,7 +1544,6 @@ If you leave the search key empty, the system automatically creates a numeric nu
         <Data AD_Column_ID="547" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="544" Column="Created">2016-05-14 16:59:09.335</Data>
         <Data AD_Column_ID="100" Column="AD_Table_ID">54105</Data>
-        <Data AD_Column_ID="64711" Column="SQLStatement" isNewNull="true"/>
         <Data AD_Column_ID="356" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
@@ -2525,7 +2522,6 @@ There are two reasons for de-activating and not deleting records:
         <Data AD_Column_ID="547" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="544" Column="Created">2016-05-14 17:24:54.737</Data>
         <Data AD_Column_ID="100" Column="AD_Table_ID">54106</Data>
-        <Data AD_Column_ID="64711" Column="SQLStatement" isNewNull="true"/>
         <Data AD_Column_ID="356" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
@@ -3585,7 +3581,6 @@ There are two reasons for de-activating and not deleting records:
         <Data AD_Column_ID="547" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="544" Column="Created">2016-05-14 18:12:04.617</Data>
         <Data AD_Column_ID="100" Column="AD_Table_ID">54107</Data>
-        <Data AD_Column_ID="64711" Column="SQLStatement" isNewNull="true"/>
         <Data AD_Column_ID="356" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
@@ -4485,7 +4480,6 @@ There are two reasons for de-activating and not deleting records:
         <Data AD_Column_ID="547" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="544" Column="Created">2016-05-14 18:27:14.806</Data>
         <Data AD_Column_ID="100" Column="AD_Table_ID">54108</Data>
-        <Data AD_Column_ID="64711" Column="SQLStatement" isNewNull="true"/>
         <Data AD_Column_ID="356" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
@@ -5619,7 +5613,6 @@ There are two reasons for de-activating and not deleting records:
         <Data AD_Column_ID="547" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="544" Column="Created">2016-05-14 18:45:39.153</Data>
         <Data AD_Column_ID="100" Column="AD_Table_ID">54109</Data>
-        <Data AD_Column_ID="64711" Column="SQLStatement" isNewNull="true"/>
         <Data AD_Column_ID="356" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
@@ -8603,7 +8596,6 @@ If the document type of your document has no automatic document sequence defined
         <Data AD_Column_ID="547" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="544" Column="Created">2016-05-16 10:28:35.373</Data>
         <Data AD_Column_ID="100" Column="AD_Table_ID">54112</Data>
-        <Data AD_Column_ID="64711" Column="SQLStatement" isNewNull="true"/>
         <Data AD_Column_ID="356" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
@@ -9461,7 +9453,6 @@ There are two reasons for de-activating and not deleting records:
         <Data AD_Column_ID="547" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="544" Column="Created">2016-05-16 10:36:32.897</Data>
         <Data AD_Column_ID="100" Column="AD_Table_ID">54113</Data>
-        <Data AD_Column_ID="64711" Column="SQLStatement" isNewNull="true"/>
         <Data AD_Column_ID="356" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
@@ -10412,7 +10403,6 @@ There are two reasons for de-activating and not deleting records:
         <Data AD_Column_ID="547" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="544" Column="Created">2016-05-16 10:50:54.527</Data>
         <Data AD_Column_ID="100" Column="AD_Table_ID">54114</Data>
-        <Data AD_Column_ID="64711" Column="SQLStatement" isNewNull="true"/>
         <Data AD_Column_ID="356" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
@@ -12466,7 +12456,6 @@ If the document type of your document has no automatic document sequence defined
         <Data AD_Column_ID="547" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="544" Column="Created">2016-05-16 11:56:09.867</Data>
         <Data AD_Column_ID="100" Column="AD_Table_ID">54115</Data>
-        <Data AD_Column_ID="64711" Column="SQLStatement" isNewNull="true"/>
         <Data AD_Column_ID="356" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
@@ -15382,7 +15371,6 @@ If the document type of your document has no automatic document sequence defined
         <Data AD_Column_ID="547" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="544" Column="Created">2016-05-16 14:37:20.499</Data>
         <Data AD_Column_ID="100" Column="AD_Table_ID">54116</Data>
-        <Data AD_Column_ID="64711" Column="SQLStatement" isNewNull="true"/>
         <Data AD_Column_ID="356" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
@@ -16632,7 +16620,6 @@ There are two reasons for de-activating and not deleting records:
         <Data AD_Column_ID="547" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="544" Column="Created">2016-05-16 14:48:07.071</Data>
         <Data AD_Column_ID="100" Column="AD_Table_ID">54117</Data>
-        <Data AD_Column_ID="64711" Column="SQLStatement" isNewNull="true"/>
         <Data AD_Column_ID="356" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
@@ -17965,7 +17952,6 @@ There are two reasons for de-activating and not deleting records:
         <Data AD_Column_ID="547" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="544" Column="Created">2016-05-16 14:58:22.181</Data>
         <Data AD_Column_ID="100" Column="AD_Table_ID">54118</Data>
-        <Data AD_Column_ID="64711" Column="SQLStatement" isNewNull="true"/>
         <Data AD_Column_ID="356" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
