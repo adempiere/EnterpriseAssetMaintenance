@@ -13425,10 +13425,10 @@ There are two reasons for de-activating and not deleting records:
     </Step>
     <Step SeqNo="6550" StepType="AD">
       <PO AD_Table_ID="116" Action="I" Record_ID="54052" Table="AD_Menu">
-        <Data AD_Column_ID="233" Column="AD_Window_ID" isNewNull="true"/>
+        <Data AD_Column_ID="233" Column="AD_Window_ID">53471</Data>
         <Data AD_Column_ID="228" Column="AD_Menu_ID">54052</Data>
-        <Data AD_Column_ID="229" Column="Name">Maintenance</Data>
-        <Data AD_Column_ID="230" Column="Description">Maintenance</Data>
+        <Data AD_Column_ID="229" Column="Name">Maintenance Forecast</Data>
+        <Data AD_Column_ID="230" Column="Description">Maintenance Forecast</Data>
         <Data AD_Column_ID="234" Column="AD_Workflow_ID" isNewNull="true"/>
         <Data AD_Column_ID="235" Column="AD_Task_ID" isNewNull="true"/>
         <Data AD_Column_ID="399" Column="AD_Client_ID">0</Data>
@@ -13437,7 +13437,7 @@ There are two reasons for de-activating and not deleting records:
         <Data AD_Column_ID="602" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="7721" Column="EntityType">D</Data>
         <Data AD_Column_ID="57960" Column="AD_Browse_ID" isNewNull="true"/>
-        <Data AD_Column_ID="1169" Column="IsSummary">true</Data>
+        <Data AD_Column_ID="1169" Column="IsSummary">false</Data>
         <Data AD_Column_ID="232" Column="Action" isNewNull="true"/>
         <Data AD_Column_ID="600" Column="CreatedBy">100</Data>
         <Data AD_Column_ID="601" Column="Updated">2016-05-17 15:05:57.513</Data>
@@ -13560,7 +13560,7 @@ There are two reasons for de-activating and not deleting records:
     </Step>
     <Step SeqNo="6600" StepType="AD">
       <PO AD_Table_ID="116" Action="I" Record_ID="54057" Table="AD_Menu">
-        <Data AD_Column_ID="233" Column="AD_Window_ID" isNewNull="true"/>
+        <Data AD_Column_ID="233" Column="AD_Window_ID">53477</Data>
         <Data AD_Column_ID="228" Column="AD_Menu_ID">54057</Data>
         <Data AD_Column_ID="229" Column="Name">Work Order</Data>
         <Data AD_Column_ID="230" Column="Description">Work Order (Service Order)</Data>
