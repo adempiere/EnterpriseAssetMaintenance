@@ -670,56 +670,6 @@
         <Data AD_Column_ID="360" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
-    <Step SeqNo="210" StepType="AD">
-      <PO AD_Table_ID="101" Action="D" Record_ID="80495" Table="AD_Column">
-        <Data AD_Column_ID="13448" Column="ColumnSQL" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="117" Column="DefaultValue" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="114" Column="AD_Table_ID" isNewNull="true" oldValue="54106"/>
-        <Data AD_Column_ID="3389" Column="ValueMax" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="6482" Column="EntityType" isNewNull="true" oldValue="U"/>
-        <Data AD_Column_ID="110" Column="Version" isNewNull="true" oldValue="0"/>
-        <Data AD_Column_ID="227" Column="AD_Reference_Value_ID" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="124" Column="IsMandatory" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="125" Column="IsTranslated" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="126" Column="IsIdentifier" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="127" Column="SeqNo" isNewNull="true" oldValue="0"/>
-        <Data AD_Column_ID="113" Column="Help" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="3388" Column="ValueMin" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="120" Column="IsParent" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="359" Column="AD_Client_ID" isNewNull="true" oldValue="0"/>
-        <Data AD_Column_ID="118" Column="FieldLength" isNewNull="true" oldValue="1"/>
-        <Data AD_Column_ID="6244" Column="IsSelectionColumn" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="226" Column="AD_Reference_ID" isNewNull="true" oldValue="28"/>
-        <Data AD_Column_ID="115" Column="AD_Val_Rule_ID" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="1179" Column="VFormat" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="119" Column="IsKey" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="2608" Column="AD_Element_ID" isNewNull="true" oldValue="58918"/>
-        <Data AD_Column_ID="3369" Column="AD_Process_ID" isNewNull="true" oldValue="53861"/>
-        <Data AD_Column_ID="6245" Column="ReadOnlyLogic" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="54358" Column="InfoFactoryClass" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="50218" Column="MandatoryLogic" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="56149" Column="IsAutocomplete" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="56187" Column="IsAllowLogging" isNewNull="true" oldValue="true"/>
-        <Data AD_Column_ID="56352" Column="FormatPattern" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="128" Column="IsEncrypted" isNewNull="true" oldValue="N"/>
-        <Data AD_Column_ID="3360" Column="IsUpdateable" isNewNull="true" oldValue="true"/>
-        <Data AD_Column_ID="1692" Column="Callout" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="11617" Column="IsAlwaysUpdateable" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="116" Column="ColumnName" isNewNull="true" oldValue="CalculateCost"/>
-        <Data AD_Column_ID="112" Column="Description" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="111" Column="Name" isNewNull="true" oldValue="Calculate Cost"/>
-        <Data AD_Column_ID="59702" Column="AD_Chart_ID" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="6483" Column="IsSyncDatabase" isNewNull="true" oldValue="N"/>
-        <Data AD_Column_ID="551" Column="Updated" isNewNull="true" oldValue="2016-05-20 14:56:08.0"/>
-        <Data AD_Column_ID="550" Column="CreatedBy" isNewNull="true" oldValue="100"/>
-        <Data AD_Column_ID="548" Column="IsActive" isNewNull="true" oldValue="true"/>
-        <Data AD_Column_ID="549" Column="Created" isNewNull="true" oldValue="2016-05-20 14:52:26.0"/>
-        <Data AD_Column_ID="552" Column="UpdatedBy" isNewNull="true" oldValue="100"/>
-        <Data AD_Column_ID="109" Column="AD_Column_ID" isNewNull="true" oldValue="80495"/>
-        <Data AD_Column_ID="360" Column="AD_Org_ID" isNewNull="true" oldValue="0"/>
-      </PO>
-    </Step>
-    
     <Step SeqNo="220" StepType="AD">
       <PO AD_Table_ID="101" Action="I" Record_ID="80496" Table="AD_Column">
         <Data AD_Column_ID="13448" Column="ColumnSQL" isNewNull="true"/>
