@@ -16,7 +16,7 @@
         <Data AD_Column_ID="11563" Column="WorkflowValue" isNewNull="true"/>
         <Data AD_Column_ID="14084" Column="IsServerProcess">false</Data>
         <Data AD_Column_ID="50181" Column="ShowHelp">Y</Data>
-        <Data AD_Column_ID="6485" Column="EntityType">U</Data>
+        <Data AD_Column_ID="6485" Column="EntityType">D</Data>
         <Data AD_Column_ID="6653" Column="Statistic_Seconds">0</Data>
         <Data AD_Column_ID="6652" Column="Statistic_Count">0</Data>
         <Data AD_Column_ID="4656" Column="Classname">org.compiere.process.AMAssetPlanning</Data>
@@ -53,7 +53,7 @@
         <Data AD_Column_ID="3738" Column="IsMandatory">true</Data>
         <Data AD_Column_ID="2828" Column="AD_Reference_Value_ID" isNewNull="true"/>
         <Data AD_Column_ID="7729" Column="AD_Element_ID">500</Data>
-        <Data AD_Column_ID="7728" Column="EntityType">U</Data>
+        <Data AD_Column_ID="7728" Column="EntityType">D</Data>
         <Data AD_Column_ID="56299" Column="ReadOnlyLogic" isNewNull="true"/>
         <Data AD_Column_ID="56300" Column="DisplayLogic" isNewNull="true"/>
         <Data AD_Column_ID="2823" Column="Description">Unique Period Number</Data>
@@ -87,7 +87,7 @@
         <Data AD_Column_ID="3738" Column="IsMandatory">false</Data>
         <Data AD_Column_ID="2828" Column="AD_Reference_Value_ID" isNewNull="true"/>
         <Data AD_Column_ID="7729" Column="AD_Element_ID">366</Data>
-        <Data AD_Column_ID="7728" Column="EntityType">U</Data>
+        <Data AD_Column_ID="7728" Column="EntityType">D</Data>
         <Data AD_Column_ID="56299" Column="ReadOnlyLogic" isNewNull="true"/>
         <Data AD_Column_ID="56300" Column="DisplayLogic" isNewNull="true"/>
         <Data AD_Column_ID="2823" Column="Description" isNewNull="true"/>
@@ -119,7 +119,7 @@
         <Data AD_Column_ID="11563" Column="WorkflowValue" isNewNull="true"/>
         <Data AD_Column_ID="14084" Column="IsServerProcess">false</Data>
         <Data AD_Column_ID="50181" Column="ShowHelp">Y</Data>
-        <Data AD_Column_ID="6485" Column="EntityType">U</Data>
+        <Data AD_Column_ID="6485" Column="EntityType">D</Data>
         <Data AD_Column_ID="6653" Column="Statistic_Seconds">0</Data>
         <Data AD_Column_ID="6652" Column="Statistic_Count">0</Data>
         <Data AD_Column_ID="4656" Column="Classname">org.compiere.process.AMCalculateCostsMaintenancePattern</Data>
@@ -154,7 +154,7 @@
         <Data AD_Column_ID="11563" Column="WorkflowValue" isNewNull="true"/>
         <Data AD_Column_ID="14084" Column="IsServerProcess">false</Data>
         <Data AD_Column_ID="50181" Column="ShowHelp">Y</Data>
-        <Data AD_Column_ID="6485" Column="EntityType">U</Data>
+        <Data AD_Column_ID="6485" Column="EntityType">D</Data>
         <Data AD_Column_ID="6653" Column="Statistic_Seconds">0</Data>
         <Data AD_Column_ID="6652" Column="Statistic_Count">0</Data>
         <Data AD_Column_ID="4656" Column="Classname">org.compiere.process.AMCalculateCostsMaintenance</Data>
@@ -189,7 +189,7 @@
         <Data AD_Column_ID="11563" Column="WorkflowValue" isNewNull="true"/>
         <Data AD_Column_ID="14084" Column="IsServerProcess">false</Data>
         <Data AD_Column_ID="50181" Column="ShowHelp">Y</Data>
-        <Data AD_Column_ID="6485" Column="EntityType">U</Data>
+        <Data AD_Column_ID="6485" Column="EntityType">D</Data>
         <Data AD_Column_ID="6653" Column="Statistic_Seconds">0</Data>
         <Data AD_Column_ID="6652" Column="Statistic_Count">0</Data>
         <Data AD_Column_ID="4656" Column="Classname">org.compiere.process.AMCalculateCostsServiceOrder</Data>
@@ -224,7 +224,7 @@
         <Data AD_Column_ID="11563" Column="WorkflowValue" isNewNull="true"/>
         <Data AD_Column_ID="14084" Column="IsServerProcess">false</Data>
         <Data AD_Column_ID="50181" Column="ShowHelp">Y</Data>
-        <Data AD_Column_ID="6485" Column="EntityType">U</Data>
+        <Data AD_Column_ID="6485" Column="EntityType">D</Data>
         <Data AD_Column_ID="6653" Column="Statistic_Seconds">0</Data>
         <Data AD_Column_ID="6652" Column="Statistic_Count">0</Data>
         <Data AD_Column_ID="4656" Column="Classname">org.compiere.process.AMCopyFromMP</Data>
@@ -261,7 +261,7 @@
         <Data AD_Column_ID="3738" Column="IsMandatory">false</Data>
         <Data AD_Column_ID="2828" Column="AD_Reference_Value_ID">53818</Data>
         <Data AD_Column_ID="7729" Column="AD_Element_ID" isNewNull="true"/>
-        <Data AD_Column_ID="7728" Column="EntityType">U</Data>
+        <Data AD_Column_ID="7728" Column="EntityType">D</Data>
         <Data AD_Column_ID="56299" Column="ReadOnlyLogic" isNewNull="true"/>
         <Data AD_Column_ID="56300" Column="DisplayLogic" isNewNull="true"/>
         <Data AD_Column_ID="2823" Column="Description" isNewNull="true"/>
@@ -295,7 +295,7 @@
         <Data AD_Column_ID="3738" Column="IsMandatory">false</Data>
         <Data AD_Column_ID="2828" Column="AD_Reference_Value_ID" isNewNull="true"/>
         <Data AD_Column_ID="7729" Column="AD_Element_ID">58746</Data>
-        <Data AD_Column_ID="7728" Column="EntityType">U</Data>
+        <Data AD_Column_ID="7728" Column="EntityType">D</Data>
         <Data AD_Column_ID="56299" Column="ReadOnlyLogic" isNewNull="true"/>
         <Data AD_Column_ID="56300" Column="DisplayLogic" isNewNull="true"/>
         <Data AD_Column_ID="2823" Column="Description" isNewNull="true"/>
@@ -327,7 +327,7 @@
         <Data AD_Column_ID="11563" Column="WorkflowValue" isNewNull="true"/>
         <Data AD_Column_ID="14084" Column="IsServerProcess">false</Data>
         <Data AD_Column_ID="50181" Column="ShowHelp">Y</Data>
-        <Data AD_Column_ID="6485" Column="EntityType">U</Data>
+        <Data AD_Column_ID="6485" Column="EntityType">D</Data>
         <Data AD_Column_ID="6653" Column="Statistic_Seconds">0</Data>
         <Data AD_Column_ID="6652" Column="Statistic_Count">0</Data>
         <Data AD_Column_ID="4656" Column="Classname">org.compiere.process.AMProcessServiceOrder</Data>
@@ -364,7 +364,7 @@
         <Data AD_Column_ID="3738" Column="IsMandatory">false</Data>
         <Data AD_Column_ID="2828" Column="AD_Reference_Value_ID">135</Data>
         <Data AD_Column_ID="7729" Column="AD_Element_ID">287</Data>
-        <Data AD_Column_ID="7728" Column="EntityType">U</Data>
+        <Data AD_Column_ID="7728" Column="EntityType">D</Data>
         <Data AD_Column_ID="56299" Column="ReadOnlyLogic" isNewNull="true"/>
         <Data AD_Column_ID="56300" Column="DisplayLogic" isNewNull="true"/>
         <Data AD_Column_ID="2823" Column="Description">The targeted status of the document</Data>
@@ -396,7 +396,7 @@
         <Data AD_Column_ID="11563" Column="WorkflowValue" isNewNull="true"/>
         <Data AD_Column_ID="14084" Column="IsServerProcess">false</Data>
         <Data AD_Column_ID="50181" Column="ShowHelp">Y</Data>
-        <Data AD_Column_ID="6485" Column="EntityType">U</Data>
+        <Data AD_Column_ID="6485" Column="EntityType">D</Data>
         <Data AD_Column_ID="6653" Column="Statistic_Seconds">0</Data>
         <Data AD_Column_ID="6652" Column="Statistic_Count">0</Data>
         <Data AD_Column_ID="4656" Column="Classname">org.compiere.process.AMServiceOrderCreateSO</Data>
@@ -433,7 +433,7 @@
         <Data AD_Column_ID="3738" Column="IsMandatory">false</Data>
         <Data AD_Column_ID="2828" Column="AD_Reference_Value_ID" isNewNull="true"/>
         <Data AD_Column_ID="7729" Column="AD_Element_ID">196</Data>
-        <Data AD_Column_ID="7728" Column="EntityType">U</Data>
+        <Data AD_Column_ID="7728" Column="EntityType">D</Data>
         <Data AD_Column_ID="56299" Column="ReadOnlyLogic" isNewNull="true"/>
         <Data AD_Column_ID="56300" Column="DisplayLogic" isNewNull="true"/>
         <Data AD_Column_ID="2823" Column="Description" isNewNull="true"/>
@@ -467,7 +467,7 @@
         <Data AD_Column_ID="3738" Column="IsMandatory">false</Data>
         <Data AD_Column_ID="2828" Column="AD_Reference_Value_ID" isNewNull="true"/>
         <Data AD_Column_ID="7729" Column="AD_Element_ID">459</Data>
-        <Data AD_Column_ID="7728" Column="EntityType">U</Data>
+        <Data AD_Column_ID="7728" Column="EntityType">D</Data>
         <Data AD_Column_ID="56299" Column="ReadOnlyLogic" isNewNull="true"/>
         <Data AD_Column_ID="56300" Column="DisplayLogic" isNewNull="true"/>
         <Data AD_Column_ID="2823" Column="Description" isNewNull="true"/>
@@ -499,7 +499,7 @@
         <Data AD_Column_ID="11563" Column="WorkflowValue" isNewNull="true"/>
         <Data AD_Column_ID="14084" Column="IsServerProcess">false</Data>
         <Data AD_Column_ID="50181" Column="ShowHelp">Y</Data>
-        <Data AD_Column_ID="6485" Column="EntityType">U</Data>
+        <Data AD_Column_ID="6485" Column="EntityType">D</Data>
         <Data AD_Column_ID="6653" Column="Statistic_Seconds">0</Data>
         <Data AD_Column_ID="6652" Column="Statistic_Count">0</Data>
         <Data AD_Column_ID="4656" Column="Classname">org.compiere.process.AMProcessRequestServiceOrder</Data>
@@ -536,7 +536,7 @@
         <Data AD_Column_ID="3738" Column="IsMandatory">false</Data>
         <Data AD_Column_ID="2828" Column="AD_Reference_Value_ID">135</Data>
         <Data AD_Column_ID="7729" Column="AD_Element_ID">287</Data>
-        <Data AD_Column_ID="7728" Column="EntityType">U</Data>
+        <Data AD_Column_ID="7728" Column="EntityType">D</Data>
         <Data AD_Column_ID="56299" Column="ReadOnlyLogic" isNewNull="true"/>
         <Data AD_Column_ID="56300" Column="DisplayLogic" isNewNull="true"/>
         <Data AD_Column_ID="2823" Column="Description">The targeted status of the document</Data>
@@ -566,7 +566,7 @@
         <Data AD_Column_ID="598" Column="IsActive">true</Data>
         <Data AD_Column_ID="599" Column="Created">2016-05-20 14:50:26.057</Data>
         <Data AD_Column_ID="602" Column="UpdatedBy">100</Data>
-        <Data AD_Column_ID="7721" Column="EntityType">U</Data>
+        <Data AD_Column_ID="7721" Column="EntityType">D</Data>
         <Data AD_Column_ID="57960" Column="AD_Browse_ID" isNewNull="true"/>
         <Data AD_Column_ID="1169" Column="IsSummary">false</Data>
         <Data AD_Column_ID="232" Column="Action">P</Data>
@@ -607,7 +607,7 @@
         <Data AD_Column_ID="2605" Column="Help" isNewNull="true"/>
         <Data AD_Column_ID="6283" Column="PO_Description" isNewNull="true"/>
         <Data AD_Column_ID="6284" Column="PO_Help" isNewNull="true"/>
-        <Data AD_Column_ID="6484" Column="EntityType">U</Data>
+        <Data AD_Column_ID="6484" Column="EntityType">D</Data>
         <Data AD_Column_ID="2599" Column="CreatedBy">100</Data>
         <Data AD_Column_ID="2601" Column="UpdatedBy">100</Data>
         <Data AD_Column_ID="2603" Column="Name">Calculate Cost</Data>
@@ -627,7 +627,7 @@
         <Data AD_Column_ID="117" Column="DefaultValue" isNewNull="true"/>
         <Data AD_Column_ID="114" Column="AD_Table_ID">54106</Data>
         <Data AD_Column_ID="3389" Column="ValueMax" isNewNull="true"/>
-        <Data AD_Column_ID="6482" Column="EntityType">U</Data>
+        <Data AD_Column_ID="6482" Column="EntityType">D</Data>
         <Data AD_Column_ID="110" Column="Version">0</Data>
         <Data AD_Column_ID="227" Column="AD_Reference_Value_ID" isNewNull="true"/>
         <Data AD_Column_ID="124" Column="IsMandatory">false</Data>
@@ -641,7 +641,6 @@
         <Data AD_Column_ID="118" Column="FieldLength">1</Data>
         <Data AD_Column_ID="6244" Column="IsSelectionColumn">false</Data>
         <Data AD_Column_ID="226" Column="AD_Reference_ID">28</Data>
-        <Data AD_Column_ID="72747" Column="IsSecure">false</Data>
         <Data AD_Column_ID="115" Column="AD_Val_Rule_ID" isNewNull="true"/>
         <Data AD_Column_ID="1179" Column="VFormat" isNewNull="true"/>
         <Data AD_Column_ID="119" Column="IsKey">false</Data>
@@ -662,7 +661,6 @@
         <Data AD_Column_ID="111" Column="Name">Calculate Cost</Data>
         <Data AD_Column_ID="59702" Column="AD_Chart_ID" isNewNull="true"/>
         <Data AD_Column_ID="6483" Column="IsSyncDatabase">N</Data>
-        <Data AD_Column_ID="62199" Column="IsAllowCopy">true</Data>
         <Data AD_Column_ID="551" Column="Updated">2016-05-20 14:52:26.194</Data>
         <Data AD_Column_ID="550" Column="CreatedBy">100</Data>
         <Data AD_Column_ID="548" Column="IsActive">true</Data>
@@ -672,65 +670,13 @@
         <Data AD_Column_ID="360" Column="AD_Org_ID">0</Data>
       </PO>
     </Step>
-    <Step SeqNo="210" StepType="AD">
-      <PO AD_Table_ID="101" Action="D" Record_ID="80495" Table="AD_Column">
-        <Data AD_Column_ID="13448" Column="ColumnSQL" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="117" Column="DefaultValue" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="114" Column="AD_Table_ID" isNewNull="true" oldValue="54106"/>
-        <Data AD_Column_ID="3389" Column="ValueMax" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="6482" Column="EntityType" isNewNull="true" oldValue="U"/>
-        <Data AD_Column_ID="110" Column="Version" isNewNull="true" oldValue="0"/>
-        <Data AD_Column_ID="227" Column="AD_Reference_Value_ID" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="124" Column="IsMandatory" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="125" Column="IsTranslated" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="126" Column="IsIdentifier" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="127" Column="SeqNo" isNewNull="true" oldValue="0"/>
-        <Data AD_Column_ID="113" Column="Help" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="3388" Column="ValueMin" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="120" Column="IsParent" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="359" Column="AD_Client_ID" isNewNull="true" oldValue="0"/>
-        <Data AD_Column_ID="118" Column="FieldLength" isNewNull="true" oldValue="1"/>
-        <Data AD_Column_ID="6244" Column="IsSelectionColumn" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="226" Column="AD_Reference_ID" isNewNull="true" oldValue="28"/>
-        <Data AD_Column_ID="72747" Column="IsSecure" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="115" Column="AD_Val_Rule_ID" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="1179" Column="VFormat" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="119" Column="IsKey" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="2608" Column="AD_Element_ID" isNewNull="true" oldValue="58918"/>
-        <Data AD_Column_ID="3369" Column="AD_Process_ID" isNewNull="true" oldValue="53861"/>
-        <Data AD_Column_ID="6245" Column="ReadOnlyLogic" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="54358" Column="InfoFactoryClass" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="50218" Column="MandatoryLogic" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="56149" Column="IsAutocomplete" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="56187" Column="IsAllowLogging" isNewNull="true" oldValue="true"/>
-        <Data AD_Column_ID="56352" Column="FormatPattern" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="128" Column="IsEncrypted" isNewNull="true" oldValue="N"/>
-        <Data AD_Column_ID="3360" Column="IsUpdateable" isNewNull="true" oldValue="true"/>
-        <Data AD_Column_ID="1692" Column="Callout" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="11617" Column="IsAlwaysUpdateable" isNewNull="true" oldValue="false"/>
-        <Data AD_Column_ID="116" Column="ColumnName" isNewNull="true" oldValue="CalculateCost"/>
-        <Data AD_Column_ID="112" Column="Description" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="111" Column="Name" isNewNull="true" oldValue="Calculate Cost"/>
-        <Data AD_Column_ID="59702" Column="AD_Chart_ID" isNewNull="true" isOldNull="true"/>
-        <Data AD_Column_ID="6483" Column="IsSyncDatabase" isNewNull="true" oldValue="N"/>
-        <Data AD_Column_ID="62199" Column="IsAllowCopy" isNewNull="true" oldValue="true"/>
-        <Data AD_Column_ID="551" Column="Updated" isNewNull="true" oldValue="2016-05-20 14:56:08.0"/>
-        <Data AD_Column_ID="550" Column="CreatedBy" isNewNull="true" oldValue="100"/>
-        <Data AD_Column_ID="548" Column="IsActive" isNewNull="true" oldValue="true"/>
-        <Data AD_Column_ID="549" Column="Created" isNewNull="true" oldValue="2016-05-20 14:52:26.0"/>
-        <Data AD_Column_ID="552" Column="UpdatedBy" isNewNull="true" oldValue="100"/>
-        <Data AD_Column_ID="109" Column="AD_Column_ID" isNewNull="true" oldValue="80495"/>
-        <Data AD_Column_ID="360" Column="AD_Org_ID" isNewNull="true" oldValue="0"/>
-      </PO>
-    </Step>
-    
     <Step SeqNo="220" StepType="AD">
       <PO AD_Table_ID="101" Action="I" Record_ID="80496" Table="AD_Column">
         <Data AD_Column_ID="13448" Column="ColumnSQL" isNewNull="true"/>
         <Data AD_Column_ID="117" Column="DefaultValue" isNewNull="true"/>
         <Data AD_Column_ID="114" Column="AD_Table_ID">54109</Data>
         <Data AD_Column_ID="3389" Column="ValueMax" isNewNull="true"/>
-        <Data AD_Column_ID="6482" Column="EntityType">U</Data>
+        <Data AD_Column_ID="6482" Column="EntityType">D</Data>
         <Data AD_Column_ID="110" Column="Version">0</Data>
         <Data AD_Column_ID="227" Column="AD_Reference_Value_ID" isNewNull="true"/>
         <Data AD_Column_ID="124" Column="IsMandatory">false</Data>
@@ -744,7 +690,6 @@
         <Data AD_Column_ID="118" Column="FieldLength">1</Data>
         <Data AD_Column_ID="6244" Column="IsSelectionColumn">false</Data>
         <Data AD_Column_ID="226" Column="AD_Reference_ID">28</Data>
-        <Data AD_Column_ID="72747" Column="IsSecure">false</Data>
         <Data AD_Column_ID="115" Column="AD_Val_Rule_ID" isNewNull="true"/>
         <Data AD_Column_ID="1179" Column="VFormat" isNewNull="true"/>
         <Data AD_Column_ID="119" Column="IsKey">false</Data>
@@ -765,7 +710,6 @@
         <Data AD_Column_ID="111" Column="Name">Copy From</Data>
         <Data AD_Column_ID="59702" Column="AD_Chart_ID" isNewNull="true"/>
         <Data AD_Column_ID="6483" Column="IsSyncDatabase">N</Data>
-        <Data AD_Column_ID="62199" Column="IsAllowCopy">true</Data>
         <Data AD_Column_ID="551" Column="Updated">2016-05-20 15:06:48.611</Data>
         <Data AD_Column_ID="550" Column="CreatedBy">100</Data>
         <Data AD_Column_ID="548" Column="IsActive">true</Data>
@@ -778,48 +722,6 @@
     <Step SeqNo="230" StepType="AD">
       <PO AD_Table_ID="101" Action="U" Record_ID="80496" Table="AD_Column">
         <Data AD_Column_ID="3369" Column="AD_Process_ID" isOldNull="true">53865</Data>
-      </PO>
-    </Step>
-    <Step SeqNo="240" StepType="AD">
-      <PO AD_Table_ID="107" Action="I" Record_ID="79305" Table="AD_Field">
-        <Data AD_Column_ID="182" Column="SortNo">0</Data>
-        <Data AD_Column_ID="186" Column="IsEncrypted">false</Data>
-        <Data AD_Column_ID="180" Column="DisplayLength">0</Data>
-        <Data AD_Column_ID="176" Column="IsDisplayed">true</Data>
-        <Data AD_Column_ID="183" Column="IsSameLine">false</Data>
-        <Data AD_Column_ID="184" Column="IsHeading">false</Data>
-        <Data AD_Column_ID="174" Column="AD_Column_ID">80496</Data>
-        <Data AD_Column_ID="185" Column="IsFieldOnly">false</Data>
-        <Data AD_Column_ID="181" Column="SeqNo">310</Data>
-        <Data AD_Column_ID="2745" Column="IsCentrallyMaintained">true</Data>
-        <Data AD_Column_ID="172" Column="AD_Tab_ID">54201</Data>
-        <Data AD_Column_ID="2007" Column="IsReadOnly">false</Data>
-        <Data AD_Column_ID="170" Column="Help">Copy From Record</Data>
-        <Data AD_Column_ID="5375" Column="AD_FieldGroup_ID" isNewNull="true"/>
-        <Data AD_Column_ID="9969" Column="ObscureType" isNewNull="true"/>
-        <Data AD_Column_ID="15011" Column="AD_Reference_ID" isNewNull="true"/>
-        <Data AD_Column_ID="177" Column="DisplayLogic" isNewNull="true"/>
-        <Data AD_Column_ID="15013" Column="IsMandatory" isNewNull="true"/>
-        <Data AD_Column_ID="7714" Column="EntityType">U</Data>
-        <Data AD_Column_ID="53265" Column="DefaultValue" isNewNull="true"/>
-        <Data AD_Column_ID="54356" Column="AD_Reference_Value_ID" isNewNull="true"/>
-        <Data AD_Column_ID="54357" Column="AD_Val_Rule_ID" isNewNull="true"/>
-        <Data AD_Column_ID="54359" Column="InfoFactoryClass" isNewNull="true"/>
-        <Data AD_Column_ID="57957" Column="Included_Tab_ID" isNewNull="true"/>
-        <Data AD_Column_ID="169" Column="Description">Copy From Record</Data>
-        <Data AD_Column_ID="168" Column="Name">Copy From</Data>
-        <Data AD_Column_ID="62478" Column="IsDisplayedGrid">true</Data>
-        <Data AD_Column_ID="62479" Column="SeqNoGrid">310</Data>
-        <Data AD_Column_ID="62200" Column="IsAllowCopy" isNewNull="true"/>
-        <Data AD_Column_ID="582" Column="UpdatedBy">100</Data>
-        <Data AD_Column_ID="578" Column="IsActive">true</Data>
-        <Data AD_Column_ID="579" Column="Created">2016-05-20 15:10:27.278</Data>
-        <Data AD_Column_ID="383" Column="AD_Client_ID">0</Data>
-        <Data AD_Column_ID="580" Column="CreatedBy">100</Data>
-        <Data AD_Column_ID="581" Column="Updated">2016-05-20 15:10:27.278</Data>
-        <Data AD_Column_ID="167" Column="AD_Field_ID">79305</Data>
-        <Data AD_Column_ID="384" Column="AD_Org_ID">0</Data>
-        <Data AD_Column_ID="78296" Column="IsAllowNewAttributeInstance">false</Data>
       </PO>
     </Step>
     <Step SeqNo="250" StepType="AD">
