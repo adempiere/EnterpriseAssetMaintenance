@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Migrations>
+  <Migration EntityType="D" Name="Add new Entity Type for Assets Mantenance #15" ReleaseNo="3.9.1" SeqNo="05">
+    <Comments>See: https://github.com/adempiere/adempiereEAM/issues/15</Comments>
+    <Step SeqNo="10" StepType="AD">
+      <PO AD_Table_ID="882" Action="I" Record_ID="50037" Table="AD_EntityType">
+        <Data AD_Column_ID="15599" Column="Updated">2017-09-05 11:43:14.141</Data>
+        <Data AD_Column_ID="15596" Column="IsActive">true</Data>
+        <Data AD_Column_ID="15592" Column="EntityType">EAM</Data>
+        <Data AD_Column_ID="15595" Column="AD_EntityType_ID">50037</Data>
+        <Data AD_Column_ID="15593" Column="AD_Client_ID">0</Data>
+        <Data AD_Column_ID="15607" Column="Processing">false</Data>
+        <Data AD_Column_ID="15594" Column="AD_Org_ID">0</Data>
+        <Data AD_Column_ID="15597" Column="Created">2017-09-05 11:43:14.141</Data>
+        <Data AD_Column_ID="15600" Column="UpdatedBy">100</Data>
+        <Data AD_Column_ID="15602" Column="Description">ADempiere EAM Contribution</Data>
+        <Data AD_Column_ID="15604" Column="Version" isNewNull="true"/>
+        <Data AD_Column_ID="15605" Column="ModelPackage">org.eam.model</Data>
+        <Data AD_Column_ID="15606" Column="Classpath" isNewNull="true"/>
+        <Data AD_Column_ID="15603" Column="Help">Enterprise asset management (EAM) is the optimal lifecycle management of the physical assets of an organization. It covers subjects including the design, construction, commissioning, operations, maintenance and decommissioning/replacement of plant, equipment and facilities.</Data>
+        <Data AD_Column_ID="15598" Column="CreatedBy">100</Data>
+        <Data AD_Column_ID="15601" Column="Name">ADempiere (EAM)</Data>
+        <Data AD_Column_ID="84318" Column="UUID" isNewNull="true"/>
+      </PO>
+    </Step>
+  </Migration>
+</Migrations>
