@@ -22,7 +22,6 @@ import java.sql.ResultSet;
 import java.util.Properties;
 import org.compiere.model.*;
 import org.compiere.util.Env;
-import org.compiere.util.KeyNamePair;
 
 /** Generated Model for AM_PatternTask
  *  @author Adempiere (generated) 
@@ -33,7 +32,7 @@ public class X_AM_PatternTask extends PO implements I_AM_PatternTask, I_Persiste
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_PatternTask (Properties ctx, int AM_PatternTask_ID, String trxName)
@@ -101,8 +100,8 @@ public class X_AM_PatternTask extends PO implements I_AM_PatternTask, I_Persiste
 		return ii.intValue();
 	}
 
-	/** Set AM Maintenance Pattern Task.
-		@param AM_PatternTask_ID AM Maintenance Pattern Task	  */
+	/** Set AM Maintenance Pattern Task ID.
+		@param AM_PatternTask_ID AM Maintenance Pattern Task ID	  */
 	public void setAM_PatternTask_ID (int AM_PatternTask_ID)
 	{
 		if (AM_PatternTask_ID < 1) 
@@ -111,8 +110,8 @@ public class X_AM_PatternTask extends PO implements I_AM_PatternTask, I_Persiste
 			set_ValueNoCheck (COLUMNNAME_AM_PatternTask_ID, Integer.valueOf(AM_PatternTask_ID));
 	}
 
-	/** Get AM Maintenance Pattern Task.
-		@return AM Maintenance Pattern Task	  */
+	/** Get AM Maintenance Pattern Task ID.
+		@return AM Maintenance Pattern Task ID	  */
 	public int getAM_PatternTask_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_PatternTask_ID);
@@ -242,12 +241,4 @@ public class X_AM_PatternTask extends PO implements I_AM_PatternTask, I_Persiste
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}
-
-    /** Get Record ID/ColumnName
-        @return ID/ColumnName pair
-      */
-    public KeyNamePair getKeyNamePair() 
-    {
-        return new KeyNamePair(get_ID(), getName());
-    }
 }

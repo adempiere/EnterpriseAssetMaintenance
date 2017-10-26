@@ -92,10 +92,10 @@ public interface I_AM_AssetMeterLog
     /** Column name AM_AssetMeterLog_ID */
     public static final String COLUMNNAME_AM_AssetMeterLog_ID = "AM_AssetMeterLog_ID";
 
-	/** Set AM Asset Meter Log	  */
+	/** Set AM Asset Meter Log ID	  */
 	public void setAM_AssetMeterLog_ID (int AM_AssetMeterLog_ID);
 
-	/** Get AM Asset Meter Log	  */
+	/** Get AM Asset Meter Log ID	  */
 	public int getAM_AssetMeterLog_ID();
 
     /** Column name Amt */

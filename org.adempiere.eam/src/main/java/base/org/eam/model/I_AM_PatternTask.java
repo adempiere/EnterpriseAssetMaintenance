@@ -77,10 +77,10 @@ public interface I_AM_PatternTask
     /** Column name AM_PatternTask_ID */
     public static final String COLUMNNAME_AM_PatternTask_ID = "AM_PatternTask_ID";
 
-	/** Set AM Maintenance Pattern Task	  */
+	/** Set AM Maintenance Pattern Task ID	  */
 	public void setAM_PatternTask_ID (int AM_PatternTask_ID);
 
-	/** Get AM Maintenance Pattern Task	  */
+	/** Get AM Maintenance Pattern Task ID	  */
 	public int getAM_PatternTask_ID();
 
     /** Column name CostAmt */

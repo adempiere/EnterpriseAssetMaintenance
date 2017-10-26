@@ -129,10 +129,10 @@ public interface I_AM_ServiceOrder
     /** Column name AM_ServiceOrder_ID */
     public static final String COLUMNNAME_AM_ServiceOrder_ID = "AM_ServiceOrder_ID";
 
-	/** Set AM ServiceOrder	  */
+	/** Set AM ServiceOrder ID	  */
 	public void setAM_ServiceOrder_ID (int AM_ServiceOrder_ID);
 
-	/** Get AM ServiceOrder	  */
+	/** Get AM ServiceOrder ID	  */
 	public int getAM_ServiceOrder_ID();
 
     /** Column name AM_ServiceRequest_ID */
@@ -356,6 +356,15 @@ public interface I_AM_ServiceOrder
 	  * Indicates if this document requires approval
 	  */
 	public boolean isApproved();
+
+    /** Column name IsFromForecast */
+    public static final String COLUMNNAME_IsFromForecast = "IsFromForecast";
+
+	/** Set Is From Forecast	  */
+	public void setIsFromForecast (boolean IsFromForecast);
+
+	/** Get Is From Forecast	  */
+	public boolean isFromForecast();
 
     /** Column name IsTimeReal */
     public static final String COLUMNNAME_IsTimeReal = "IsTimeReal";

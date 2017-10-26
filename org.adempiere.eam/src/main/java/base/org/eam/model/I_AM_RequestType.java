@@ -66,10 +66,10 @@ public interface I_AM_RequestType
     /** Column name AM_RequestType_ID */
     public static final String COLUMNNAME_AM_RequestType_ID = "AM_RequestType_ID";
 
-	/** Set SO Request Type	  */
+	/** Set Request Type	  */
 	public void setAM_RequestType_ID (int AM_RequestType_ID);
 
-	/** Get SO Request Type	  */
+	/** Get Request Type	  */
 	public int getAM_RequestType_ID();
 
     /** Column name Created */

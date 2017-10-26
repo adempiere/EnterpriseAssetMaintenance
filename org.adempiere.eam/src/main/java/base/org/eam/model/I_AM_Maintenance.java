@@ -122,10 +122,10 @@ public interface I_AM_Maintenance
     /** Column name AM_Maintenance_ID */
     public static final String COLUMNNAME_AM_Maintenance_ID = "AM_Maintenance_ID";
 
-	/** Set AM Maintenance	  */
+	/** Set AM Maintenance ID	  */
 	public void setAM_Maintenance_ID (int AM_Maintenance_ID);
 
-	/** Get AM Maintenance	  */
+	/** Get AM Maintenance ID	  */
 	public int getAM_Maintenance_ID();
 
     /** Column name AM_MaintenanceParent_ID */

@@ -88,10 +88,10 @@ public interface I_AM_ServiceOrderTask
     /** Column name AM_ServiceOrderTask_ID */
     public static final String COLUMNNAME_AM_ServiceOrderTask_ID = "AM_ServiceOrderTask_ID";
 
-	/** Set AM ServiceOrder Task	  */
+	/** Set AM ServiceOrder Task ID	  */
 	public void setAM_ServiceOrderTask_ID (int AM_ServiceOrderTask_ID);
 
-	/** Get AM ServiceOrder Task	  */
+	/** Get AM ServiceOrder Task ID	  */
 	public int getAM_ServiceOrderTask_ID();
 
     /** Column name CostAmt */

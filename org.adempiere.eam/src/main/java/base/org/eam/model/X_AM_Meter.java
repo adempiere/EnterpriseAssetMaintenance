@@ -31,7 +31,7 @@ public class X_AM_Meter extends PO implements I_AM_Meter, I_Persistent
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_Meter (Properties ctx, int AM_Meter_ID, String trxName)
@@ -73,8 +73,8 @@ public class X_AM_Meter extends PO implements I_AM_Meter, I_Persistent
       return sb.toString();
     }
 
-	/** Set AM Meter.
-		@param AM_Meter_ID AM Meter	  */
+	/** Set AM Meter ID.
+		@param AM_Meter_ID AM Meter ID	  */
 	public void setAM_Meter_ID (int AM_Meter_ID)
 	{
 		if (AM_Meter_ID < 1) 
@@ -83,8 +83,8 @@ public class X_AM_Meter extends PO implements I_AM_Meter, I_Persistent
 			set_ValueNoCheck (COLUMNNAME_AM_Meter_ID, Integer.valueOf(AM_Meter_ID));
 	}
 
-	/** Get AM Meter.
-		@return AM Meter	  */
+	/** Get AM Meter ID.
+		@return AM Meter ID	  */
 	public int getAM_Meter_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Meter_ID);

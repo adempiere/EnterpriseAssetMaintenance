@@ -32,7 +32,7 @@ public class X_AM_ServiceOrderResource extends PO implements I_AM_ServiceOrderRe
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_ServiceOrderResource (Properties ctx, int AM_ServiceOrderResource_ID, String trxName)
@@ -75,8 +75,8 @@ public class X_AM_ServiceOrderResource extends PO implements I_AM_ServiceOrderRe
       return sb.toString();
     }
 
-	/** Set AM ServiceOrder Resource.
-		@param AM_ServiceOrderResource_ID AM ServiceOrder Resource	  */
+	/** Set AM ServiceOrder Resource ID.
+		@param AM_ServiceOrderResource_ID AM ServiceOrder Resource ID	  */
 	public void setAM_ServiceOrderResource_ID (int AM_ServiceOrderResource_ID)
 	{
 		if (AM_ServiceOrderResource_ID < 1) 
@@ -85,8 +85,8 @@ public class X_AM_ServiceOrderResource extends PO implements I_AM_ServiceOrderRe
 			set_ValueNoCheck (COLUMNNAME_AM_ServiceOrderResource_ID, Integer.valueOf(AM_ServiceOrderResource_ID));
 	}
 
-	/** Get AM ServiceOrder Resource.
-		@return AM ServiceOrder Resource	  */
+	/** Get AM ServiceOrder Resource ID.
+		@return AM ServiceOrder Resource ID	  */
 	public int getAM_ServiceOrderResource_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_ServiceOrderResource_ID);

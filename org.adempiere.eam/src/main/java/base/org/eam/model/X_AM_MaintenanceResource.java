@@ -32,7 +32,7 @@ public class X_AM_MaintenanceResource extends PO implements I_AM_MaintenanceReso
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_MaintenanceResource (Properties ctx, int AM_MaintenanceResource_ID, String trxName)
@@ -74,8 +74,8 @@ public class X_AM_MaintenanceResource extends PO implements I_AM_MaintenanceReso
       return sb.toString();
     }
 
-	/** Set AM Maintenance Resource.
-		@param AM_MaintenanceResource_ID AM Maintenance Resource	  */
+	/** Set AM Maintenance Resource ID.
+		@param AM_MaintenanceResource_ID AM Maintenance Resource ID	  */
 	public void setAM_MaintenanceResource_ID (int AM_MaintenanceResource_ID)
 	{
 		if (AM_MaintenanceResource_ID < 1) 
@@ -84,8 +84,8 @@ public class X_AM_MaintenanceResource extends PO implements I_AM_MaintenanceReso
 			set_ValueNoCheck (COLUMNNAME_AM_MaintenanceResource_ID, Integer.valueOf(AM_MaintenanceResource_ID));
 	}
 
-	/** Get AM Maintenance Resource.
-		@return AM Maintenance Resource	  */
+	/** Get AM Maintenance Resource ID.
+		@return AM Maintenance Resource ID	  */
 	public int getAM_MaintenanceResource_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_MaintenanceResource_ID);

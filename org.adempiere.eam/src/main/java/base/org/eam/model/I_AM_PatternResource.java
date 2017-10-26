@@ -66,10 +66,10 @@ public interface I_AM_PatternResource
     /** Column name AM_PatternResource_ID */
     public static final String COLUMNNAME_AM_PatternResource_ID = "AM_PatternResource_ID";
 
-	/** Set AM Maintenance Pattern Resource	  */
+	/** Set AM Maintenance Pattern Resource ID	  */
 	public void setAM_PatternResource_ID (int AM_PatternResource_ID);
 
-	/** Get AM Maintenance Pattern Resource	  */
+	/** Get AM Maintenance Pattern Resource ID	  */
 	public int getAM_PatternResource_ID();
 
     /** Column name AM_PatternTask_ID */

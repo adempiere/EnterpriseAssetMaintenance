@@ -204,6 +204,19 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 		}
 	}
 
+	@Override
+	protected boolean beforeSave(boolean newRecord) {
+		if(newRecord) {
+			if(getC_DocType_ID() == 0) {
+				MDocType [] documentType = MDocType.getOfDocBaseType(Env.getCtx(), "MSO");
+				if(documentType.length > 0) {
+					setC_DocType_ID(documentType[0].getC_DocType_ID());
+				}
+			}
+		}
+		return super.beforeSave(newRecord);
+	}
+	
 	/**
 	 * Approve Document
 	 * 
@@ -289,19 +302,6 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 			}
 			asset.saveEx();
 		}
-
-		// update forecast
-//		MPrognosis forecast = MPrognosis.getByServiceOrder_ID(Env.getCtx(), this.getAM_ServiceOrder_ID());
-//		if (forecast != null)
-//		{
-//			// update Forecast: with real or Work Order's official time?
-//			if (this.isTimeReal())
-//				forecast.setLastMaintenanceDate(now);
-//			else
-//				forecast.setLastMaintenanceDate(this.getDateStartPlan());
-//			forecast.saveEx();
-//		}
-
 		return DocAction.STATUS_Completed;
 	} // completeIt
 
@@ -571,6 +571,36 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 		saveEx();
 		//	Return ok
 		return true;
+	}
+	
+	/**
+	 * Set values from maintenance
+	 * @param maintenance
+	 */
+	public void setMaintenance(MAMMaintenance maintenance) {
+		if(maintenance == null) {
+			return;
+		}
+		setAM_Maintenance_ID(maintenance.getAM_Maintenance_ID());
+		setAM_Area_ID(maintenance.getAM_Area_ID());
+		if(maintenance.getAM_Pattern_ID() != 0) {
+			setAM_Pattern_ID(maintenance.getAM_Pattern_ID());
+		}
+		setAD_User_ID(maintenance.getAD_User_ID());
+		addDescription(maintenance.getDescription());
+	}
+	
+	/**
+	 * Set values from pattern
+	 * @param pattern
+	 */
+	public void setPattern(MAMPattern pattern) {
+		if(pattern == null) {
+			return;
+		}
+		setAM_Pattern_ID(pattern.getAM_Pattern_ID());
+		setAM_Area_ID(pattern.getAM_Area_ID());
+		addDescription(pattern.getDescription());
 	}
 
 	@Override

@@ -66,10 +66,10 @@ public interface I_AM_MaintenanceResource
     /** Column name AM_MaintenanceResource_ID */
     public static final String COLUMNNAME_AM_MaintenanceResource_ID = "AM_MaintenanceResource_ID";
 
-	/** Set AM Maintenance Resource	  */
+	/** Set AM Maintenance Resource ID	  */
 	public void setAM_MaintenanceResource_ID (int AM_MaintenanceResource_ID);
 
-	/** Get AM Maintenance Resource	  */
+	/** Get AM Maintenance Resource ID	  */
 	public int getAM_MaintenanceResource_ID();
 
     /** Column name AM_MaintenanceTask_ID */

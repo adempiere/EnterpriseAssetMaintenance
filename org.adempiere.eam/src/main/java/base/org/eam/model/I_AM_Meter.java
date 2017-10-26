@@ -66,10 +66,10 @@ public interface I_AM_Meter
     /** Column name AM_Meter_ID */
     public static final String COLUMNNAME_AM_Meter_ID = "AM_Meter_ID";
 
-	/** Set AM Meter	  */
+	/** Set AM Meter ID	  */
 	public void setAM_Meter_ID (int AM_Meter_ID);
 
-	/** Get AM Meter	  */
+	/** Get AM Meter ID	  */
 	public int getAM_Meter_ID();
 
     /** Column name Created */

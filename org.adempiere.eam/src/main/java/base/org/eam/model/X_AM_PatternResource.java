@@ -32,7 +32,7 @@ public class X_AM_PatternResource extends PO implements I_AM_PatternResource, I_
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_PatternResource (Properties ctx, int AM_PatternResource_ID, String trxName)
@@ -74,8 +74,8 @@ public class X_AM_PatternResource extends PO implements I_AM_PatternResource, I_
       return sb.toString();
     }
 
-	/** Set AM Maintenance Pattern Resource.
-		@param AM_PatternResource_ID AM Maintenance Pattern Resource	  */
+	/** Set AM Maintenance Pattern Resource ID.
+		@param AM_PatternResource_ID AM Maintenance Pattern Resource ID	  */
 	public void setAM_PatternResource_ID (int AM_PatternResource_ID)
 	{
 		if (AM_PatternResource_ID < 1) 
@@ -84,8 +84,8 @@ public class X_AM_PatternResource extends PO implements I_AM_PatternResource, I_
 			set_ValueNoCheck (COLUMNNAME_AM_PatternResource_ID, Integer.valueOf(AM_PatternResource_ID));
 	}
 
-	/** Get AM Maintenance Pattern Resource.
-		@return AM Maintenance Pattern Resource	  */
+	/** Get AM Maintenance Pattern Resource ID.
+		@return AM Maintenance Pattern Resource ID	  */
 	public int getAM_PatternResource_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_PatternResource_ID);

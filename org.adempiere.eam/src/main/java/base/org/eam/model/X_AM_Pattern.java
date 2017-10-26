@@ -32,7 +32,7 @@ public class X_AM_Pattern extends PO implements I_AM_Pattern, I_Persistent
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_Pattern (Properties ctx, int AM_Pattern_ID, String trxName)
@@ -156,8 +156,8 @@ public class X_AM_Pattern extends PO implements I_AM_Pattern, I_Persistent
 		return ii.intValue();
 	}
 
-	/** Set AM Maintenance Pattern.
-		@param AM_Pattern_ID AM Maintenance Pattern	  */
+	/** Set AM Maintenance Pattern ID.
+		@param AM_Pattern_ID AM Maintenance Pattern ID	  */
 	public void setAM_Pattern_ID (int AM_Pattern_ID)
 	{
 		if (AM_Pattern_ID < 1) 
@@ -166,8 +166,8 @@ public class X_AM_Pattern extends PO implements I_AM_Pattern, I_Persistent
 			set_ValueNoCheck (COLUMNNAME_AM_Pattern_ID, Integer.valueOf(AM_Pattern_ID));
 	}
 
-	/** Get AM Maintenance Pattern.
-		@return AM Maintenance Pattern	  */
+	/** Get AM Maintenance Pattern ID.
+		@return AM Maintenance Pattern ID	  */
 	public int getAM_Pattern_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Pattern_ID);

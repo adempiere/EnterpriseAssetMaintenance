@@ -81,19 +81,19 @@ public interface I_AM_AssetMeter
     /** Column name AM_AssetMeter_ID */
     public static final String COLUMNNAME_AM_AssetMeter_ID = "AM_AssetMeter_ID";
 
-	/** Set AM Asset Meter	  */
+	/** Set AM Asset Meter ID	  */
 	public void setAM_AssetMeter_ID (int AM_AssetMeter_ID);
 
-	/** Get AM Asset Meter	  */
+	/** Get AM Asset Meter ID	  */
 	public int getAM_AssetMeter_ID();
 
     /** Column name AM_Meter_ID */
     public static final String COLUMNNAME_AM_Meter_ID = "AM_Meter_ID";
 
-	/** Set AM Meter	  */
+	/** Set AM Meter ID	  */
 	public void setAM_Meter_ID (int AM_Meter_ID);
 
-	/** Get AM Meter	  */
+	/** Get AM Meter ID	  */
 	public int getAM_Meter_ID();
 
 	public org.eam.model.I_AM_Meter getAM_Meter() throws RuntimeException;

@@ -30,7 +30,7 @@ public class X_AM_PatternType extends PO implements I_AM_PatternType, I_Persiste
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_PatternType (Properties ctx, int AM_PatternType_ID, String trxName)

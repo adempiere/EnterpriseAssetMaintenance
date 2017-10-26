@@ -33,7 +33,7 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_ServiceRequest (Properties ctx, int AM_ServiceRequest_ID, String trxName)
@@ -178,8 +178,8 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 		return (org.eam.model.I_AM_RequestType)MTable.get(getCtx(), org.eam.model.I_AM_RequestType.Table_Name)
 			.getPO(getAM_RequestType_ID(), get_TrxName());	}
 
-	/** Set SO Request Type.
-		@param AM_RequestType_ID SO Request Type	  */
+	/** Set Request Type.
+		@param AM_RequestType_ID Request Type	  */
 	public void setAM_RequestType_ID (int AM_RequestType_ID)
 	{
 		if (AM_RequestType_ID < 1) 
@@ -188,8 +188,8 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 			set_Value (COLUMNNAME_AM_RequestType_ID, Integer.valueOf(AM_RequestType_ID));
 	}
 
-	/** Get SO Request Type.
-		@return SO Request Type	  */
+	/** Get Request Type.
+		@return Request Type	  */
 	public int getAM_RequestType_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_RequestType_ID);
@@ -198,8 +198,8 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 		return ii.intValue();
 	}
 
-	/** Set AM Service Order Request.
-		@param AM_ServiceRequest_ID AM Service Order Request	  */
+	/** Set AM Service Order Request ID.
+		@param AM_ServiceRequest_ID AM Service Order Request ID	  */
 	public void setAM_ServiceRequest_ID (int AM_ServiceRequest_ID)
 	{
 		if (AM_ServiceRequest_ID < 1) 
@@ -208,8 +208,8 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 			set_ValueNoCheck (COLUMNNAME_AM_ServiceRequest_ID, Integer.valueOf(AM_ServiceRequest_ID));
 	}
 
-	/** Get AM Service Order Request.
-		@return AM Service Order Request	  */
+	/** Get AM Service Order Request ID.
+		@return AM Service Order Request ID	  */
 	public int getAM_ServiceRequest_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_ServiceRequest_ID);

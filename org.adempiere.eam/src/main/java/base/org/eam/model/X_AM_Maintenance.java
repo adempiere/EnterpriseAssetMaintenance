@@ -33,7 +33,7 @@ public class X_AM_Maintenance extends PO implements I_AM_Maintenance, I_Persiste
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_Maintenance (Properties ctx, int AM_Maintenance_ID, String trxName)
@@ -187,8 +187,8 @@ public class X_AM_Maintenance extends PO implements I_AM_Maintenance, I_Persiste
 		return ii.intValue();
 	}
 
-	/** Set AM Maintenance.
-		@param AM_Maintenance_ID AM Maintenance	  */
+	/** Set AM Maintenance ID.
+		@param AM_Maintenance_ID AM Maintenance ID	  */
 	public void setAM_Maintenance_ID (int AM_Maintenance_ID)
 	{
 		if (AM_Maintenance_ID < 1) 
@@ -197,8 +197,8 @@ public class X_AM_Maintenance extends PO implements I_AM_Maintenance, I_Persiste
 			set_ValueNoCheck (COLUMNNAME_AM_Maintenance_ID, Integer.valueOf(AM_Maintenance_ID));
 	}
 
-	/** Get AM Maintenance.
-		@return AM Maintenance	  */
+	/** Get AM Maintenance ID.
+		@return AM Maintenance ID	  */
 	public int getAM_Maintenance_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Maintenance_ID);
@@ -316,7 +316,7 @@ public class X_AM_Maintenance extends PO implements I_AM_Maintenance, I_Persiste
 	public void setCalendarType (String CalendarType)
 	{
 
-		set_Value (COLUMNNAME_CalendarType, CalendarType);
+		set_ValueNoCheck (COLUMNNAME_CalendarType, CalendarType);
 	}
 
 	/** Get AM Calendar Type.

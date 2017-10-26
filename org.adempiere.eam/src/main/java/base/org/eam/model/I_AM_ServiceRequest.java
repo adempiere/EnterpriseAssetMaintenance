@@ -107,10 +107,10 @@ public interface I_AM_ServiceRequest
     /** Column name AM_RequestType_ID */
     public static final String COLUMNNAME_AM_RequestType_ID = "AM_RequestType_ID";
 
-	/** Set SO Request Type	  */
+	/** Set Request Type	  */
 	public void setAM_RequestType_ID (int AM_RequestType_ID);
 
-	/** Get SO Request Type	  */
+	/** Get Request Type	  */
 	public int getAM_RequestType_ID();
 
 	public org.eam.model.I_AM_RequestType getAM_RequestType() throws RuntimeException;
@@ -118,10 +118,10 @@ public interface I_AM_ServiceRequest
     /** Column name AM_ServiceRequest_ID */
     public static final String COLUMNNAME_AM_ServiceRequest_ID = "AM_ServiceRequest_ID";
 
-	/** Set AM Service Order Request	  */
+	/** Set AM Service Order Request ID	  */
 	public void setAM_ServiceRequest_ID (int AM_ServiceRequest_ID);
 
-	/** Get AM Service Order Request	  */
+	/** Get AM Service Order Request ID	  */
 	public int getAM_ServiceRequest_ID();
 
     /** Column name C_Currency_ID */

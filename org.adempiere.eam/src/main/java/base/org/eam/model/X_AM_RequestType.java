@@ -30,7 +30,7 @@ public class X_AM_RequestType extends PO implements I_AM_RequestType, I_Persiste
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_RequestType (Properties ctx, int AM_RequestType_ID, String trxName)
@@ -72,8 +72,8 @@ public class X_AM_RequestType extends PO implements I_AM_RequestType, I_Persiste
       return sb.toString();
     }
 
-	/** Set SO Request Type.
-		@param AM_RequestType_ID SO Request Type	  */
+	/** Set Request Type.
+		@param AM_RequestType_ID Request Type	  */
 	public void setAM_RequestType_ID (int AM_RequestType_ID)
 	{
 		if (AM_RequestType_ID < 1) 
@@ -82,8 +82,8 @@ public class X_AM_RequestType extends PO implements I_AM_RequestType, I_Persiste
 			set_ValueNoCheck (COLUMNNAME_AM_RequestType_ID, Integer.valueOf(AM_RequestType_ID));
 	}
 
-	/** Get SO Request Type.
-		@return SO Request Type	  */
+	/** Get Request Type.
+		@return Request Type	  */
 	public int getAM_RequestType_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_RequestType_ID);

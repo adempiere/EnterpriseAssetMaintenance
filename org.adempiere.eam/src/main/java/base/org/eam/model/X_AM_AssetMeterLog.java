@@ -33,7 +33,7 @@ public class X_AM_AssetMeterLog extends PO implements I_AM_AssetMeterLog, I_Pers
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_AssetMeterLog (Properties ctx, int AM_AssetMeterLog_ID, String trxName)
@@ -129,8 +129,8 @@ public class X_AM_AssetMeterLog extends PO implements I_AM_AssetMeterLog, I_Pers
 		return ii.intValue();
 	}
 
-	/** Set AM Asset Meter Log.
-		@param AM_AssetMeterLog_ID AM Asset Meter Log	  */
+	/** Set AM Asset Meter Log ID.
+		@param AM_AssetMeterLog_ID AM Asset Meter Log ID	  */
 	public void setAM_AssetMeterLog_ID (int AM_AssetMeterLog_ID)
 	{
 		if (AM_AssetMeterLog_ID < 1) 
@@ -139,8 +139,8 @@ public class X_AM_AssetMeterLog extends PO implements I_AM_AssetMeterLog, I_Pers
 			set_ValueNoCheck (COLUMNNAME_AM_AssetMeterLog_ID, Integer.valueOf(AM_AssetMeterLog_ID));
 	}
 
-	/** Get AM Asset Meter Log.
-		@return AM Asset Meter Log	  */
+	/** Get AM Asset Meter Log ID.
+		@return AM Asset Meter Log ID	  */
 	public int getAM_AssetMeterLog_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_AssetMeterLog_ID);

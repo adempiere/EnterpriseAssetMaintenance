@@ -107,10 +107,10 @@ public interface I_AM_Pattern
     /** Column name AM_Pattern_ID */
     public static final String COLUMNNAME_AM_Pattern_ID = "AM_Pattern_ID";
 
-	/** Set AM Maintenance Pattern	  */
+	/** Set AM Maintenance Pattern ID	  */
 	public void setAM_Pattern_ID (int AM_Pattern_ID);
 
-	/** Get AM Maintenance Pattern	  */
+	/** Get AM Maintenance Pattern ID	  */
 	public int getAM_Pattern_ID();
 
     /** Column name AM_PatternType_ID */

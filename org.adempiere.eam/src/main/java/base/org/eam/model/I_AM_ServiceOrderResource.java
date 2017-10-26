@@ -66,10 +66,10 @@ public interface I_AM_ServiceOrderResource
     /** Column name AM_ServiceOrderResource_ID */
     public static final String COLUMNNAME_AM_ServiceOrderResource_ID = "AM_ServiceOrderResource_ID";
 
-	/** Set AM ServiceOrder Resource	  */
+	/** Set AM ServiceOrder Resource ID	  */
 	public void setAM_ServiceOrderResource_ID (int AM_ServiceOrderResource_ID);
 
-	/** Get AM ServiceOrder Resource	  */
+	/** Get AM ServiceOrder Resource ID	  */
 	public int getAM_ServiceOrderResource_ID();
 
     /** Column name AM_ServiceOrderTask_ID */

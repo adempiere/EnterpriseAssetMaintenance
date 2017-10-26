@@ -22,7 +22,6 @@ import java.sql.ResultSet;
 import java.util.Properties;
 import org.compiere.model.*;
 import org.compiere.util.Env;
-import org.compiere.util.KeyNamePair;
 
 /** Generated Model for AM_ServiceOrderTask
  *  @author Adempiere (generated) 
@@ -33,7 +32,7 @@ public class X_AM_ServiceOrderTask extends PO implements I_AM_ServiceOrderTask, 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_ServiceOrderTask (Properties ctx, int AM_ServiceOrderTask_ID, String trxName)
@@ -129,8 +128,8 @@ public class X_AM_ServiceOrderTask extends PO implements I_AM_ServiceOrderTask, 
 		return ii.intValue();
 	}
 
-	/** Set AM ServiceOrder Task.
-		@param AM_ServiceOrderTask_ID AM ServiceOrder Task	  */
+	/** Set AM ServiceOrder Task ID.
+		@param AM_ServiceOrderTask_ID AM ServiceOrder Task ID	  */
 	public void setAM_ServiceOrderTask_ID (int AM_ServiceOrderTask_ID)
 	{
 		if (AM_ServiceOrderTask_ID < 1) 
@@ -139,8 +138,8 @@ public class X_AM_ServiceOrderTask extends PO implements I_AM_ServiceOrderTask, 
 			set_ValueNoCheck (COLUMNNAME_AM_ServiceOrderTask_ID, Integer.valueOf(AM_ServiceOrderTask_ID));
 	}
 
-	/** Get AM ServiceOrder Task.
-		@return AM ServiceOrder Task	  */
+	/** Get AM ServiceOrder Task ID.
+		@return AM ServiceOrder Task ID	  */
 	public int getAM_ServiceOrderTask_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_ServiceOrderTask_ID);
@@ -305,14 +304,6 @@ public class X_AM_ServiceOrderTask extends PO implements I_AM_ServiceOrderTask, 
 		return (String)get_Value(COLUMNNAME_Name);
 	}
 
-    /** Get Record ID/ColumnName
-        @return ID/ColumnName pair
-      */
-    public KeyNamePair getKeyNamePair() 
-    {
-        return new KeyNamePair(get_ID(), getName());
-    }
-
 	/** Set Processed.
 		@param Processed 
 		The document has been processed
@@ -354,7 +345,7 @@ public class X_AM_ServiceOrderTask extends PO implements I_AM_ServiceOrderTask, 
 	public void setStatus (String Status)
 	{
 
-		set_ValueNoCheck (COLUMNNAME_Status, Status);
+		set_Value (COLUMNNAME_Status, Status);
 	}
 
 	/** Get Status.

@@ -33,7 +33,7 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_ServiceOrder (Properties ctx, int AM_ServiceOrder_ID, String trxName)
@@ -217,8 +217,8 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 		return ii.intValue();
 	}
 
-	/** Set AM ServiceOrder.
-		@param AM_ServiceOrder_ID AM ServiceOrder	  */
+	/** Set AM ServiceOrder ID.
+		@param AM_ServiceOrder_ID AM ServiceOrder ID	  */
 	public void setAM_ServiceOrder_ID (int AM_ServiceOrder_ID)
 	{
 		if (AM_ServiceOrder_ID < 1) 
@@ -227,8 +227,8 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 			set_ValueNoCheck (COLUMNNAME_AM_ServiceOrder_ID, Integer.valueOf(AM_ServiceOrder_ID));
 	}
 
-	/** Get AM ServiceOrder.
-		@return AM ServiceOrder	  */
+	/** Get AM ServiceOrder ID.
+		@return AM ServiceOrder ID	  */
 	public int getAM_ServiceOrder_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_ServiceOrder_ID);
@@ -581,6 +581,27 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 	public boolean isApproved () 
 	{
 		Object oo = get_Value(COLUMNNAME_IsApproved);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+
+	/** Set Is From Forecast.
+		@param IsFromForecast Is From Forecast	  */
+	public void setIsFromForecast (boolean IsFromForecast)
+	{
+		set_Value (COLUMNNAME_IsFromForecast, Boolean.valueOf(IsFromForecast));
+	}
+
+	/** Get Is From Forecast.
+		@return Is From Forecast	  */
+	public boolean isFromForecast () 
+	{
+		Object oo = get_Value(COLUMNNAME_IsFromForecast);
 		if (oo != null) 
 		{
 			 if (oo instanceof Boolean) 

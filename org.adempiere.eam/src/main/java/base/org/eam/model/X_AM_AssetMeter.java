@@ -33,7 +33,7 @@ public class X_AM_AssetMeter extends PO implements I_AM_AssetMeter, I_Persistent
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_AssetMeter (Properties ctx, int AM_AssetMeter_ID, String trxName)
@@ -106,8 +106,8 @@ public class X_AM_AssetMeter extends PO implements I_AM_AssetMeter, I_Persistent
 		return ii.intValue();
 	}
 
-	/** Set AM Asset Meter.
-		@param AM_AssetMeter_ID AM Asset Meter	  */
+	/** Set AM Asset Meter ID.
+		@param AM_AssetMeter_ID AM Asset Meter ID	  */
 	public void setAM_AssetMeter_ID (int AM_AssetMeter_ID)
 	{
 		if (AM_AssetMeter_ID < 1) 
@@ -116,8 +116,8 @@ public class X_AM_AssetMeter extends PO implements I_AM_AssetMeter, I_Persistent
 			set_ValueNoCheck (COLUMNNAME_AM_AssetMeter_ID, Integer.valueOf(AM_AssetMeter_ID));
 	}
 
-	/** Get AM Asset Meter.
-		@return AM Asset Meter	  */
+	/** Get AM Asset Meter ID.
+		@return AM Asset Meter ID	  */
 	public int getAM_AssetMeter_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_AssetMeter_ID);
@@ -131,8 +131,8 @@ public class X_AM_AssetMeter extends PO implements I_AM_AssetMeter, I_Persistent
 		return (org.eam.model.I_AM_Meter)MTable.get(getCtx(), org.eam.model.I_AM_Meter.Table_Name)
 			.getPO(getAM_Meter_ID(), get_TrxName());	}
 
-	/** Set AM Meter.
-		@param AM_Meter_ID AM Meter	  */
+	/** Set AM Meter ID.
+		@param AM_Meter_ID AM Meter ID	  */
 	public void setAM_Meter_ID (int AM_Meter_ID)
 	{
 		if (AM_Meter_ID < 1) 
@@ -141,8 +141,8 @@ public class X_AM_AssetMeter extends PO implements I_AM_AssetMeter, I_Persistent
 			set_ValueNoCheck (COLUMNNAME_AM_Meter_ID, Integer.valueOf(AM_Meter_ID));
 	}
 
-	/** Get AM Meter.
-		@return AM Meter	  */
+	/** Get AM Meter ID.
+		@return AM Meter ID	  */
 	public int getAM_Meter_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Meter_ID);

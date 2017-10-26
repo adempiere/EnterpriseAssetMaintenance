@@ -31,7 +31,7 @@ public class X_AM_Area extends PO implements I_AM_Area, I_Persistent
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_Area (Properties ctx, int AM_Area_ID, String trxName)

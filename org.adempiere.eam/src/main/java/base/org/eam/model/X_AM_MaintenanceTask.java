@@ -22,7 +22,6 @@ import java.sql.ResultSet;
 import java.util.Properties;
 import org.compiere.model.*;
 import org.compiere.util.Env;
-import org.compiere.util.KeyNamePair;
 
 /** Generated Model for AM_MaintenanceTask
  *  @author Adempiere (generated) 
@@ -33,7 +32,7 @@ public class X_AM_MaintenanceTask extends PO implements I_AM_MaintenanceTask, I_
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171004L;
+	private static final long serialVersionUID = 20171020L;
 
     /** Standard Constructor */
     public X_AM_MaintenanceTask (Properties ctx, int AM_MaintenanceTask_ID, String trxName)
@@ -101,8 +100,8 @@ public class X_AM_MaintenanceTask extends PO implements I_AM_MaintenanceTask, I_
 		return ii.intValue();
 	}
 
-	/** Set AM Maintenance Task.
-		@param AM_MaintenanceTask_ID AM Maintenance Task	  */
+	/** Set AM Maintenance Task ID.
+		@param AM_MaintenanceTask_ID AM Maintenance Task ID	  */
 	public void setAM_MaintenanceTask_ID (int AM_MaintenanceTask_ID)
 	{
 		if (AM_MaintenanceTask_ID < 1) 
@@ -111,8 +110,8 @@ public class X_AM_MaintenanceTask extends PO implements I_AM_MaintenanceTask, I_
 			set_ValueNoCheck (COLUMNNAME_AM_MaintenanceTask_ID, Integer.valueOf(AM_MaintenanceTask_ID));
 	}
 
-	/** Get AM Maintenance Task.
-		@return AM Maintenance Task	  */
+	/** Get AM Maintenance Task ID.
+		@return AM Maintenance Task ID	  */
 	public int getAM_MaintenanceTask_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_MaintenanceTask_ID);
@@ -242,12 +241,4 @@ public class X_AM_MaintenanceTask extends PO implements I_AM_MaintenanceTask, I_
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}
-
-    /** Get Record ID/ColumnName
-        @return ID/ColumnName pair
-      */
-    public KeyNamePair getKeyNamePair() 
-    {
-        return new KeyNamePair(get_ID(), getName());
-    }
 }
