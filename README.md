@@ -5,5 +5,13 @@
 
 Enterprise asset management (EAM) is the optimal lifecycle management of the physical assets of an organization. It covers subjects including the design, construction, commissioning, operations, maintenance and decommissioning/replacement of plant, equipment and facilities. 
 
-[Powered by Wikipedia](https://en.wikipedia.org/wiki/Enterprise_asset_management)
+![Maintenance E-R Diagram](docs/EAM.png)
 
+## Getting Started
+
+- Download and install ADempiere last versión from [https://github.com/adempiere/adempiere/releases](https://github.com/adempiere/adempiere/releases)
+- Download adempiereEAM project using git user git clone [https://github.com/adempiere/adempiereEAM](https://github.com/adempiere/adempiereEAM)
+- Run it
+
+## License
+This project have License GNU/GPLv2 or later.
