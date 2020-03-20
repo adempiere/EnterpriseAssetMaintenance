@@ -14,6 +14,7 @@ before_script:
   - wget http://github.com/erpcya/adempiere/releases/latest/download/Adempiere_393LTS.tar.gz -c -O Adempiere.tar.gz
   - tar -xzf Adempiere.tar.gz
   - mv Adempiere/lib/Adempiere.jar dependences/Adempiere.jar
+  - mv Adempiere/packages/FixedAssetManagement/lib/FixedAssetManagement.jar dependences/FixedAssetManagement.jar
 jobs:
   include:
     - stage: Compilation
