@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.adempiere.exceptions.AdempiereException;
+import org.eam.model.MAMMaintenance;
 
 /**
  * Maintenance Type factory using standard maintenance types
@@ -35,7 +36,7 @@ public class MaintenanceEngineFactory {
 	private static final Map<String, Class<? extends MaintenanceEngine>>
 	maintenanceEngines = new HashMap<String, Class<? extends MaintenanceEngine>>();
 	static {
-		maintenanceEngines.put("TBM", TimeBasedMaintenance.class);
+		maintenanceEngines.put(MAMMaintenance.MAINTENANCETYPE_Calendar_BasedMaintenance, CalendarBasedMaintenance.class);
 	}
 	
 	/**
@@ -62,6 +63,17 @@ public class MaintenanceEngineFactory {
 		} catch (Exception e) {
 			throw new AdempiereException(e);
 		}
+		return engine;
+	}
+	
+	/**
+	 * Get engine from maintenance definition
+	 * @param maintenanceDefinition
+	 * @return
+	 */
+	public MaintenanceEngine getEngine(MAMMaintenance maintenanceDefinition) {
+		MaintenanceEngine engine = getEngine(maintenanceDefinition.getMaintenanceType());
+		engine.setMaintenanceDefinition(maintenanceDefinition);
 		return engine;
 	}
 }

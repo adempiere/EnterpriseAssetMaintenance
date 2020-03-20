@@ -171,7 +171,7 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 		
 		MDocType dt = MDocType.get(getCtx(), getC_DocType_ID());
 		//	Std Period open?
-		if (!MPeriod.isOpen(getCtx(), getDateTrx(), dt.getDocBaseType(), getAD_Org_ID())) {
+		if (!MPeriod.isOpen(getCtx(), getDateDoc(), dt.getDocBaseType(), getAD_Org_ID())) {
 			m_processMsg = "@PeriodClosed@";
 			return DocAction.STATUS_Invalid;
 		}
@@ -195,7 +195,7 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 	private void setDefiniteDocumentNo() {
 		MDocType dt = MDocType.get(getCtx(), getC_DocType_ID());
 		if (dt.isOverwriteDateOnComplete()) {
-			setDateTrx(new Timestamp (System.currentTimeMillis()));
+			setDateDoc(new Timestamp (System.currentTimeMillis()));
 		}
 		if (dt.isOverwriteSeqOnComplete()) {
 			String value = DB.getDocumentNo(getC_DocType_ID(), get_TrxName(), true, this);
@@ -281,13 +281,7 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 		if (getAM_Maintenance_ID() != 0) {
 			MAMMaintenance maintenance = MAMMaintenance.get(getCtx(), getAM_Maintenance_ID());
 			//	
-			// update Preventive Maintenance with real or Work Order's official
-			// time?
-			if (isTimeReal()) {
-				maintenance.setDateLastSO(getDateTrx());
-			} else {
-				maintenance.setDateLastSO(getDateStartPlan());
-			}
+			maintenance.setDateLastServiceOrder(getDateDoc());
 			maintenance.saveEx();
 		}
 
@@ -295,15 +289,11 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 		MAsset asset = MAsset.get(getCtx(), getA_Asset_ID(), get_TrxName());
 		if (asset != null) {
 			// update Asset: with real or Work order's official time?
-			if (isTimeReal()) {
-				asset.setLastMaintenanceDate(getDateTrx());
-			} else {
-				asset.setLastMaintenanceDate(getDateStartPlan());
-			}
+			asset.setLastMaintenanceDate(getDateDoc());
 			asset.saveEx();
 		}
 		return DocAction.STATUS_Completed;
-	} // completeIt
+	} // completeIt	
 
 	/**
 	 * Close Document. Cancel not delivered Quantities
@@ -364,12 +354,12 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 		if(getAM_Maintenance_ID() == 0) {
 			if(getDocStatus().equals(DOCSTATUS_Completed)) {
 				MAMMaintenance maintenance = MAMMaintenance.get(getCtx(), getAM_Maintenance_ID());
-				if (maintenance.getProgrammingType().equals(MAMMaintenance.PROGRAMMINGTYPE_Calendar)) {
+				if (maintenance.getMaintenanceType().equals(MAMMaintenance.MAINTENANCETYPE_Calendar_BasedMaintenance)) {
 					maintenance.setDateNextRun(new Timestamp(maintenance.getDateLastRun().getTime()
 							- (maintenance.getInterval().longValue() * 86400000)));
 				} else {
-					maintenance.setNextAM(maintenance.getNextAM().subtract(maintenance.getInterval()));
-					maintenance.setLastAM(maintenance.getNextAM().subtract(maintenance.getInterval()));
+					maintenance.setNextMeasuring(maintenance.getNextMeasuring().subtract(maintenance.getInterval()));
+					maintenance.setLastMeasuring(maintenance.getNextMeasuring().subtract(maintenance.getInterval()));
 				}
 				//	
 				maintenance.saveEx();

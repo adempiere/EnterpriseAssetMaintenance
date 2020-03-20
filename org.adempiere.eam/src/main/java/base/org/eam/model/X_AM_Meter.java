@@ -24,14 +24,14 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Model for AM_Meter
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0 - $Id$ */
+ *  @version Release 3.9.3 - $Id$ */
 public class X_AM_Meter extends PO implements I_AM_Meter, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171020L;
+	private static final long serialVersionUID = 20200320L;
 
     /** Standard Constructor */
     public X_AM_Meter (Properties ctx, int AM_Meter_ID, String trxName)
@@ -40,6 +40,8 @@ public class X_AM_Meter extends PO implements I_AM_Meter, I_Persistent
       /** if (AM_Meter_ID == 0)
         {
 			setAM_Meter_ID (0);
+			setC_UOM_ID (0);
+// -1
 			setName (null);
 			setValue (null);
         } */
@@ -73,8 +75,10 @@ public class X_AM_Meter extends PO implements I_AM_Meter, I_Persistent
       return sb.toString();
     }
 
-	/** Set AM Meter ID.
-		@param AM_Meter_ID AM Meter ID	  */
+	/** Set Meter.
+		@param AM_Meter_ID 
+		Asset meter master
+	  */
 	public void setAM_Meter_ID (int AM_Meter_ID)
 	{
 		if (AM_Meter_ID < 1) 
@@ -83,11 +87,40 @@ public class X_AM_Meter extends PO implements I_AM_Meter, I_Persistent
 			set_ValueNoCheck (COLUMNNAME_AM_Meter_ID, Integer.valueOf(AM_Meter_ID));
 	}
 
-	/** Get AM Meter ID.
-		@return AM Meter ID	  */
+	/** Get Meter.
+		@return Asset meter master
+	  */
 	public int getAM_Meter_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Meter_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	public org.compiere.model.I_C_UOM getC_UOM() throws RuntimeException
+    {
+		return (org.compiere.model.I_C_UOM)MTable.get(getCtx(), org.compiere.model.I_C_UOM.Table_Name)
+			.getPO(getC_UOM_ID(), get_TrxName());	}
+
+	/** Set UOM.
+		@param C_UOM_ID 
+		Unit of Measure
+	  */
+	public void setC_UOM_ID (int C_UOM_ID)
+	{
+		if (C_UOM_ID < 1) 
+			set_ValueNoCheck (COLUMNNAME_C_UOM_ID, null);
+		else 
+			set_ValueNoCheck (COLUMNNAME_C_UOM_ID, Integer.valueOf(C_UOM_ID));
+	}
+
+	/** Get UOM.
+		@return Unit of Measure
+	  */
+	public int getC_UOM_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_C_UOM_ID);
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
@@ -110,23 +143,6 @@ public class X_AM_Meter extends PO implements I_AM_Meter, I_Persistent
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
-	/** Set Max Day.
-		@param MaxDay Max Day	  */
-	public void setMaxDay (int MaxDay)
-	{
-		set_Value (COLUMNNAME_MaxDay, Integer.valueOf(MaxDay));
-	}
-
-	/** Get Max Day.
-		@return Max Day	  */
-	public int getMaxDay () 
-	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_MaxDay);
-		if (ii == null)
-			 return 0;
-		return ii.intValue();
-	}
-
 	/** Set Name.
 		@param Name 
 		Alphanumeric identifier of the entity
@@ -142,6 +158,23 @@ public class X_AM_Meter extends PO implements I_AM_Meter, I_Persistent
 	public String getName () 
 	{
 		return (String)get_Value(COLUMNNAME_Name);
+	}
+
+	/** Set Immutable Universally Unique Identifier.
+		@param UUID 
+		Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID)
+	{
+		set_Value (COLUMNNAME_UUID, UUID);
+	}
+
+	/** Get Immutable Universally Unique Identifier.
+		@return Immutable Universally Unique Identifier
+	  */
+	public String getUUID () 
+	{
+		return (String)get_Value(COLUMNNAME_UUID);
 	}
 
 	/** Set Search Key.

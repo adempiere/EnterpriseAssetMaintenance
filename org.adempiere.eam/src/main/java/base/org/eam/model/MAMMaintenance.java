@@ -105,20 +105,18 @@ public class MAMMaintenance extends X_AM_Maintenance {
 		Timestamp dateTimeReference;
 
 		// try to get dateNextRun as reference
-		if (getDateLastSO() == null) {
+		if (getDateLastServiceOrder() == null) {
 			dateTimeReference = getDateNextRun() == null ? dateTimeNow : getDateNextRun();
 		} else {
-			dateTimeReference = getDateLastSO();
+			dateTimeReference = getDateLastServiceOrder();
 		}
-		if (getCalendarType().equals(MAMMaintenance.CALENDARTYPE_Daily))
+		if (getFrequencyType().equals(MAMMaintenance.FREQUENCYTYPE_Day))
 			calculatedDateNextRun = calculateDateNextRun(dateTimeNow, dateTimeReference, Calendar.DATE);
-		else if (getCalendarType().equals(MAMMaintenance.CALENDARTYPE_MonthlyFixed))
+		else if (getFrequencyType().equals(MAMMaintenance.FREQUENCYTYPE_Monthly))
 			calculatedDateNextRun = calculateDateNextRun(dateTimeNow, dateTimeReference, Calendar.MONTH);
-		else if (getCalendarType().equals(MAMMaintenance.CALENDARTYPE_MonthlyRepetitive))
-			calculatedDateNextRun = calculateDateNextRun(dateTimeNow, dateTimeReference, Calendar.MONTH);
-		else if (getCalendarType().equals(MAMMaintenance.CALENDARTYPE_Yearly))
+		else if (getFrequencyType().equals(MAMMaintenance.FREQUENCYTYPE_Yearly))
 			calculatedDateNextRun = calculateDateNextRun(dateTimeNow, dateTimeReference, Calendar.YEAR);
-		else if (getCalendarType().equals(MAMMaintenance.CALENDARTYPE_Weekly))
+		else if (getFrequencyType().equals(MAMMaintenance.FREQUENCYTYPE_Weekly))
 			calculatedDateNextRun = calculateDateNextRun(dateTimeNow, dateTimeReference, Calendar.WEEK_OF_YEAR);
 
 		setDateNextRun(calculatedDateNextRun);
@@ -142,58 +140,42 @@ public class MAMMaintenance extends X_AM_Maintenance {
 
 		// First future date is brought to past, then past is brought to NEXT
 		// future, preserving interval
-		while (suggestedDate.after(dateNow))
-		{ // suggested date AFTER now: go into a PAST date
-			if (getCalendarType().equals(MAMMaintenance.CALENDARTYPE_MonthlyRepetitive)
-					|| getCalendarType().equals(MAMMaintenance.CALENDARTYPE_Weekly))
-			{
+		while (suggestedDate.after(dateNow)) { // suggested date AFTER now: go into a PAST date
+			if (getFrequencyType().equals(MAMMaintenance.FREQUENCYTYPE_Monthly)
+					|| getFrequencyType().equals(MAMMaintenance.FREQUENCYTYPE_Weekly)) {
 				// for repetitive months or weekly: DECREMENT months as defined
 				// in interval
-				suggestedDate.add(calendarIncrement, -getInterval().intValue());
-			}
-			else if (getCalendarType().equals(MAMMaintenance.CALENDARTYPE_MonthlyFixed))
-			{
+				suggestedDate.add(calendarIncrement, - getInterval().intValue());
+			} else if (getFrequencyType().equals(MAMMaintenance.FREQUENCYTYPE_Monthly)) {	//	TODO: Add IsFixed attribute
 				// set day of month as defined in interval
 				suggestedDate.add(calendarIncrement, -1);
 				suggestedDate.set(Calendar.DAY_OF_MONTH, getInterval().intValue());
-			}
-			else if (getCalendarType().equals(MAMMaintenance.CALENDARTYPE_Yearly))
-			{
+			} else if (getFrequencyType().equals(MAMMaintenance.FREQUENCYTYPE_Yearly)) {
 				// set day of year as defined in interval
 				suggestedDate.add(calendarIncrement, -1);
 				suggestedDate.set(Calendar.DAY_OF_YEAR, getInterval().intValue());
-			}
-			else
-			{
+			} else {
 				// for daily Maintenance:DECREMENT just by the Calendar
 				suggestedDate.add(calendarIncrement, -1);
 			}
 		}
-
-		while (suggestedDate.before(dateNow))
-		{
+		//	Iterate
+		while (suggestedDate.before(dateNow)) {
 			// suggested date BEFORE now: go into a FUTURE date
-			if (getCalendarType().equals(MAMMaintenance.CALENDARTYPE_MonthlyRepetitive)
-					|| getCalendarType().equals(MAMMaintenance.CALENDARTYPE_Weekly))
-			{
+			if (getFrequencyType().equals(MAMMaintenance.FREQUENCYTYPE_Monthly)
+					|| getFrequencyType().equals(MAMMaintenance.FREQUENCYTYPE_Weekly)) {
 				// for repetitive months or weekly: INCREMENT months as defined
 				// in interval
 				suggestedDate.add(calendarIncrement, getInterval().intValue());
-			}
-			else if (getCalendarType().equals(MAMMaintenance.CALENDARTYPE_MonthlyFixed))
-			{
+			} else if (getFrequencyType().equals(MAMMaintenance.FREQUENCYTYPE_Monthly)) {	//	TODO_ Add Fixed attribute
 				// set day of month as defined in interval
 				suggestedDate.add(calendarIncrement, 1);
 				suggestedDate.set(Calendar.DAY_OF_MONTH, getInterval().intValue());
-			}
-			else if (getCalendarType().equals(MAMMaintenance.CALENDARTYPE_Yearly))
-			{
+			} else if (getFrequencyType().equals(MAMMaintenance.FREQUENCYTYPE_Yearly)) {
 				// set day of year as defined in interval
 				suggestedDate.add(calendarIncrement, 1);
 				suggestedDate.set(Calendar.DAY_OF_YEAR, getInterval().intValue());
-			}
-			else
-			{
+			} else {
 				// for daily Maintenance: INCREMENT just by the Calendar
 				suggestedDate.add(calendarIncrement, 1);
 			}
@@ -274,7 +256,6 @@ public class MAMMaintenance extends X_AM_Maintenance {
 		setAM_Pattern_ID(pattern.getAM_Pattern_ID());
 		// copy Asset and Asset Group from Maintenance Pattern
 		setA_Asset_ID(pattern.getA_Asset_ID());
-		setA_Asset_Group_ID(pattern.getA_Asset_Group_ID());
 		// copy Maintenance Area and Costs from Maintenance Pattern
 		setCostAmt(pattern.getCostAmt());
 		setAM_Area_ID(pattern.getAM_Area_ID());

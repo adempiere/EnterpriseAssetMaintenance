@@ -11,6 +11,7 @@ Enterprise asset management (EAM) is the optimal lifecycle management of the phy
 
 - Download and install ADempiere last versión from [https://github.com/adempiere/adempiere/releases](https://github.com/adempiere/adempiere/releases)
 - Download adempiereEAM project using git user git clone [https://github.com/adempiere/adempiereEAM](https://github.com/adempiere/adempiereEAM)
+- use gradle for build
 - Run it
 
 ## License

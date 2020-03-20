@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for AM_PatternResource
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0
+ *  @version Release 3.9.3
  */
 public interface I_AM_PatternResource 
 {
@@ -66,19 +66,27 @@ public interface I_AM_PatternResource
     /** Column name AM_PatternResource_ID */
     public static final String COLUMNNAME_AM_PatternResource_ID = "AM_PatternResource_ID";
 
-	/** Set AM Maintenance Pattern Resource ID	  */
+	/** Set Maintenance Pattern Resource.
+	  * Maintenance Pattern Resource used for maintaining of asset
+	  */
 	public void setAM_PatternResource_ID (int AM_PatternResource_ID);
 
-	/** Get AM Maintenance Pattern Resource ID	  */
+	/** Get Maintenance Pattern Resource.
+	  * Maintenance Pattern Resource used for maintaining of asset
+	  */
 	public int getAM_PatternResource_ID();
 
     /** Column name AM_PatternTask_ID */
     public static final String COLUMNNAME_AM_PatternTask_ID = "AM_PatternTask_ID";
 
-	/** Set AM Maintenance Pattern Task	  */
+	/** Set Maintenance Pattern Task.
+	  * Pattern Task defined for a asset
+	  */
 	public void setAM_PatternTask_ID (int AM_PatternTask_ID);
 
-	/** Get AM Maintenance Pattern Task	  */
+	/** Get Maintenance Pattern Task.
+	  * Pattern Task defined for a asset
+	  */
 	public int getAM_PatternTask_ID();
 
 	public org.eam.model.I_AM_PatternTask getAM_PatternTask() throws RuntimeException;
@@ -170,14 +178,18 @@ public interface I_AM_PatternResource
 
 	public org.compiere.model.I_M_Product getM_Product() throws RuntimeException;
 
-    /** Column name ResourceQty */
-    public static final String COLUMNNAME_ResourceQty = "ResourceQty";
+    /** Column name ResourceQuantity */
+    public static final String COLUMNNAME_ResourceQuantity = "ResourceQuantity";
 
-	/** Set Resource Qty	  */
-	public void setResourceQty (BigDecimal ResourceQty);
+	/** Set Resource Quantity.
+	  * Resource Quantity used for Maintenance
+	  */
+	public void setResourceQuantity (BigDecimal ResourceQuantity);
 
-	/** Get Resource Qty	  */
-	public BigDecimal getResourceQty();
+	/** Get Resource Quantity.
+	  * Resource Quantity used for Maintenance
+	  */
+	public BigDecimal getResourceQuantity();
 
     /** Column name ResourceType */
     public static final String COLUMNNAME_ResourceType = "ResourceType";
@@ -218,4 +230,17 @@ public interface I_AM_PatternResource
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
+
+    /** Column name UUID */
+    public static final String COLUMNNAME_UUID = "UUID";
+
+	/** Set Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID);
+
+	/** Get Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public String getUUID();
 }

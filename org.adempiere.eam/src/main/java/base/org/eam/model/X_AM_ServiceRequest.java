@@ -26,14 +26,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for AM_ServiceRequest
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0 - $Id$ */
+ *  @version Release 3.9.3 - $Id$ */
 public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171020L;
+	private static final long serialVersionUID = 20200320L;
 
     /** Standard Constructor */
     public X_AM_ServiceRequest (Properties ctx, int AM_ServiceRequest_ID, String trxName)
@@ -61,6 +61,8 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 // N
 			setPriorityRule (null);
 			setProcessed (false);
+			setProcessing (false);
+// N
         } */
     }
 
@@ -97,9 +99,9 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 		return (org.compiere.model.I_A_Asset)MTable.get(getCtx(), org.compiere.model.I_A_Asset.Table_Name)
 			.getPO(getA_Asset_ID(), get_TrxName());	}
 
-	/** Set Asset.
+	/** Set Fixed Asset.
 		@param A_Asset_ID 
-		Asset used internally or by customers
+		Fixed Asset used internally or by customers
 	  */
 	public void setA_Asset_ID (int A_Asset_ID)
 	{
@@ -109,8 +111,8 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 			set_Value (COLUMNNAME_A_Asset_ID, Integer.valueOf(A_Asset_ID));
 	}
 
-	/** Get Asset.
-		@return Asset used internally or by customers
+	/** Get Fixed Asset.
+		@return Fixed Asset used internally or by customers
 	  */
 	public int getA_Asset_ID () 
 	{
@@ -148,26 +150,29 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 		return ii.intValue();
 	}
 
-	public org.eam.model.I_AM_Pattern getAM_Pattern() throws RuntimeException
+	public org.eam.model.I_AM_Reason getAM_Reason() throws RuntimeException
     {
-		return (org.eam.model.I_AM_Pattern)MTable.get(getCtx(), org.eam.model.I_AM_Pattern.Table_Name)
-			.getPO(getAM_Pattern_ID(), get_TrxName());	}
+		return (org.eam.model.I_AM_Reason)MTable.get(getCtx(), org.eam.model.I_AM_Reason.Table_Name)
+			.getPO(getAM_Reason_ID(), get_TrxName());	}
 
-	/** Set AM Maintenance Pattern.
-		@param AM_Pattern_ID AM Maintenance Pattern	  */
-	public void setAM_Pattern_ID (int AM_Pattern_ID)
+	/** Set Maintenance Reason.
+		@param AM_Reason_ID 
+		Maintenance Reason for request order or service order
+	  */
+	public void setAM_Reason_ID (int AM_Reason_ID)
 	{
-		if (AM_Pattern_ID < 1) 
-			set_Value (COLUMNNAME_AM_Pattern_ID, null);
+		if (AM_Reason_ID < 1) 
+			set_Value (COLUMNNAME_AM_Reason_ID, null);
 		else 
-			set_Value (COLUMNNAME_AM_Pattern_ID, Integer.valueOf(AM_Pattern_ID));
+			set_Value (COLUMNNAME_AM_Reason_ID, Integer.valueOf(AM_Reason_ID));
 	}
 
-	/** Get AM Maintenance Pattern.
-		@return AM Maintenance Pattern	  */
-	public int getAM_Pattern_ID () 
+	/** Get Maintenance Reason.
+		@return Maintenance Reason for request order or service order
+	  */
+	public int getAM_Reason_ID () 
 	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Pattern_ID);
+		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Reason_ID);
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
@@ -179,7 +184,9 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 			.getPO(getAM_RequestType_ID(), get_TrxName());	}
 
 	/** Set Request Type.
-		@param AM_RequestType_ID Request Type	  */
+		@param AM_RequestType_ID 
+		Request type for make a request of maintenance
+	  */
 	public void setAM_RequestType_ID (int AM_RequestType_ID)
 	{
 		if (AM_RequestType_ID < 1) 
@@ -189,7 +196,8 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 	}
 
 	/** Get Request Type.
-		@return Request Type	  */
+		@return Request type for make a request of maintenance
+	  */
 	public int getAM_RequestType_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_RequestType_ID);
@@ -198,8 +206,10 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 		return ii.intValue();
 	}
 
-	/** Set AM Service Order Request ID.
-		@param AM_ServiceRequest_ID AM Service Order Request ID	  */
+	/** Set Service Order Request.
+		@param AM_ServiceRequest_ID 
+		Request for a Service Order
+	  */
 	public void setAM_ServiceRequest_ID (int AM_ServiceRequest_ID)
 	{
 		if (AM_ServiceRequest_ID < 1) 
@@ -208,8 +218,9 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 			set_ValueNoCheck (COLUMNNAME_AM_ServiceRequest_ID, Integer.valueOf(AM_ServiceRequest_ID));
 	}
 
-	/** Get AM Service Order Request ID.
-		@return AM Service Order Request ID	  */
+	/** Get Service Order Request.
+		@return Request for a Service Order
+	  */
 	public int getAM_ServiceRequest_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_ServiceRequest_ID);
@@ -568,5 +579,22 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 			return "Y".equals(oo);
 		}
 		return false;
+	}
+
+	/** Set Immutable Universally Unique Identifier.
+		@param UUID 
+		Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID)
+	{
+		set_Value (COLUMNNAME_UUID, UUID);
+	}
+
+	/** Get Immutable Universally Unique Identifier.
+		@return Immutable Universally Unique Identifier
+	  */
+	public String getUUID () 
+	{
+		return (String)get_Value(COLUMNNAME_UUID);
 	}
 }

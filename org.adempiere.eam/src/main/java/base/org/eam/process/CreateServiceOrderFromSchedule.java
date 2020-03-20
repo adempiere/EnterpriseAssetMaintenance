@@ -1,19 +1,18 @@
-/******************************************************************************
- * Product: ADempiere ERP & CRM Smart Business Solution                       *
- * Copyright (C) 2006-2017 ADempiere Foundation, All Rights Reserved.         *
- * This program is free software, you can redistribute it and/or modify it    *
- * under the terms version 2 of the GNU General Public License as published   *
- * or (at your option) any later version.										*
- * by the Free Software Foundation. This program is distributed in the hope   *
- * that it will be useful, but WITHOUT ANY WARRANTY, without even the implied *
- * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.           *
- * See the GNU General Public License for more details.                       *
- * You should have received a copy of the GNU General Public License along    *
- * with this program, if not, write to the Free Software Foundation, Inc.,    *
- * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     *
- * For the text or an alternative of this public license, you may reach us    *
- * or via info@adempiere.net or http://www.adempiere.net/license.html         *
- *****************************************************************************/
+/*************************************************************************************
+ * Product: Adempiere ERP & CRM Smart Business Solution                              *
+ * This program is free software; you can redistribute it and/or modify it    		 *
+ * under the terms version 2 or later of the GNU General Public License as published *
+ * by the Free Software Foundation. This program is distributed in the hope   		 *
+ * that it will be useful, but WITHOUT ANY WARRANTY; without even the implied 		 *
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.           		 *
+ * See the GNU General Public License for more details.                       		 *
+ * You should have received a copy of the GNU General Public License along    		 *
+ * with this program; if not, write to the Free Software Foundation, Inc.,    		 *
+ * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.                     		 *
+ * For the text or an alternative of this public license, you may reach us    		 *
+ * Copyright (C) 2012-2020 E.R.P. Consultores y Asociados, S.A. All Rights Reserved. *
+ * Contributor(s): Yamel Senih www.erpya.com				  		                 *
+ *************************************************************************************/
 
 package org.eam.process;
 
@@ -25,23 +24,23 @@ import org.eam.model.MAMMaintenance;
 import org.eam.model.MAMPattern;
 import org.eam.model.MAMServiceOrder;
 
-/** Generated Process for (Create Service Order from Maintenance Forecast)
- *  @author ADempiere (generated) 
- *  @version Release 3.9.0
+/** 
+ * Create Service Order from Schedule
+ * 	@author Yamel Senih, ysenih@erpya.com , http://www.erpya.com
  */
-public class CreateMSOFromForecast extends CreateMSOFromForecastAbstract {
+public class CreateServiceOrderFromSchedule extends CreateServiceOrderFromScheduleAbstract {
 	
 	/** Service Order Cache : (AM_ServiceOrder_ID) -> MAMServiceOrder */
 	private ArrayList<MAMServiceOrder> serviceOrderList = new ArrayList<MAMServiceOrder>();
 	
 	@Override
 	protected String doIt() throws Exception {
-		getSelectionKeys().stream().forEach(key -> {
-			int maintenanceId = getSelectionAsInt(key, "MF_AM_Maintenance_ID");
-			int assetId = getSelectionAsInt(key, "MF_A_Asset_ID");
-			int serviceRequestId = getSelectionAsInt(key, "MF_AM_ServiceRequest_ID");
-			int patternId = getSelectionAsInt(key, "MF_AM_Pattern_ID");
-			Timestamp dateNextRun = getSelectionAsTimestamp(key, "MF_DateNextRun");
+		getSelectionKeys().stream().forEach(scheduleId -> {
+			int maintenanceId = getSelectionAsInt(scheduleId, "SC_AM_Maintenance_ID");
+			int assetId = getSelectionAsInt(scheduleId, "MA_A_Asset_ID");
+			int serviceRequestId = getSelectionAsInt(scheduleId, "MF_AM_ServiceRequest_ID");
+			int patternId = getSelectionAsInt(scheduleId, "MA_AM_Pattern_ID");
+			Timestamp maintenanceDate = getSelectionAsTimestamp(scheduleId, "SC_MaintenanceDate");
 //			BigDecimal amount = getSelectionAsBigDecimal(key, "MF_Amt");
 //			BigDecimal average = getSelectionAsBigDecimal(key, "MF_Average");
 //			BigDecimal range = getSelectionAsBigDecimal(key, "MF_Range");
@@ -54,8 +53,8 @@ public class CreateMSOFromForecast extends CreateMSOFromForecastAbstract {
 				serviceOrder.setC_DocType_ID(getDocTypeTargetId());
 			}
 			//	
-			serviceOrder.setDateTrx(getDateDoc());
-			serviceOrder.setDateStartPlan(dateNextRun);
+			serviceOrder.setDateDoc(getDateDoc());
+			serviceOrder.setDateStartPlan(maintenanceDate);
 			serviceOrder.setA_Asset_ID(assetId);
 			serviceOrder.setMaintenance(maintenance);
 			serviceOrder.setPattern(pattern);
@@ -63,7 +62,6 @@ public class CreateMSOFromForecast extends CreateMSOFromForecastAbstract {
 			if(serviceRequestId != 0) {
 				serviceOrder.setAM_ServiceRequest_ID(serviceRequestId);
 			}
-			serviceOrder.setIsFromForecast(serviceRequestId == 0);
 			serviceOrder.setDocAction(getDocAction());
 			serviceOrder.saveEx();
 			//	Add to list

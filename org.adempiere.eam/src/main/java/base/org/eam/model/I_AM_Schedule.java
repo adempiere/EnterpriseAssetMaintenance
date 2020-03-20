@@ -21,17 +21,17 @@ import java.sql.Timestamp;
 import org.compiere.model.*;
 import org.compiere.util.KeyNamePair;
 
-/** Generated Interface for AM_AssetMeterLog
+/** Generated Interface for AM_Schedule
  *  @author Adempiere (generated) 
  *  @version Release 3.9.3
  */
-public interface I_AM_AssetMeterLog 
+public interface I_AM_Schedule 
 {
 
-    /** TableName=AM_AssetMeterLog */
-    public static final String Table_Name = "AM_AssetMeterLog";
+    /** TableName=AM_Schedule */
+    public static final String Table_Name = "AM_Schedule";
 
-    /** AD_Table_ID=54105 */
+    /** AD_Table_ID=54727 */
     public static final int Table_ID = MTable.getTable_ID(Table_Name);
 
     KeyNamePair Model = new KeyNamePair(Table_ID, Table_Name);
@@ -63,48 +63,57 @@ public interface I_AM_AssetMeterLog
 	  */
 	public int getAD_Org_ID();
 
-    /** Column name AD_User_ID */
-    public static final String COLUMNNAME_AD_User_ID = "AD_User_ID";
+    /** Column name AM_Maintenance_ID */
+    public static final String COLUMNNAME_AM_Maintenance_ID = "AM_Maintenance_ID";
 
-	/** Set User/Contact.
-	  * User within the system - Internal or Business Partner Contact
+	/** Set Asset Maintenance.
+	  * Define a maintenance program assigned to Asset
 	  */
-	public void setAD_User_ID (int AD_User_ID);
+	public void setAM_Maintenance_ID (int AM_Maintenance_ID);
 
-	/** Get User/Contact.
-	  * User within the system - Internal or Business Partner Contact
+	/** Get Asset Maintenance.
+	  * Define a maintenance program assigned to Asset
 	  */
-	public int getAD_User_ID();
+	public int getAM_Maintenance_ID();
 
-	public org.compiere.model.I_AD_User getAD_User() throws RuntimeException;
+	public org.eam.model.I_AM_Maintenance getAM_Maintenance() throws RuntimeException;
 
-    /** Column name AM_AssetMeter_ID */
-    public static final String COLUMNNAME_AM_AssetMeter_ID = "AM_AssetMeter_ID";
+    /** Column name AM_Schedule_ID */
+    public static final String COLUMNNAME_AM_Schedule_ID = "AM_Schedule_ID";
 
-	/** Set Asset Meter.
-	  * Asset Meter
+	/** Set Maintenance Schedule	  */
+	public void setAM_Schedule_ID (int AM_Schedule_ID);
+
+	/** Get Maintenance Schedule	  */
+	public int getAM_Schedule_ID();
+
+    /** Column name AM_ServiceRequest_ID */
+    public static final String COLUMNNAME_AM_ServiceRequest_ID = "AM_ServiceRequest_ID";
+
+	/** Set Service Order Request.
+	  * Request for a Service Order
 	  */
-	public void setAM_AssetMeter_ID (int AM_AssetMeter_ID);
+	public void setAM_ServiceRequest_ID (int AM_ServiceRequest_ID);
 
-	/** Get Asset Meter.
-	  * Asset Meter
+	/** Get Service Order Request.
+	  * Request for a Service Order
 	  */
-	public int getAM_AssetMeter_ID();
+	public int getAM_ServiceRequest_ID();
 
-	public org.eam.model.I_AM_AssetMeter getAM_AssetMeter() throws RuntimeException;
+	public org.eam.model.I_AM_ServiceRequest getAM_ServiceRequest() throws RuntimeException;
 
-    /** Column name AM_AssetMeterLog_ID */
-    public static final String COLUMNNAME_AM_AssetMeterLog_ID = "AM_AssetMeterLog_ID";
+    /** Column name Comments */
+    public static final String COLUMNNAME_Comments = "Comments";
 
-	/** Set Asset Meter Log.
-	  * Asset Meter Log define a log for each measuring
+	/** Set Comments.
+	  * Comments or additional information
 	  */
-	public void setAM_AssetMeterLog_ID (int AM_AssetMeterLog_ID);
+	public void setComments (String Comments);
 
-	/** Get Asset Meter Log.
-	  * Asset Meter Log define a log for each measuring
+	/** Get Comments.
+	  * Comments or additional information
 	  */
-	public int getAM_AssetMeterLog_ID();
+	public String getComments();
 
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
@@ -121,32 +130,6 @@ public interface I_AM_AssetMeterLog
 	  * User who created this records
 	  */
 	public int getCreatedBy();
-
-    /** Column name CurrentMeasuring */
-    public static final String COLUMNNAME_CurrentMeasuring = "CurrentMeasuring";
-
-	/** Set Current Measuring.
-	  * Current Measuring for asset
-	  */
-	public void setCurrentMeasuring (BigDecimal CurrentMeasuring);
-
-	/** Get Current Measuring.
-	  * Current Measuring for asset
-	  */
-	public BigDecimal getCurrentMeasuring();
-
-    /** Column name DateTrx */
-    public static final String COLUMNNAME_DateTrx = "DateTrx";
-
-	/** Set Transaction Date.
-	  * Transaction Date
-	  */
-	public void setDateTrx (Timestamp DateTrx);
-
-	/** Get Transaction Date.
-	  * Transaction Date
-	  */
-	public Timestamp getDateTrx();
 
     /** Column name Description */
     public static final String COLUMNNAME_Description = "Description";
@@ -174,18 +157,57 @@ public interface I_AM_AssetMeterLog
 	  */
 	public boolean isActive();
 
-    /** Column name MeasuringLog */
-    public static final String COLUMNNAME_MeasuringLog = "MeasuringLog";
+    /** Column name IsClosed */
+    public static final String COLUMNNAME_IsClosed = "IsClosed";
 
-	/** Set Measuring Log.
-	  * Measuring Amount for asset
+	/** Set Closed Status.
+	  * The status is closed
 	  */
-	public void setMeasuringLog (BigDecimal MeasuringLog);
+	public void setIsClosed (boolean IsClosed);
 
-	/** Get Measuring Log.
-	  * Measuring Amount for asset
+	/** Get Closed Status.
+	  * The status is closed
 	  */
-	public BigDecimal getMeasuringLog();
+	public boolean isClosed();
+
+    /** Column name MaintenanceDate */
+    public static final String COLUMNNAME_MaintenanceDate = "MaintenanceDate";
+
+	/** Set Maintenance Date.
+	  * Maintenance Date for Schedule
+	  */
+	public void setMaintenanceDate (Timestamp MaintenanceDate);
+
+	/** Get Maintenance Date.
+	  * Maintenance Date for Schedule
+	  */
+	public Timestamp getMaintenanceDate();
+
+    /** Column name PriorityRule */
+    public static final String COLUMNNAME_PriorityRule = "PriorityRule";
+
+	/** Set Priority.
+	  * Priority of a document
+	  */
+	public void setPriorityRule (String PriorityRule);
+
+	/** Get Priority.
+	  * Priority of a document
+	  */
+	public String getPriorityRule();
+
+    /** Column name Processed */
+    public static final String COLUMNNAME_Processed = "Processed";
+
+	/** Set Processed.
+	  * The document has been processed
+	  */
+	public void setProcessed (boolean Processed);
+
+	/** Get Processed.
+	  * The document has been processed
+	  */
+	public boolean isProcessed();
 
     /** Column name Updated */
     public static final String COLUMNNAME_Updated = "Updated";
@@ -215,4 +237,17 @@ public interface I_AM_AssetMeterLog
 	  * Immutable Universally Unique Identifier
 	  */
 	public String getUUID();
+
+    /** Column name Value */
+    public static final String COLUMNNAME_Value = "Value";
+
+	/** Set Search Key.
+	  * Search key for the record in the format required - must be unique
+	  */
+	public void setValue (String Value);
+
+	/** Get Search Key.
+	  * Search key for the record in the format required - must be unique
+	  */
+	public String getValue();
 }

@@ -25,14 +25,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for AM_MaintenanceResource
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0 - $Id$ */
+ *  @version Release 3.9.3 - $Id$ */
 public class X_AM_MaintenanceResource extends PO implements I_AM_MaintenanceResource, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171020L;
+	private static final long serialVersionUID = 20200320L;
 
     /** Standard Constructor */
     public X_AM_MaintenanceResource (Properties ctx, int AM_MaintenanceResource_ID, String trxName)
@@ -74,8 +74,10 @@ public class X_AM_MaintenanceResource extends PO implements I_AM_MaintenanceReso
       return sb.toString();
     }
 
-	/** Set AM Maintenance Resource ID.
-		@param AM_MaintenanceResource_ID AM Maintenance Resource ID	  */
+	/** Set Maintenance Resource.
+		@param AM_MaintenanceResource_ID 
+		Resource used for make a maintenance order
+	  */
 	public void setAM_MaintenanceResource_ID (int AM_MaintenanceResource_ID)
 	{
 		if (AM_MaintenanceResource_ID < 1) 
@@ -84,8 +86,9 @@ public class X_AM_MaintenanceResource extends PO implements I_AM_MaintenanceReso
 			set_ValueNoCheck (COLUMNNAME_AM_MaintenanceResource_ID, Integer.valueOf(AM_MaintenanceResource_ID));
 	}
 
-	/** Get AM Maintenance Resource ID.
-		@return AM Maintenance Resource ID	  */
+	/** Get Maintenance Resource.
+		@return Resource used for make a maintenance order
+	  */
 	public int getAM_MaintenanceResource_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_MaintenanceResource_ID);
@@ -99,8 +102,10 @@ public class X_AM_MaintenanceResource extends PO implements I_AM_MaintenanceReso
 		return (org.eam.model.I_AM_MaintenanceTask)MTable.get(getCtx(), org.eam.model.I_AM_MaintenanceTask.Table_Name)
 			.getPO(getAM_MaintenanceTask_ID(), get_TrxName());	}
 
-	/** Set AM Maintenance Task.
-		@param AM_MaintenanceTask_ID AM Maintenance Task	  */
+	/** Set Maintenance Task.
+		@param AM_MaintenanceTask_ID 
+		Task that will be maked for asset maintenance
+	  */
 	public void setAM_MaintenanceTask_ID (int AM_MaintenanceTask_ID)
 	{
 		if (AM_MaintenanceTask_ID < 1) 
@@ -109,8 +114,9 @@ public class X_AM_MaintenanceResource extends PO implements I_AM_MaintenanceReso
 			set_ValueNoCheck (COLUMNNAME_AM_MaintenanceTask_ID, Integer.valueOf(AM_MaintenanceTask_ID));
 	}
 
-	/** Get AM Maintenance Task.
-		@return AM Maintenance Task	  */
+	/** Get Maintenance Task.
+		@return Task that will be maked for asset maintenance
+	  */
 	public int getAM_MaintenanceTask_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_MaintenanceTask_ID);
@@ -223,18 +229,21 @@ public class X_AM_MaintenanceResource extends PO implements I_AM_MaintenanceReso
 		return ii.intValue();
 	}
 
-	/** Set Resource Qty.
-		@param ResourceQty Resource Qty	  */
-	public void setResourceQty (BigDecimal ResourceQty)
+	/** Set Resource Quantity.
+		@param ResourceQuantity 
+		Resource Quantity used for Maintenance
+	  */
+	public void setResourceQuantity (BigDecimal ResourceQuantity)
 	{
-		set_Value (COLUMNNAME_ResourceQty, ResourceQty);
+		set_Value (COLUMNNAME_ResourceQuantity, ResourceQuantity);
 	}
 
-	/** Get Resource Qty.
-		@return Resource Qty	  */
-	public BigDecimal getResourceQty () 
+	/** Get Resource Quantity.
+		@return Resource Quantity used for Maintenance
+	  */
+	public BigDecimal getResourceQuantity () 
 	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_ResourceQty);
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_ResourceQuantity);
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;
@@ -295,5 +304,22 @@ public class X_AM_MaintenanceResource extends PO implements I_AM_MaintenanceReso
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
+	}
+
+	/** Set Immutable Universally Unique Identifier.
+		@param UUID 
+		Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID)
+	{
+		set_Value (COLUMNNAME_UUID, UUID);
+	}
+
+	/** Get Immutable Universally Unique Identifier.
+		@return Immutable Universally Unique Identifier
+	  */
+	public String getUUID () 
+	{
+		return (String)get_Value(COLUMNNAME_UUID);
 	}
 }

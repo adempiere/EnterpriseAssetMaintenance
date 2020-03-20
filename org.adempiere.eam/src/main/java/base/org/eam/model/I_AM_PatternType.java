@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for AM_PatternType
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0
+ *  @version Release 3.9.3
  */
 public interface I_AM_PatternType 
 {
@@ -66,10 +66,14 @@ public interface I_AM_PatternType
     /** Column name AM_PatternType_ID */
     public static final String COLUMNNAME_AM_PatternType_ID = "AM_PatternType_ID";
 
-	/** Set Maintenance Pattern Type	  */
+	/** Set Maintenance Pattern Type.
+	  * Pattern Type used for asset
+	  */
 	public void setAM_PatternType_ID (int AM_PatternType_ID);
 
-	/** Get Maintenance Pattern Type	  */
+	/** Get Maintenance Pattern Type.
+	  * Pattern Type used for asset
+	  */
 	public int getAM_PatternType_ID();
 
     /** Column name Created */

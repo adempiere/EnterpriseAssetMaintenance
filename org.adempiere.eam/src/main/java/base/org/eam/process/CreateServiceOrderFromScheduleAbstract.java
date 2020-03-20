@@ -20,15 +20,15 @@ package org.eam.process;
 import java.sql.Timestamp;
 import org.compiere.process.SvrProcess;
 
-/** Generated Process for (Create Service Order from Maintenance Forecast)
+/** Generated Process for (Create Service Order from Maintenance Schedule)
  *  @author ADempiere (generated) 
- *  @version Release 3.9.0
+ *  @version Release 3.9.3
  */
-public abstract class CreateMSOFromForecastAbstract extends SvrProcess {
+public abstract class CreateServiceOrderFromScheduleAbstract extends SvrProcess {
 	/** Process Value 	*/
-	private static final String VALUE_FOR_PROCESS = "SBP_CreateMSOFromForecast";
+	private static final String VALUE_FOR_PROCESS = "SBP_CreateServiceOrderFromSchedule";
 	/** Process Name 	*/
-	private static final String NAME_FOR_PROCESS = "Create Service Order from Maintenance Forecast";
+	private static final String NAME_FOR_PROCESS = "Create Service Order from Maintenance Schedule";
 	/** Process Id 	*/
 	private static final int ID_FOR_PROCESS = 54006;
 	/**	Parameter Name for Document Date	*/

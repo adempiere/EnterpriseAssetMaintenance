@@ -25,14 +25,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for AM_PatternResource
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0 - $Id$ */
+ *  @version Release 3.9.3 - $Id$ */
 public class X_AM_PatternResource extends PO implements I_AM_PatternResource, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171020L;
+	private static final long serialVersionUID = 20200320L;
 
     /** Standard Constructor */
     public X_AM_PatternResource (Properties ctx, int AM_PatternResource_ID, String trxName)
@@ -74,8 +74,10 @@ public class X_AM_PatternResource extends PO implements I_AM_PatternResource, I_
       return sb.toString();
     }
 
-	/** Set AM Maintenance Pattern Resource ID.
-		@param AM_PatternResource_ID AM Maintenance Pattern Resource ID	  */
+	/** Set Maintenance Pattern Resource.
+		@param AM_PatternResource_ID 
+		Maintenance Pattern Resource used for maintaining of asset
+	  */
 	public void setAM_PatternResource_ID (int AM_PatternResource_ID)
 	{
 		if (AM_PatternResource_ID < 1) 
@@ -84,8 +86,9 @@ public class X_AM_PatternResource extends PO implements I_AM_PatternResource, I_
 			set_ValueNoCheck (COLUMNNAME_AM_PatternResource_ID, Integer.valueOf(AM_PatternResource_ID));
 	}
 
-	/** Get AM Maintenance Pattern Resource ID.
-		@return AM Maintenance Pattern Resource ID	  */
+	/** Get Maintenance Pattern Resource.
+		@return Maintenance Pattern Resource used for maintaining of asset
+	  */
 	public int getAM_PatternResource_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_PatternResource_ID);
@@ -99,8 +102,10 @@ public class X_AM_PatternResource extends PO implements I_AM_PatternResource, I_
 		return (org.eam.model.I_AM_PatternTask)MTable.get(getCtx(), org.eam.model.I_AM_PatternTask.Table_Name)
 			.getPO(getAM_PatternTask_ID(), get_TrxName());	}
 
-	/** Set AM Maintenance Pattern Task.
-		@param AM_PatternTask_ID AM Maintenance Pattern Task	  */
+	/** Set Maintenance Pattern Task.
+		@param AM_PatternTask_ID 
+		Pattern Task defined for a asset
+	  */
 	public void setAM_PatternTask_ID (int AM_PatternTask_ID)
 	{
 		if (AM_PatternTask_ID < 1) 
@@ -109,8 +114,9 @@ public class X_AM_PatternResource extends PO implements I_AM_PatternResource, I_
 			set_ValueNoCheck (COLUMNNAME_AM_PatternTask_ID, Integer.valueOf(AM_PatternTask_ID));
 	}
 
-	/** Get AM Maintenance Pattern Task.
-		@return AM Maintenance Pattern Task	  */
+	/** Get Maintenance Pattern Task.
+		@return Pattern Task defined for a asset
+	  */
 	public int getAM_PatternTask_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_PatternTask_ID);
@@ -223,18 +229,21 @@ public class X_AM_PatternResource extends PO implements I_AM_PatternResource, I_
 		return ii.intValue();
 	}
 
-	/** Set Resource Qty.
-		@param ResourceQty Resource Qty	  */
-	public void setResourceQty (BigDecimal ResourceQty)
+	/** Set Resource Quantity.
+		@param ResourceQuantity 
+		Resource Quantity used for Maintenance
+	  */
+	public void setResourceQuantity (BigDecimal ResourceQuantity)
 	{
-		set_Value (COLUMNNAME_ResourceQty, ResourceQty);
+		set_Value (COLUMNNAME_ResourceQuantity, ResourceQuantity);
 	}
 
-	/** Get Resource Qty.
-		@return Resource Qty	  */
-	public BigDecimal getResourceQty () 
+	/** Get Resource Quantity.
+		@return Resource Quantity used for Maintenance
+	  */
+	public BigDecimal getResourceQuantity () 
 	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_ResourceQty);
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_ResourceQuantity);
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;
@@ -295,5 +304,22 @@ public class X_AM_PatternResource extends PO implements I_AM_PatternResource, I_
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
+	}
+
+	/** Set Immutable Universally Unique Identifier.
+		@param UUID 
+		Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID)
+	{
+		set_Value (COLUMNNAME_UUID, UUID);
+	}
+
+	/** Get Immutable Universally Unique Identifier.
+		@return Immutable Universally Unique Identifier
+	  */
+	public String getUUID () 
+	{
+		return (String)get_Value(COLUMNNAME_UUID);
 	}
 }

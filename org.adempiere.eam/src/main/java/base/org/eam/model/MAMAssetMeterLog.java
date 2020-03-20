@@ -49,18 +49,18 @@ public class MAMAssetMeterLog extends X_AM_AssetMeterLog {
 	@Override
 	protected boolean beforeSave(boolean newRecord) {
 		MAMAssetMeter assetMeter = new MAMAssetMeter(getCtx(), getAM_AssetMeter_ID(), get_TrxName());
-		BigDecimal currentAmt = assetMeter.getAmt();
-		if(currentAmt == null) {
-			currentAmt = Env.ZERO;
+		BigDecimal currentMeasuring = assetMeter.getAmt();
+		if(currentMeasuring == null) {
+			currentMeasuring = Env.ZERO;
 		}
 		//	Set new current amount
-		currentAmt = currentAmt.add(getAmt());
+		currentMeasuring = currentMeasuring.add(getMeasuringLog());
 		//	set to asset meter
-		assetMeter.setAmt(currentAmt);
+		assetMeter.setAmt(currentMeasuring);
 		assetMeter.setDateTrx(getDateTrx());
 		assetMeter.saveEx();
 		//	Set to current record
-		setCurrentAmt(currentAmt);
+		setCurrentMeasuring(currentMeasuring);
 		return super.beforeSave(newRecord);
 	}
 }

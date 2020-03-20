@@ -3,7 +3,7 @@
  * Copyright (C) 2006-2017 ADempiere Foundation, All Rights Reserved.         *
  * This program is free software, you can redistribute it and/or modify it    *
  * under the terms version 2 of the GNU General Public License as published   *
- * or (at your option) any later version.									  *
+ * or (at your option) any later version.										*
  * by the Free Software Foundation. This program is distributed in the hope   *
  * that it will be useful, but WITHOUT ANY WARRANTY, without even the implied *
  * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.           *
@@ -21,7 +21,7 @@ import org.compiere.process.SvrProcess;
 
 /** Generated Process for (Copy From Pattern)
  *  @author ADempiere (generated) 
- *  @version Release 3.9.0
+ *  @version Release 3.9.3
  */
 public abstract class CopyFromMaintenancePatternAbstract extends SvrProcess {
 	/** Process Value 	*/
@@ -30,37 +30,22 @@ public abstract class CopyFromMaintenancePatternAbstract extends SvrProcess {
 	private static final String NAME_FOR_PROCESS = "Copy From Pattern";
 	/** Process Id 	*/
 	private static final int ID_FOR_PROCESS = 53865;
-	/**	Parameter Name for Maintenance Area	*/
-	public static final String AM_AREA_ID = "AM_Area_ID";
-	/**	Parameter Name for AM Maintenance Pattern	*/
+	/**	Parameter Name for Maintenance Pattern	*/
 	public static final String AM_PATTERN_ID = "AM_Pattern_ID";
-	/**	Parameter Value for Maintenance Area	*/
-	private int areaId;
-	/**	Parameter Value for AM Maintenance Pattern	*/
+	/**	Parameter Value for Maintenance Pattern	*/
 	private int patternId;
 
 	@Override
 	protected void prepare() {
-		areaId = getParameterAsInt(AM_AREA_ID);
 		patternId = getParameterAsInt(AM_PATTERN_ID);
 	}
 
-	/**	 Getter Parameter Value for Maintenance Area	*/
-	protected int getAreaId() {
-		return areaId;
-	}
-
-	/**	 Setter Parameter Value for Maintenance Area	*/
-	protected void setAreaId(int areaId) {
-		this.areaId = areaId;
-	}
-
-	/**	 Getter Parameter Value for AM Maintenance Pattern	*/
+	/**	 Getter Parameter Value for Maintenance Pattern	*/
 	protected int getPatternId() {
 		return patternId;
 	}
 
-	/**	 Setter Parameter Value for AM Maintenance Pattern	*/
+	/**	 Setter Parameter Value for Maintenance Pattern	*/
 	protected void setPatternId(int patternId) {
 		this.patternId = patternId;
 	}

@@ -25,14 +25,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for AM_MaintenanceTask
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0 - $Id$ */
+ *  @version Release 3.9.3 - $Id$ */
 public class X_AM_MaintenanceTask extends PO implements I_AM_MaintenanceTask, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171020L;
+	private static final long serialVersionUID = 20200320L;
 
     /** Standard Constructor */
     public X_AM_MaintenanceTask (Properties ctx, int AM_MaintenanceTask_ID, String trxName)
@@ -80,8 +80,10 @@ public class X_AM_MaintenanceTask extends PO implements I_AM_MaintenanceTask, I_
 		return (org.eam.model.I_AM_Maintenance)MTable.get(getCtx(), org.eam.model.I_AM_Maintenance.Table_Name)
 			.getPO(getAM_Maintenance_ID(), get_TrxName());	}
 
-	/** Set AM Maintenance.
-		@param AM_Maintenance_ID AM Maintenance	  */
+	/** Set Asset Maintenance.
+		@param AM_Maintenance_ID 
+		Define a maintenance program assigned to Asset
+	  */
 	public void setAM_Maintenance_ID (int AM_Maintenance_ID)
 	{
 		if (AM_Maintenance_ID < 1) 
@@ -90,8 +92,9 @@ public class X_AM_MaintenanceTask extends PO implements I_AM_MaintenanceTask, I_
 			set_ValueNoCheck (COLUMNNAME_AM_Maintenance_ID, Integer.valueOf(AM_Maintenance_ID));
 	}
 
-	/** Get AM Maintenance.
-		@return AM Maintenance	  */
+	/** Get Asset Maintenance.
+		@return Define a maintenance program assigned to Asset
+	  */
 	public int getAM_Maintenance_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Maintenance_ID);
@@ -100,8 +103,10 @@ public class X_AM_MaintenanceTask extends PO implements I_AM_MaintenanceTask, I_
 		return ii.intValue();
 	}
 
-	/** Set AM Maintenance Task ID.
-		@param AM_MaintenanceTask_ID AM Maintenance Task ID	  */
+	/** Set Maintenance Task.
+		@param AM_MaintenanceTask_ID 
+		Task that will be maked for asset maintenance
+	  */
 	public void setAM_MaintenanceTask_ID (int AM_MaintenanceTask_ID)
 	{
 		if (AM_MaintenanceTask_ID < 1) 
@@ -110,8 +115,9 @@ public class X_AM_MaintenanceTask extends PO implements I_AM_MaintenanceTask, I_
 			set_ValueNoCheck (COLUMNNAME_AM_MaintenanceTask_ID, Integer.valueOf(AM_MaintenanceTask_ID));
 	}
 
-	/** Get AM Maintenance Task ID.
-		@return AM Maintenance Task ID	  */
+	/** Get Maintenance Task.
+		@return Task that will be maked for asset maintenance
+	  */
 	public int getAM_MaintenanceTask_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_MaintenanceTask_ID);
@@ -240,5 +246,22 @@ public class X_AM_MaintenanceTask extends PO implements I_AM_MaintenanceTask, I_
 	public String getName () 
 	{
 		return (String)get_Value(COLUMNNAME_Name);
+	}
+
+	/** Set Immutable Universally Unique Identifier.
+		@param UUID 
+		Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID)
+	{
+		set_Value (COLUMNNAME_UUID, UUID);
+	}
+
+	/** Get Immutable Universally Unique Identifier.
+		@return Immutable Universally Unique Identifier
+	  */
+	public String getUUID () 
+	{
+		return (String)get_Value(COLUMNNAME_UUID);
 	}
 }

@@ -26,14 +26,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for AM_AssetMeterLog
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0 - $Id$ */
+ *  @version Release 3.9.3 - $Id$ */
 public class X_AM_AssetMeterLog extends PO implements I_AM_AssetMeterLog, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171020L;
+	private static final long serialVersionUID = 20200320L;
 
     /** Standard Constructor */
     public X_AM_AssetMeterLog (Properties ctx, int AM_AssetMeterLog_ID, String trxName)
@@ -43,8 +43,8 @@ public class X_AM_AssetMeterLog extends PO implements I_AM_AssetMeterLog, I_Pers
         {
 			setAM_AssetMeter_ID (0);
 			setAM_AssetMeterLog_ID (0);
-			setAmt (Env.ZERO);
 			setDateTrx (new Timestamp( System.currentTimeMillis() ));
+			setMeasuringLog (Env.ZERO);
         } */
     }
 
@@ -109,8 +109,10 @@ public class X_AM_AssetMeterLog extends PO implements I_AM_AssetMeterLog, I_Pers
 		return (org.eam.model.I_AM_AssetMeter)MTable.get(getCtx(), org.eam.model.I_AM_AssetMeter.Table_Name)
 			.getPO(getAM_AssetMeter_ID(), get_TrxName());	}
 
-	/** Set AM Asset Meter.
-		@param AM_AssetMeter_ID AM Asset Meter	  */
+	/** Set Asset Meter.
+		@param AM_AssetMeter_ID 
+		Asset Meter
+	  */
 	public void setAM_AssetMeter_ID (int AM_AssetMeter_ID)
 	{
 		if (AM_AssetMeter_ID < 1) 
@@ -119,8 +121,9 @@ public class X_AM_AssetMeterLog extends PO implements I_AM_AssetMeterLog, I_Pers
 			set_ValueNoCheck (COLUMNNAME_AM_AssetMeter_ID, Integer.valueOf(AM_AssetMeter_ID));
 	}
 
-	/** Get AM Asset Meter.
-		@return AM Asset Meter	  */
+	/** Get Asset Meter.
+		@return Asset Meter
+	  */
 	public int getAM_AssetMeter_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_AssetMeter_ID);
@@ -129,8 +132,10 @@ public class X_AM_AssetMeterLog extends PO implements I_AM_AssetMeterLog, I_Pers
 		return ii.intValue();
 	}
 
-	/** Set AM Asset Meter Log ID.
-		@param AM_AssetMeterLog_ID AM Asset Meter Log ID	  */
+	/** Set Asset Meter Log.
+		@param AM_AssetMeterLog_ID 
+		Asset Meter Log define a log for each measuring
+	  */
 	public void setAM_AssetMeterLog_ID (int AM_AssetMeterLog_ID)
 	{
 		if (AM_AssetMeterLog_ID < 1) 
@@ -139,8 +144,9 @@ public class X_AM_AssetMeterLog extends PO implements I_AM_AssetMeterLog, I_Pers
 			set_ValueNoCheck (COLUMNNAME_AM_AssetMeterLog_ID, Integer.valueOf(AM_AssetMeterLog_ID));
 	}
 
-	/** Get AM Asset Meter Log ID.
-		@return AM Asset Meter Log ID	  */
+	/** Get Asset Meter Log.
+		@return Asset Meter Log define a log for each measuring
+	  */
 	public int getAM_AssetMeterLog_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_AssetMeterLog_ID);
@@ -149,38 +155,21 @@ public class X_AM_AssetMeterLog extends PO implements I_AM_AssetMeterLog, I_Pers
 		return ii.intValue();
 	}
 
-	/** Set Amount.
-		@param Amt 
-		Amount
+	/** Set Current Measuring.
+		@param CurrentMeasuring 
+		Current Measuring for asset
 	  */
-	public void setAmt (BigDecimal Amt)
+	public void setCurrentMeasuring (BigDecimal CurrentMeasuring)
 	{
-		set_ValueNoCheck (COLUMNNAME_Amt, Amt);
+		set_Value (COLUMNNAME_CurrentMeasuring, CurrentMeasuring);
 	}
 
-	/** Get Amount.
-		@return Amount
+	/** Get Current Measuring.
+		@return Current Measuring for asset
 	  */
-	public BigDecimal getAmt () 
+	public BigDecimal getCurrentMeasuring () 
 	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_Amt);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Set Current Amt.
-		@param CurrentAmt Current Amt	  */
-	public void setCurrentAmt (BigDecimal CurrentAmt)
-	{
-		set_Value (COLUMNNAME_CurrentAmt, CurrentAmt);
-	}
-
-	/** Get Current Amt.
-		@return Current Amt	  */
-	public BigDecimal getCurrentAmt () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_CurrentAmt);
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_CurrentMeasuring);
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;
@@ -218,5 +207,42 @@ public class X_AM_AssetMeterLog extends PO implements I_AM_AssetMeterLog, I_Pers
 	public String getDescription () 
 	{
 		return (String)get_Value(COLUMNNAME_Description);
+	}
+
+	/** Set Measuring Log.
+		@param MeasuringLog 
+		Measuring Amount for asset
+	  */
+	public void setMeasuringLog (BigDecimal MeasuringLog)
+	{
+		set_ValueNoCheck (COLUMNNAME_MeasuringLog, MeasuringLog);
+	}
+
+	/** Get Measuring Log.
+		@return Measuring Amount for asset
+	  */
+	public BigDecimal getMeasuringLog () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_MeasuringLog);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set Immutable Universally Unique Identifier.
+		@param UUID 
+		Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID)
+	{
+		set_Value (COLUMNNAME_UUID, UUID);
+	}
+
+	/** Get Immutable Universally Unique Identifier.
+		@return Immutable Universally Unique Identifier
+	  */
+	public String getUUID () 
+	{
+		return (String)get_Value(COLUMNNAME_UUID);
 	}
 }

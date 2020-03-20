@@ -21,17 +21,17 @@ import java.sql.Timestamp;
 import org.compiere.model.*;
 import org.compiere.util.KeyNamePair;
 
-/** Generated Interface for AM_AssetMeterLog
+/** Generated Interface for AM_Reason
  *  @author Adempiere (generated) 
  *  @version Release 3.9.3
  */
-public interface I_AM_AssetMeterLog 
+public interface I_AM_Reason 
 {
 
-    /** TableName=AM_AssetMeterLog */
-    public static final String Table_Name = "AM_AssetMeterLog";
+    /** TableName=AM_Reason */
+    public static final String Table_Name = "AM_Reason";
 
-    /** AD_Table_ID=54105 */
+    /** AD_Table_ID=54728 */
     public static final int Table_ID = MTable.getTable_ID(Table_Name);
 
     KeyNamePair Model = new KeyNamePair(Table_ID, Table_Name);
@@ -63,48 +63,18 @@ public interface I_AM_AssetMeterLog
 	  */
 	public int getAD_Org_ID();
 
-    /** Column name AD_User_ID */
-    public static final String COLUMNNAME_AD_User_ID = "AD_User_ID";
+    /** Column name AM_Reason_ID */
+    public static final String COLUMNNAME_AM_Reason_ID = "AM_Reason_ID";
 
-	/** Set User/Contact.
-	  * User within the system - Internal or Business Partner Contact
+	/** Set Maintenance Reason.
+	  * Maintenance Reason for request order or service order
 	  */
-	public void setAD_User_ID (int AD_User_ID);
+	public void setAM_Reason_ID (int AM_Reason_ID);
 
-	/** Get User/Contact.
-	  * User within the system - Internal or Business Partner Contact
+	/** Get Maintenance Reason.
+	  * Maintenance Reason for request order or service order
 	  */
-	public int getAD_User_ID();
-
-	public org.compiere.model.I_AD_User getAD_User() throws RuntimeException;
-
-    /** Column name AM_AssetMeter_ID */
-    public static final String COLUMNNAME_AM_AssetMeter_ID = "AM_AssetMeter_ID";
-
-	/** Set Asset Meter.
-	  * Asset Meter
-	  */
-	public void setAM_AssetMeter_ID (int AM_AssetMeter_ID);
-
-	/** Get Asset Meter.
-	  * Asset Meter
-	  */
-	public int getAM_AssetMeter_ID();
-
-	public org.eam.model.I_AM_AssetMeter getAM_AssetMeter() throws RuntimeException;
-
-    /** Column name AM_AssetMeterLog_ID */
-    public static final String COLUMNNAME_AM_AssetMeterLog_ID = "AM_AssetMeterLog_ID";
-
-	/** Set Asset Meter Log.
-	  * Asset Meter Log define a log for each measuring
-	  */
-	public void setAM_AssetMeterLog_ID (int AM_AssetMeterLog_ID);
-
-	/** Get Asset Meter Log.
-	  * Asset Meter Log define a log for each measuring
-	  */
-	public int getAM_AssetMeterLog_ID();
+	public int getAM_Reason_ID();
 
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
@@ -122,32 +92,6 @@ public interface I_AM_AssetMeterLog
 	  */
 	public int getCreatedBy();
 
-    /** Column name CurrentMeasuring */
-    public static final String COLUMNNAME_CurrentMeasuring = "CurrentMeasuring";
-
-	/** Set Current Measuring.
-	  * Current Measuring for asset
-	  */
-	public void setCurrentMeasuring (BigDecimal CurrentMeasuring);
-
-	/** Get Current Measuring.
-	  * Current Measuring for asset
-	  */
-	public BigDecimal getCurrentMeasuring();
-
-    /** Column name DateTrx */
-    public static final String COLUMNNAME_DateTrx = "DateTrx";
-
-	/** Set Transaction Date.
-	  * Transaction Date
-	  */
-	public void setDateTrx (Timestamp DateTrx);
-
-	/** Get Transaction Date.
-	  * Transaction Date
-	  */
-	public Timestamp getDateTrx();
-
     /** Column name Description */
     public static final String COLUMNNAME_Description = "Description";
 
@@ -160,6 +104,19 @@ public interface I_AM_AssetMeterLog
 	  * Optional short description of the record
 	  */
 	public String getDescription();
+
+    /** Column name Help */
+    public static final String COLUMNNAME_Help = "Help";
+
+	/** Set Comment/Help.
+	  * Comment or Hint
+	  */
+	public void setHelp (String Help);
+
+	/** Get Comment/Help.
+	  * Comment or Hint
+	  */
+	public String getHelp();
 
     /** Column name IsActive */
     public static final String COLUMNNAME_IsActive = "IsActive";
@@ -174,18 +131,31 @@ public interface I_AM_AssetMeterLog
 	  */
 	public boolean isActive();
 
-    /** Column name MeasuringLog */
-    public static final String COLUMNNAME_MeasuringLog = "MeasuringLog";
+    /** Column name IsVoidingReason */
+    public static final String COLUMNNAME_IsVoidingReason = "IsVoidingReason";
 
-	/** Set Measuring Log.
-	  * Measuring Amount for asset
+	/** Set Voiding Reason.
+	  * Voiding Reason for Service Order
 	  */
-	public void setMeasuringLog (BigDecimal MeasuringLog);
+	public void setIsVoidingReason (boolean IsVoidingReason);
 
-	/** Get Measuring Log.
-	  * Measuring Amount for asset
+	/** Get Voiding Reason.
+	  * Voiding Reason for Service Order
 	  */
-	public BigDecimal getMeasuringLog();
+	public boolean isVoidingReason();
+
+    /** Column name Name */
+    public static final String COLUMNNAME_Name = "Name";
+
+	/** Set Name.
+	  * Alphanumeric identifier of the entity
+	  */
+	public void setName (String Name);
+
+	/** Get Name.
+	  * Alphanumeric identifier of the entity
+	  */
+	public String getName();
 
     /** Column name Updated */
     public static final String COLUMNNAME_Updated = "Updated";
@@ -215,4 +185,17 @@ public interface I_AM_AssetMeterLog
 	  * Immutable Universally Unique Identifier
 	  */
 	public String getUUID();
+
+    /** Column name Value */
+    public static final String COLUMNNAME_Value = "Value";
+
+	/** Set Search Key.
+	  * Search key for the record in the format required - must be unique
+	  */
+	public void setValue (String Value);
+
+	/** Get Search Key.
+	  * Search key for the record in the format required - must be unique
+	  */
+	public String getValue();
 }

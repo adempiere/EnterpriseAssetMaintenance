@@ -1,0 +1,26 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    jcenter()
+}
+
+sourceSets {
+    main {
+         java {
+            srcDirs = ['org.adempiere.eam/src/main/java/base']
+         }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'dependences', include: ['*.jar'])
+}
+
+jar {
+    manifest {
+        attributes('Implementation-Title': project.name,
+                   'Implementation-Version': project.version)
+    }
+}

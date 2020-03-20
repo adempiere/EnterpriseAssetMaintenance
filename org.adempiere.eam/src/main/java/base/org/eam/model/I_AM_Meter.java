@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for AM_Meter
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0
+ *  @version Release 3.9.3
  */
 public interface I_AM_Meter 
 {
@@ -66,10 +66,14 @@ public interface I_AM_Meter
     /** Column name AM_Meter_ID */
     public static final String COLUMNNAME_AM_Meter_ID = "AM_Meter_ID";
 
-	/** Set AM Meter ID	  */
+	/** Set Meter.
+	  * Asset meter master
+	  */
 	public void setAM_Meter_ID (int AM_Meter_ID);
 
-	/** Get AM Meter ID	  */
+	/** Get Meter.
+	  * Asset meter master
+	  */
 	public int getAM_Meter_ID();
 
     /** Column name Created */
@@ -87,6 +91,21 @@ public interface I_AM_Meter
 	  * User who created this records
 	  */
 	public int getCreatedBy();
+
+    /** Column name C_UOM_ID */
+    public static final String COLUMNNAME_C_UOM_ID = "C_UOM_ID";
+
+	/** Set UOM.
+	  * Unit of Measure
+	  */
+	public void setC_UOM_ID (int C_UOM_ID);
+
+	/** Get UOM.
+	  * Unit of Measure
+	  */
+	public int getC_UOM_ID();
+
+	public org.compiere.model.I_C_UOM getC_UOM() throws RuntimeException;
 
     /** Column name Description */
     public static final String COLUMNNAME_Description = "Description";
@@ -113,15 +132,6 @@ public interface I_AM_Meter
 	  * The record is active in the system
 	  */
 	public boolean isActive();
-
-    /** Column name MaxDay */
-    public static final String COLUMNNAME_MaxDay = "MaxDay";
-
-	/** Set Max Day	  */
-	public void setMaxDay (int MaxDay);
-
-	/** Get Max Day	  */
-	public int getMaxDay();
 
     /** Column name Name */
     public static final String COLUMNNAME_Name = "Name";
@@ -151,6 +161,19 @@ public interface I_AM_Meter
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
+
+    /** Column name UUID */
+    public static final String COLUMNNAME_UUID = "UUID";
+
+	/** Set Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID);
+
+	/** Get Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public String getUUID();
 
     /** Column name Value */
     public static final String COLUMNNAME_Value = "Value";

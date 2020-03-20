@@ -20,11 +20,12 @@ package org.eam.model;
 import java.sql.ResultSet;
 import java.util.Properties;
 import org.compiere.model.*;
+import org.compiere.util.KeyNamePair;
 
-/** Generated Model for AM_PatternType
+/** Generated Model for AM_Reason
  *  @author Adempiere (generated) 
  *  @version Release 3.9.3 - $Id$ */
-public class X_AM_PatternType extends PO implements I_AM_PatternType, I_Persistent 
+public class X_AM_Reason extends PO implements I_AM_Reason, I_Persistent 
 {
 
 	/**
@@ -33,19 +34,21 @@ public class X_AM_PatternType extends PO implements I_AM_PatternType, I_Persiste
 	private static final long serialVersionUID = 20200320L;
 
     /** Standard Constructor */
-    public X_AM_PatternType (Properties ctx, int AM_PatternType_ID, String trxName)
+    public X_AM_Reason (Properties ctx, int AM_Reason_ID, String trxName)
     {
-      super (ctx, AM_PatternType_ID, trxName);
-      /** if (AM_PatternType_ID == 0)
+      super (ctx, AM_Reason_ID, trxName);
+      /** if (AM_Reason_ID == 0)
         {
-			setAM_PatternType_ID (0);
+			setAM_Reason_ID (0);
+			setIsVoidingReason (false);
+// N
 			setName (null);
 			setValue (null);
         } */
     }
 
     /** Load Constructor */
-    public X_AM_PatternType (Properties ctx, ResultSet rs, String trxName)
+    public X_AM_Reason (Properties ctx, ResultSet rs, String trxName)
     {
       super (ctx, rs, trxName);
     }
@@ -67,29 +70,29 @@ public class X_AM_PatternType extends PO implements I_AM_PatternType, I_Persiste
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_AM_PatternType[")
+      StringBuffer sb = new StringBuffer ("X_AM_Reason[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
-	/** Set Maintenance Pattern Type.
-		@param AM_PatternType_ID 
-		Pattern Type used for asset
+	/** Set Maintenance Reason.
+		@param AM_Reason_ID 
+		Maintenance Reason for request order or service order
 	  */
-	public void setAM_PatternType_ID (int AM_PatternType_ID)
+	public void setAM_Reason_ID (int AM_Reason_ID)
 	{
-		if (AM_PatternType_ID < 1) 
-			set_ValueNoCheck (COLUMNNAME_AM_PatternType_ID, null);
+		if (AM_Reason_ID < 1) 
+			set_ValueNoCheck (COLUMNNAME_AM_Reason_ID, null);
 		else 
-			set_ValueNoCheck (COLUMNNAME_AM_PatternType_ID, Integer.valueOf(AM_PatternType_ID));
+			set_ValueNoCheck (COLUMNNAME_AM_Reason_ID, Integer.valueOf(AM_Reason_ID));
 	}
 
-	/** Get Maintenance Pattern Type.
-		@return Pattern Type used for asset
+	/** Get Maintenance Reason.
+		@return Maintenance Reason for request order or service order
 	  */
-	public int getAM_PatternType_ID () 
+	public int getAM_Reason_ID () 
 	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_AM_PatternType_ID);
+		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Reason_ID);
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
@@ -110,6 +113,47 @@ public class X_AM_PatternType extends PO implements I_AM_PatternType, I_Persiste
 	public String getDescription () 
 	{
 		return (String)get_Value(COLUMNNAME_Description);
+	}
+
+	/** Set Comment/Help.
+		@param Help 
+		Comment or Hint
+	  */
+	public void setHelp (String Help)
+	{
+		set_Value (COLUMNNAME_Help, Help);
+	}
+
+	/** Get Comment/Help.
+		@return Comment or Hint
+	  */
+	public String getHelp () 
+	{
+		return (String)get_Value(COLUMNNAME_Help);
+	}
+
+	/** Set Voiding Reason.
+		@param IsVoidingReason 
+		Voiding Reason for Service Order
+	  */
+	public void setIsVoidingReason (boolean IsVoidingReason)
+	{
+		set_Value (COLUMNNAME_IsVoidingReason, Boolean.valueOf(IsVoidingReason));
+	}
+
+	/** Get Voiding Reason.
+		@return Voiding Reason for Service Order
+	  */
+	public boolean isVoidingReason () 
+	{
+		Object oo = get_Value(COLUMNNAME_IsVoidingReason);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
 	}
 
 	/** Set Name.
@@ -162,4 +206,12 @@ public class X_AM_PatternType extends PO implements I_AM_PatternType, I_Persiste
 	{
 		return (String)get_Value(COLUMNNAME_Value);
 	}
+
+    /** Get Record ID/ColumnName
+        @return ID/ColumnName pair
+      */
+    public KeyNamePair getKeyNamePair() 
+    {
+        return new KeyNamePair(get_ID(), getValue());
+    }
 }

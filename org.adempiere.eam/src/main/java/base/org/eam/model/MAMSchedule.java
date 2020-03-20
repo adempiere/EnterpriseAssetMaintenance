@@ -13,33 +13,49 @@
  * Copyright (C) 2012-2018 E.R.P. Consultores y Asociados, S.A. All Rights Reserved. *
  * Contributor(s): Yamel Senih www.erpya.com				  		                 *
  *************************************************************************************/
-package org.eam.engine;
+package org.eam.model;
 
-import java.sql.Timestamp;
+import java.sql.ResultSet;
+import java.util.Properties;
+
+import org.compiere.util.Util;
 
 /**
- * Maintenance class for handle Time Based Maintenance (TBM)
+ * Schedule PO class
  * @author Yamel Senih, ysenih@erpya.com , http://www.erpya.com
  */
-public class TimeBasedMaintenance extends MaintenanceEngine {
+public class MAMSchedule extends X_AM_Schedule {
 
-	@Override
-	public boolean processSchedule(Timestamp startDate, String durationUnit, int duration) {
-		if(getMaintenanceDefinition() == null
-				|| startDate == null
-				|| durationUnit == null
-				|| duration <= 0) {
-			return false;
-		}
-		//	Validate 
-		
-		
-		return true;
-	}
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8437469761214582358L;
 
-	@Override
-	public boolean processDocument() {
-		return false;
+	public MAMSchedule(Properties ctx, int AM_Schedule_ID, String trxName) {
+		super(ctx, AM_Schedule_ID, trxName);
 	}
 	
+	public MAMSchedule(Properties ctx, ResultSet rs, String trxName) {
+		super(ctx, rs, trxName);
+	}
+	
+	/**
+	 * Set values from maintenance
+	 * @param maintenance
+	 */
+	public void setMaintenance(MAMMaintenance maintenance) {
+		if(maintenance == null) {
+			return;
+		}
+		setAM_Maintenance_ID(maintenance.getAM_Maintenance_ID());
+		setPriorityRule(maintenance.getPriorityRule());
+		//	Set Description
+		if(!Util.isEmpty(maintenance.getDescription())) {
+			setDescription(maintenance.getDescription());
+		}
+		//	Set comments
+		if(!Util.isEmpty(maintenance.getComments())) {
+			setComments(maintenance.getComments());
+		}
+	}
 }

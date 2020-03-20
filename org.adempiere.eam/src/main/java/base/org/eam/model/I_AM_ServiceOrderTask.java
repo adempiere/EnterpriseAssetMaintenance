@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for AM_ServiceOrderTask
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0
+ *  @version Release 3.9.3
  */
 public interface I_AM_ServiceOrderTask 
 {
@@ -66,10 +66,14 @@ public interface I_AM_ServiceOrderTask
     /** Column name AM_Maintenance_ID */
     public static final String COLUMNNAME_AM_Maintenance_ID = "AM_Maintenance_ID";
 
-	/** Set AM Maintenance	  */
+	/** Set Asset Maintenance.
+	  * Define a maintenance program assigned to Asset
+	  */
 	public void setAM_Maintenance_ID (int AM_Maintenance_ID);
 
-	/** Get AM Maintenance	  */
+	/** Get Asset Maintenance.
+	  * Define a maintenance program assigned to Asset
+	  */
 	public int getAM_Maintenance_ID();
 
 	public org.eam.model.I_AM_Maintenance getAM_Maintenance() throws RuntimeException;
@@ -77,10 +81,14 @@ public interface I_AM_ServiceOrderTask
     /** Column name AM_ServiceOrder_ID */
     public static final String COLUMNNAME_AM_ServiceOrder_ID = "AM_ServiceOrder_ID";
 
-	/** Set AM ServiceOrder	  */
+	/** Set Service Order.
+	  * Service Order for maintenance
+	  */
 	public void setAM_ServiceOrder_ID (int AM_ServiceOrder_ID);
 
-	/** Get AM ServiceOrder	  */
+	/** Get Service Order.
+	  * Service Order for maintenance
+	  */
 	public int getAM_ServiceOrder_ID();
 
 	public org.eam.model.I_AM_ServiceOrder getAM_ServiceOrder() throws RuntimeException;
@@ -88,10 +96,14 @@ public interface I_AM_ServiceOrderTask
     /** Column name AM_ServiceOrderTask_ID */
     public static final String COLUMNNAME_AM_ServiceOrderTask_ID = "AM_ServiceOrderTask_ID";
 
-	/** Set AM ServiceOrder Task ID	  */
+	/** Set Service Order Task.
+	  * Task for a service order of maintenance
+	  */
 	public void setAM_ServiceOrderTask_ID (int AM_ServiceOrderTask_ID);
 
-	/** Get AM ServiceOrder Task ID	  */
+	/** Get Service Order Task.
+	  * Task for a service order of maintenance
+	  */
 	public int getAM_ServiceOrderTask_ID();
 
     /** Column name CostAmt */
@@ -106,15 +118,6 @@ public interface I_AM_ServiceOrderTask
 	  * Value with Cost
 	  */
 	public BigDecimal getCostAmt();
-
-    /** Column name CostAmtPlan */
-    public static final String COLUMNNAME_CostAmtPlan = "CostAmtPlan";
-
-	/** Set Cost Amt Plan	  */
-	public void setCostAmtPlan (BigDecimal CostAmtPlan);
-
-	/** Get Cost Amt Plan	  */
-	public BigDecimal getCostAmtPlan();
 
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
@@ -262,4 +265,17 @@ public interface I_AM_ServiceOrderTask
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
+
+    /** Column name UUID */
+    public static final String COLUMNNAME_UUID = "UUID";
+
+	/** Set Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID);
+
+	/** Get Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public String getUUID();
 }

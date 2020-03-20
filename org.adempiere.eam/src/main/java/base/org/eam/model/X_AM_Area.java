@@ -24,14 +24,14 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Model for AM_Area
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0 - $Id$ */
+ *  @version Release 3.9.3 - $Id$ */
 public class X_AM_Area extends PO implements I_AM_Area, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171020L;
+	private static final long serialVersionUID = 20200320L;
 
     /** Standard Constructor */
     public X_AM_Area (Properties ctx, int AM_Area_ID, String trxName)
@@ -74,7 +74,9 @@ public class X_AM_Area extends PO implements I_AM_Area, I_Persistent
     }
 
 	/** Set Maintenance Area.
-		@param AM_Area_ID Maintenance Area	  */
+		@param AM_Area_ID 
+		Maintenance Area where will be process a work order
+	  */
 	public void setAM_Area_ID (int AM_Area_ID)
 	{
 		if (AM_Area_ID < 1) 
@@ -84,7 +86,8 @@ public class X_AM_Area extends PO implements I_AM_Area, I_Persistent
 	}
 
 	/** Get Maintenance Area.
-		@return Maintenance Area	  */
+		@return Maintenance Area where will be process a work order
+	  */
 	public int getAM_Area_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Area_ID);

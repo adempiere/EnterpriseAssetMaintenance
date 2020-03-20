@@ -25,14 +25,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for AM_ServiceOrderTask
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0 - $Id$ */
+ *  @version Release 3.9.3 - $Id$ */
 public class X_AM_ServiceOrderTask extends PO implements I_AM_ServiceOrderTask, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171020L;
+	private static final long serialVersionUID = 20200320L;
 
     /** Standard Constructor */
     public X_AM_ServiceOrderTask (Properties ctx, int AM_ServiceOrderTask_ID, String trxName)
@@ -83,8 +83,10 @@ public class X_AM_ServiceOrderTask extends PO implements I_AM_ServiceOrderTask, 
 		return (org.eam.model.I_AM_Maintenance)MTable.get(getCtx(), org.eam.model.I_AM_Maintenance.Table_Name)
 			.getPO(getAM_Maintenance_ID(), get_TrxName());	}
 
-	/** Set AM Maintenance.
-		@param AM_Maintenance_ID AM Maintenance	  */
+	/** Set Asset Maintenance.
+		@param AM_Maintenance_ID 
+		Define a maintenance program assigned to Asset
+	  */
 	public void setAM_Maintenance_ID (int AM_Maintenance_ID)
 	{
 		if (AM_Maintenance_ID < 1) 
@@ -93,8 +95,9 @@ public class X_AM_ServiceOrderTask extends PO implements I_AM_ServiceOrderTask, 
 			set_Value (COLUMNNAME_AM_Maintenance_ID, Integer.valueOf(AM_Maintenance_ID));
 	}
 
-	/** Get AM Maintenance.
-		@return AM Maintenance	  */
+	/** Get Asset Maintenance.
+		@return Define a maintenance program assigned to Asset
+	  */
 	public int getAM_Maintenance_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Maintenance_ID);
@@ -108,8 +111,10 @@ public class X_AM_ServiceOrderTask extends PO implements I_AM_ServiceOrderTask, 
 		return (org.eam.model.I_AM_ServiceOrder)MTable.get(getCtx(), org.eam.model.I_AM_ServiceOrder.Table_Name)
 			.getPO(getAM_ServiceOrder_ID(), get_TrxName());	}
 
-	/** Set AM ServiceOrder.
-		@param AM_ServiceOrder_ID AM ServiceOrder	  */
+	/** Set Service Order.
+		@param AM_ServiceOrder_ID 
+		Service Order for maintenance
+	  */
 	public void setAM_ServiceOrder_ID (int AM_ServiceOrder_ID)
 	{
 		if (AM_ServiceOrder_ID < 1) 
@@ -118,8 +123,9 @@ public class X_AM_ServiceOrderTask extends PO implements I_AM_ServiceOrderTask, 
 			set_ValueNoCheck (COLUMNNAME_AM_ServiceOrder_ID, Integer.valueOf(AM_ServiceOrder_ID));
 	}
 
-	/** Get AM ServiceOrder.
-		@return AM ServiceOrder	  */
+	/** Get Service Order.
+		@return Service Order for maintenance
+	  */
 	public int getAM_ServiceOrder_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_ServiceOrder_ID);
@@ -128,8 +134,10 @@ public class X_AM_ServiceOrderTask extends PO implements I_AM_ServiceOrderTask, 
 		return ii.intValue();
 	}
 
-	/** Set AM ServiceOrder Task ID.
-		@param AM_ServiceOrderTask_ID AM ServiceOrder Task ID	  */
+	/** Set Service Order Task.
+		@param AM_ServiceOrderTask_ID 
+		Task for a service order of maintenance
+	  */
 	public void setAM_ServiceOrderTask_ID (int AM_ServiceOrderTask_ID)
 	{
 		if (AM_ServiceOrderTask_ID < 1) 
@@ -138,8 +146,9 @@ public class X_AM_ServiceOrderTask extends PO implements I_AM_ServiceOrderTask, 
 			set_ValueNoCheck (COLUMNNAME_AM_ServiceOrderTask_ID, Integer.valueOf(AM_ServiceOrderTask_ID));
 	}
 
-	/** Get AM ServiceOrder Task ID.
-		@return AM ServiceOrder Task ID	  */
+	/** Get Service Order Task.
+		@return Task for a service order of maintenance
+	  */
 	public int getAM_ServiceOrderTask_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_ServiceOrderTask_ID);
@@ -163,23 +172,6 @@ public class X_AM_ServiceOrderTask extends PO implements I_AM_ServiceOrderTask, 
 	public BigDecimal getCostAmt () 
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_CostAmt);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Set Cost Amt Plan.
-		@param CostAmtPlan Cost Amt Plan	  */
-	public void setCostAmtPlan (BigDecimal CostAmtPlan)
-	{
-		set_Value (COLUMNNAME_CostAmtPlan, CostAmtPlan);
-	}
-
-	/** Get Cost Amt Plan.
-		@return Cost Amt Plan	  */
-	public BigDecimal getCostAmtPlan () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_CostAmtPlan);
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;
@@ -354,5 +346,22 @@ public class X_AM_ServiceOrderTask extends PO implements I_AM_ServiceOrderTask, 
 	public String getStatus () 
 	{
 		return (String)get_Value(COLUMNNAME_Status);
+	}
+
+	/** Set Immutable Universally Unique Identifier.
+		@param UUID 
+		Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID)
+	{
+		set_Value (COLUMNNAME_UUID, UUID);
+	}
+
+	/** Get Immutable Universally Unique Identifier.
+		@return Immutable Universally Unique Identifier
+	  */
+	public String getUUID () 
+	{
+		return (String)get_Value(COLUMNNAME_UUID);
 	}
 }

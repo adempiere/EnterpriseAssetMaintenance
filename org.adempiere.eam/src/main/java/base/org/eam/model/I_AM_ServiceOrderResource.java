@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for AM_ServiceOrderResource
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0
+ *  @version Release 3.9.3
  */
 public interface I_AM_ServiceOrderResource 
 {
@@ -66,19 +66,27 @@ public interface I_AM_ServiceOrderResource
     /** Column name AM_ServiceOrderResource_ID */
     public static final String COLUMNNAME_AM_ServiceOrderResource_ID = "AM_ServiceOrderResource_ID";
 
-	/** Set AM ServiceOrder Resource ID	  */
+	/** Set Service Order Resource.
+	  * Resource of service order
+	  */
 	public void setAM_ServiceOrderResource_ID (int AM_ServiceOrderResource_ID);
 
-	/** Get AM ServiceOrder Resource ID	  */
+	/** Get Service Order Resource.
+	  * Resource of service order
+	  */
 	public int getAM_ServiceOrderResource_ID();
 
     /** Column name AM_ServiceOrderTask_ID */
     public static final String COLUMNNAME_AM_ServiceOrderTask_ID = "AM_ServiceOrderTask_ID";
 
-	/** Set AM ServiceOrder Task	  */
+	/** Set Service Order Task.
+	  * Task for a service order of maintenance
+	  */
 	public void setAM_ServiceOrderTask_ID (int AM_ServiceOrderTask_ID);
 
-	/** Get AM ServiceOrder Task	  */
+	/** Get Service Order Task.
+	  * Task for a service order of maintenance
+	  */
 	public int getAM_ServiceOrderTask_ID();
 
 	public org.eam.model.I_AM_ServiceOrderTask getAM_ServiceOrderTask() throws RuntimeException;
@@ -95,15 +103,6 @@ public interface I_AM_ServiceOrderResource
 	  * Value with Cost
 	  */
 	public BigDecimal getCostAmt();
-
-    /** Column name CostAmtPlan */
-    public static final String COLUMNNAME_CostAmtPlan = "CostAmtPlan";
-
-	/** Set Cost Amt Plan	  */
-	public void setCostAmtPlan (BigDecimal CostAmtPlan);
-
-	/** Get Cost Amt Plan	  */
-	public BigDecimal getCostAmtPlan();
 
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
@@ -231,23 +230,18 @@ public interface I_AM_ServiceOrderResource
 	  */
 	public BigDecimal getQtyReserved();
 
-    /** Column name ResourceQty */
-    public static final String COLUMNNAME_ResourceQty = "ResourceQty";
+    /** Column name ResourceQuantity */
+    public static final String COLUMNNAME_ResourceQuantity = "ResourceQuantity";
 
-	/** Set Resource Qty	  */
-	public void setResourceQty (BigDecimal ResourceQty);
+	/** Set Resource Quantity.
+	  * Resource Quantity used for Maintenance
+	  */
+	public void setResourceQuantity (BigDecimal ResourceQuantity);
 
-	/** Get Resource Qty	  */
-	public BigDecimal getResourceQty();
-
-    /** Column name ResourceQtyExtra */
-    public static final String COLUMNNAME_ResourceQtyExtra = "ResourceQtyExtra";
-
-	/** Set Resource Qty Extra	  */
-	public void setResourceQtyExtra (BigDecimal ResourceQtyExtra);
-
-	/** Get Resource Qty Extra	  */
-	public BigDecimal getResourceQtyExtra();
+	/** Get Resource Quantity.
+	  * Resource Quantity used for Maintenance
+	  */
+	public BigDecimal getResourceQuantity();
 
     /** Column name ResourceType */
     public static final String COLUMNNAME_ResourceType = "ResourceType";
@@ -301,4 +295,17 @@ public interface I_AM_ServiceOrderResource
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
+
+    /** Column name UUID */
+    public static final String COLUMNNAME_UUID = "UUID";
+
+	/** Set Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID);
+
+	/** Get Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public String getUUID();
 }

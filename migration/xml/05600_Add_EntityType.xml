@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Migrations>
-  <Migration EntityType="D" Name="Add new Entity Type for Assets Mantenance #15" ReleaseNo="3.9.1" SeqNo="05">
+  <Migration EntityType="D" Name="Add new Entity Type for Assets Mantenance #15" ReleaseNo="3.9.1" SeqNo="5600">
     <Comments>See: https://github.com/adempiere/adempiereEAM/issues/15</Comments>
     <Step SeqNo="10" StepType="AD">
       <PO AD_Table_ID="882" Action="I" Record_ID="50037" Table="AD_EntityType">

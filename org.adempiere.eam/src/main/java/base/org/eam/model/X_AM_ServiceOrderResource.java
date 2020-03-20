@@ -25,14 +25,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for AM_ServiceOrderResource
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0 - $Id$ */
+ *  @version Release 3.9.3 - $Id$ */
 public class X_AM_ServiceOrderResource extends PO implements I_AM_ServiceOrderResource, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171020L;
+	private static final long serialVersionUID = 20200320L;
 
     /** Standard Constructor */
     public X_AM_ServiceOrderResource (Properties ctx, int AM_ServiceOrderResource_ID, String trxName)
@@ -75,8 +75,10 @@ public class X_AM_ServiceOrderResource extends PO implements I_AM_ServiceOrderRe
       return sb.toString();
     }
 
-	/** Set AM ServiceOrder Resource ID.
-		@param AM_ServiceOrderResource_ID AM ServiceOrder Resource ID	  */
+	/** Set Service Order Resource.
+		@param AM_ServiceOrderResource_ID 
+		Resource of service order
+	  */
 	public void setAM_ServiceOrderResource_ID (int AM_ServiceOrderResource_ID)
 	{
 		if (AM_ServiceOrderResource_ID < 1) 
@@ -85,8 +87,9 @@ public class X_AM_ServiceOrderResource extends PO implements I_AM_ServiceOrderRe
 			set_ValueNoCheck (COLUMNNAME_AM_ServiceOrderResource_ID, Integer.valueOf(AM_ServiceOrderResource_ID));
 	}
 
-	/** Get AM ServiceOrder Resource ID.
-		@return AM ServiceOrder Resource ID	  */
+	/** Get Service Order Resource.
+		@return Resource of service order
+	  */
 	public int getAM_ServiceOrderResource_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_ServiceOrderResource_ID);
@@ -100,8 +103,10 @@ public class X_AM_ServiceOrderResource extends PO implements I_AM_ServiceOrderRe
 		return (org.eam.model.I_AM_ServiceOrderTask)MTable.get(getCtx(), org.eam.model.I_AM_ServiceOrderTask.Table_Name)
 			.getPO(getAM_ServiceOrderTask_ID(), get_TrxName());	}
 
-	/** Set AM ServiceOrder Task.
-		@param AM_ServiceOrderTask_ID AM ServiceOrder Task	  */
+	/** Set Service Order Task.
+		@param AM_ServiceOrderTask_ID 
+		Task for a service order of maintenance
+	  */
 	public void setAM_ServiceOrderTask_ID (int AM_ServiceOrderTask_ID)
 	{
 		if (AM_ServiceOrderTask_ID < 1) 
@@ -110,8 +115,9 @@ public class X_AM_ServiceOrderResource extends PO implements I_AM_ServiceOrderRe
 			set_ValueNoCheck (COLUMNNAME_AM_ServiceOrderTask_ID, Integer.valueOf(AM_ServiceOrderTask_ID));
 	}
 
-	/** Get AM ServiceOrder Task.
-		@return AM ServiceOrder Task	  */
+	/** Get Service Order Task.
+		@return Task for a service order of maintenance
+	  */
 	public int getAM_ServiceOrderTask_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_ServiceOrderTask_ID);
@@ -135,23 +141,6 @@ public class X_AM_ServiceOrderResource extends PO implements I_AM_ServiceOrderRe
 	public BigDecimal getCostAmt () 
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_CostAmt);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Set Cost Amt Plan.
-		@param CostAmtPlan Cost Amt Plan	  */
-	public void setCostAmtPlan (BigDecimal CostAmtPlan)
-	{
-		set_Value (COLUMNNAME_CostAmtPlan, CostAmtPlan);
-	}
-
-	/** Get Cost Amt Plan.
-		@return Cost Amt Plan	  */
-	public BigDecimal getCostAmtPlan () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_CostAmtPlan);
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;
@@ -325,35 +314,21 @@ public class X_AM_ServiceOrderResource extends PO implements I_AM_ServiceOrderRe
 		return bd;
 	}
 
-	/** Set Resource Qty.
-		@param ResourceQty Resource Qty	  */
-	public void setResourceQty (BigDecimal ResourceQty)
+	/** Set Resource Quantity.
+		@param ResourceQuantity 
+		Resource Quantity used for Maintenance
+	  */
+	public void setResourceQuantity (BigDecimal ResourceQuantity)
 	{
-		set_Value (COLUMNNAME_ResourceQty, ResourceQty);
+		set_Value (COLUMNNAME_ResourceQuantity, ResourceQuantity);
 	}
 
-	/** Get Resource Qty.
-		@return Resource Qty	  */
-	public BigDecimal getResourceQty () 
+	/** Get Resource Quantity.
+		@return Resource Quantity used for Maintenance
+	  */
+	public BigDecimal getResourceQuantity () 
 	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_ResourceQty);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Set Resource Qty Extra.
-		@param ResourceQtyExtra Resource Qty Extra	  */
-	public void setResourceQtyExtra (BigDecimal ResourceQtyExtra)
-	{
-		set_Value (COLUMNNAME_ResourceQtyExtra, ResourceQtyExtra);
-	}
-
-	/** Get Resource Qty Extra.
-		@return Resource Qty Extra	  */
-	public BigDecimal getResourceQtyExtra () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_ResourceQtyExtra);
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_ResourceQuantity);
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;
@@ -437,5 +412,22 @@ public class X_AM_ServiceOrderResource extends PO implements I_AM_ServiceOrderRe
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
+	}
+
+	/** Set Immutable Universally Unique Identifier.
+		@param UUID 
+		Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID)
+	{
+		set_Value (COLUMNNAME_UUID, UUID);
+	}
+
+	/** Get Immutable Universally Unique Identifier.
+		@return Immutable Universally Unique Identifier
+	  */
+	public String getUUID () 
+	{
+		return (String)get_Value(COLUMNNAME_UUID);
 	}
 }

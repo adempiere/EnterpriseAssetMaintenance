@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for AM_Area
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0
+ *  @version Release 3.9.3
  */
 public interface I_AM_Area 
 {
@@ -66,10 +66,14 @@ public interface I_AM_Area
     /** Column name AM_Area_ID */
     public static final String COLUMNNAME_AM_Area_ID = "AM_Area_ID";
 
-	/** Set Maintenance Area	  */
+	/** Set Maintenance Area.
+	  * Maintenance Area where will be process a work order
+	  */
 	public void setAM_Area_ID (int AM_Area_ID);
 
-	/** Get Maintenance Area	  */
+	/** Get Maintenance Area.
+	  * Maintenance Area where will be process a work order
+	  */
 	public int getAM_Area_ID();
 
     /** Column name Created */

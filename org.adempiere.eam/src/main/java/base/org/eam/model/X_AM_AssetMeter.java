@@ -26,14 +26,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for AM_AssetMeter
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0 - $Id$ */
+ *  @version Release 3.9.3 - $Id$ */
 public class X_AM_AssetMeter extends PO implements I_AM_AssetMeter, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171020L;
+	private static final long serialVersionUID = 20200320L;
 
     /** Standard Constructor */
     public X_AM_AssetMeter (Properties ctx, int AM_AssetMeter_ID, String trxName)
@@ -83,9 +83,9 @@ public class X_AM_AssetMeter extends PO implements I_AM_AssetMeter, I_Persistent
 		return (org.compiere.model.I_A_Asset)MTable.get(getCtx(), org.compiere.model.I_A_Asset.Table_Name)
 			.getPO(getA_Asset_ID(), get_TrxName());	}
 
-	/** Set Asset.
+	/** Set Fixed Asset.
 		@param A_Asset_ID 
-		Asset used internally or by customers
+		Fixed Asset used internally or by customers
 	  */
 	public void setA_Asset_ID (int A_Asset_ID)
 	{
@@ -95,8 +95,8 @@ public class X_AM_AssetMeter extends PO implements I_AM_AssetMeter, I_Persistent
 			set_ValueNoCheck (COLUMNNAME_A_Asset_ID, Integer.valueOf(A_Asset_ID));
 	}
 
-	/** Get Asset.
-		@return Asset used internally or by customers
+	/** Get Fixed Asset.
+		@return Fixed Asset used internally or by customers
 	  */
 	public int getA_Asset_ID () 
 	{
@@ -106,8 +106,10 @@ public class X_AM_AssetMeter extends PO implements I_AM_AssetMeter, I_Persistent
 		return ii.intValue();
 	}
 
-	/** Set AM Asset Meter ID.
-		@param AM_AssetMeter_ID AM Asset Meter ID	  */
+	/** Set Asset Meter.
+		@param AM_AssetMeter_ID 
+		Asset Meter
+	  */
 	public void setAM_AssetMeter_ID (int AM_AssetMeter_ID)
 	{
 		if (AM_AssetMeter_ID < 1) 
@@ -116,8 +118,9 @@ public class X_AM_AssetMeter extends PO implements I_AM_AssetMeter, I_Persistent
 			set_ValueNoCheck (COLUMNNAME_AM_AssetMeter_ID, Integer.valueOf(AM_AssetMeter_ID));
 	}
 
-	/** Get AM Asset Meter ID.
-		@return AM Asset Meter ID	  */
+	/** Get Asset Meter.
+		@return Asset Meter
+	  */
 	public int getAM_AssetMeter_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_AssetMeter_ID);
@@ -131,8 +134,10 @@ public class X_AM_AssetMeter extends PO implements I_AM_AssetMeter, I_Persistent
 		return (org.eam.model.I_AM_Meter)MTable.get(getCtx(), org.eam.model.I_AM_Meter.Table_Name)
 			.getPO(getAM_Meter_ID(), get_TrxName());	}
 
-	/** Set AM Meter ID.
-		@param AM_Meter_ID AM Meter ID	  */
+	/** Set Meter.
+		@param AM_Meter_ID 
+		Asset meter master
+	  */
 	public void setAM_Meter_ID (int AM_Meter_ID)
 	{
 		if (AM_Meter_ID < 1) 
@@ -141,8 +146,9 @@ public class X_AM_AssetMeter extends PO implements I_AM_AssetMeter, I_Persistent
 			set_ValueNoCheck (COLUMNNAME_AM_Meter_ID, Integer.valueOf(AM_Meter_ID));
 	}
 
-	/** Get AM Meter ID.
-		@return AM Meter ID	  */
+	/** Get Meter.
+		@return Asset meter master
+	  */
 	public int getAM_Meter_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Meter_ID);
@@ -220,6 +226,23 @@ public class X_AM_AssetMeter extends PO implements I_AM_AssetMeter, I_Persistent
 	public String getName () 
 	{
 		return (String)get_Value(COLUMNNAME_Name);
+	}
+
+	/** Set Immutable Universally Unique Identifier.
+		@param UUID 
+		Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID)
+	{
+		set_Value (COLUMNNAME_UUID, UUID);
+	}
+
+	/** Get Immutable Universally Unique Identifier.
+		@return Immutable Universally Unique Identifier
+	  */
+	public String getUUID () 
+	{
+		return (String)get_Value(COLUMNNAME_UUID);
 	}
 
 	/** Set Search Key.

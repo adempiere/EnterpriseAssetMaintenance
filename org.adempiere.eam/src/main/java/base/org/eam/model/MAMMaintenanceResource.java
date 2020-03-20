@@ -73,7 +73,7 @@ public class MAMMaintenanceResource extends X_AM_MaintenanceResource {
 		setCostAmt(resource.getCostAmt());
 		setM_BOM_ID(resource.getM_BOM_ID());
 		setM_Product_ID(resource.getM_Product_ID());
-		setResourceQty(resource.getResourceQty());
+		setResourceQuantity(resource.getResourceQuantity());
 		setResourceType(resource.getResourceType());
 		setS_Resource_ID(resource.getS_Resource_ID());
 		setC_UOM_ID(resource.getC_UOM_ID());

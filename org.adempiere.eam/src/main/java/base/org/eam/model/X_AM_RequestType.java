@@ -23,14 +23,14 @@ import org.compiere.model.*;
 
 /** Generated Model for AM_RequestType
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0 - $Id$ */
+ *  @version Release 3.9.3 - $Id$ */
 public class X_AM_RequestType extends PO implements I_AM_RequestType, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171020L;
+	private static final long serialVersionUID = 20200320L;
 
     /** Standard Constructor */
     public X_AM_RequestType (Properties ctx, int AM_RequestType_ID, String trxName)
@@ -73,7 +73,9 @@ public class X_AM_RequestType extends PO implements I_AM_RequestType, I_Persiste
     }
 
 	/** Set Request Type.
-		@param AM_RequestType_ID Request Type	  */
+		@param AM_RequestType_ID 
+		Request type for make a request of maintenance
+	  */
 	public void setAM_RequestType_ID (int AM_RequestType_ID)
 	{
 		if (AM_RequestType_ID < 1) 
@@ -83,7 +85,8 @@ public class X_AM_RequestType extends PO implements I_AM_RequestType, I_Persiste
 	}
 
 	/** Get Request Type.
-		@return Request Type	  */
+		@return Request type for make a request of maintenance
+	  */
 	public int getAM_RequestType_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_RequestType_ID);

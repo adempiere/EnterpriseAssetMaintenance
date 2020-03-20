@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for AM_ServiceRequest
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0
+ *  @version Release 3.9.3
  */
 public interface I_AM_ServiceRequest 
 {
@@ -45,13 +45,13 @@ public interface I_AM_ServiceRequest
     /** Column name A_Asset_ID */
     public static final String COLUMNNAME_A_Asset_ID = "A_Asset_ID";
 
-	/** Set Asset.
-	  * Asset used internally or by customers
+	/** Set Fixed Asset.
+	  * Fixed Asset used internally or by customers
 	  */
 	public void setA_Asset_ID (int A_Asset_ID);
 
-	/** Get Asset.
-	  * Asset used internally or by customers
+	/** Get Fixed Asset.
+	  * Fixed Asset used internally or by customers
 	  */
 	public int getA_Asset_ID();
 
@@ -93,24 +93,32 @@ public interface I_AM_ServiceRequest
 
 	public org.compiere.model.I_AD_User getAD_User() throws RuntimeException;
 
-    /** Column name AM_Pattern_ID */
-    public static final String COLUMNNAME_AM_Pattern_ID = "AM_Pattern_ID";
+    /** Column name AM_Reason_ID */
+    public static final String COLUMNNAME_AM_Reason_ID = "AM_Reason_ID";
 
-	/** Set AM Maintenance Pattern	  */
-	public void setAM_Pattern_ID (int AM_Pattern_ID);
+	/** Set Maintenance Reason.
+	  * Maintenance Reason for request order or service order
+	  */
+	public void setAM_Reason_ID (int AM_Reason_ID);
 
-	/** Get AM Maintenance Pattern	  */
-	public int getAM_Pattern_ID();
+	/** Get Maintenance Reason.
+	  * Maintenance Reason for request order or service order
+	  */
+	public int getAM_Reason_ID();
 
-	public org.eam.model.I_AM_Pattern getAM_Pattern() throws RuntimeException;
+	public org.eam.model.I_AM_Reason getAM_Reason() throws RuntimeException;
 
     /** Column name AM_RequestType_ID */
     public static final String COLUMNNAME_AM_RequestType_ID = "AM_RequestType_ID";
 
-	/** Set Request Type	  */
+	/** Set Request Type.
+	  * Request type for make a request of maintenance
+	  */
 	public void setAM_RequestType_ID (int AM_RequestType_ID);
 
-	/** Get Request Type	  */
+	/** Get Request Type.
+	  * Request type for make a request of maintenance
+	  */
 	public int getAM_RequestType_ID();
 
 	public org.eam.model.I_AM_RequestType getAM_RequestType() throws RuntimeException;
@@ -118,10 +126,14 @@ public interface I_AM_ServiceRequest
     /** Column name AM_ServiceRequest_ID */
     public static final String COLUMNNAME_AM_ServiceRequest_ID = "AM_ServiceRequest_ID";
 
-	/** Set AM Service Order Request ID	  */
+	/** Set Service Order Request.
+	  * Request for a Service Order
+	  */
 	public void setAM_ServiceRequest_ID (int AM_ServiceRequest_ID);
 
-	/** Get AM Service Order Request ID	  */
+	/** Get Service Order Request.
+	  * Request for a Service Order
+	  */
 	public int getAM_ServiceRequest_ID();
 
     /** Column name C_Currency_ID */
@@ -350,4 +362,17 @@ public interface I_AM_ServiceRequest
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
+
+    /** Column name UUID */
+    public static final String COLUMNNAME_UUID = "UUID";
+
+	/** Set Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID);
+
+	/** Get Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public String getUUID();
 }

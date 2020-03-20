@@ -25,14 +25,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for AM_Pattern
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0 - $Id$ */
+ *  @version Release 3.9.3 - $Id$ */
 public class X_AM_Pattern extends PO implements I_AM_Pattern, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171020L;
+	private static final long serialVersionUID = 20200320L;
 
     /** Standard Constructor */
     public X_AM_Pattern (Properties ctx, int AM_Pattern_ID, String trxName)
@@ -108,9 +108,9 @@ public class X_AM_Pattern extends PO implements I_AM_Pattern, I_Persistent
 		return (org.compiere.model.I_A_Asset)MTable.get(getCtx(), org.compiere.model.I_A_Asset.Table_Name)
 			.getPO(getA_Asset_ID(), get_TrxName());	}
 
-	/** Set Asset.
+	/** Set Fixed Asset.
 		@param A_Asset_ID 
-		Asset used internally or by customers
+		Fixed Asset used internally or by customers
 	  */
 	public void setA_Asset_ID (int A_Asset_ID)
 	{
@@ -120,8 +120,8 @@ public class X_AM_Pattern extends PO implements I_AM_Pattern, I_Persistent
 			set_Value (COLUMNNAME_A_Asset_ID, Integer.valueOf(A_Asset_ID));
 	}
 
-	/** Get Asset.
-		@return Asset used internally or by customers
+	/** Get Fixed Asset.
+		@return Fixed Asset used internally or by customers
 	  */
 	public int getA_Asset_ID () 
 	{
@@ -137,7 +137,9 @@ public class X_AM_Pattern extends PO implements I_AM_Pattern, I_Persistent
 			.getPO(getAM_Area_ID(), get_TrxName());	}
 
 	/** Set Maintenance Area.
-		@param AM_Area_ID Maintenance Area	  */
+		@param AM_Area_ID 
+		Maintenance Area where will be process a work order
+	  */
 	public void setAM_Area_ID (int AM_Area_ID)
 	{
 		if (AM_Area_ID < 1) 
@@ -147,7 +149,8 @@ public class X_AM_Pattern extends PO implements I_AM_Pattern, I_Persistent
 	}
 
 	/** Get Maintenance Area.
-		@return Maintenance Area	  */
+		@return Maintenance Area where will be process a work order
+	  */
 	public int getAM_Area_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Area_ID);
@@ -156,8 +159,10 @@ public class X_AM_Pattern extends PO implements I_AM_Pattern, I_Persistent
 		return ii.intValue();
 	}
 
-	/** Set AM Maintenance Pattern ID.
-		@param AM_Pattern_ID AM Maintenance Pattern ID	  */
+	/** Set Maintenance Pattern.
+		@param AM_Pattern_ID 
+		Maintenance Pattern or template for maintenance
+	  */
 	public void setAM_Pattern_ID (int AM_Pattern_ID)
 	{
 		if (AM_Pattern_ID < 1) 
@@ -166,8 +171,9 @@ public class X_AM_Pattern extends PO implements I_AM_Pattern, I_Persistent
 			set_ValueNoCheck (COLUMNNAME_AM_Pattern_ID, Integer.valueOf(AM_Pattern_ID));
 	}
 
-	/** Get AM Maintenance Pattern ID.
-		@return AM Maintenance Pattern ID	  */
+	/** Get Maintenance Pattern.
+		@return Maintenance Pattern or template for maintenance
+	  */
 	public int getAM_Pattern_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Pattern_ID);
@@ -182,7 +188,9 @@ public class X_AM_Pattern extends PO implements I_AM_Pattern, I_Persistent
 			.getPO(getAM_PatternType_ID(), get_TrxName());	}
 
 	/** Set Maintenance Pattern Type.
-		@param AM_PatternType_ID Maintenance Pattern Type	  */
+		@param AM_PatternType_ID 
+		Pattern Type used for asset
+	  */
 	public void setAM_PatternType_ID (int AM_PatternType_ID)
 	{
 		if (AM_PatternType_ID < 1) 
@@ -192,7 +200,8 @@ public class X_AM_Pattern extends PO implements I_AM_Pattern, I_Persistent
 	}
 
 	/** Get Maintenance Pattern Type.
-		@return Maintenance Pattern Type	  */
+		@return Pattern Type used for asset
+	  */
 	public int getAM_PatternType_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_PatternType_ID);
@@ -253,6 +262,23 @@ public class X_AM_Pattern extends PO implements I_AM_Pattern, I_Persistent
 	public String getName () 
 	{
 		return (String)get_Value(COLUMNNAME_Name);
+	}
+
+	/** Set Immutable Universally Unique Identifier.
+		@param UUID 
+		Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID)
+	{
+		set_Value (COLUMNNAME_UUID, UUID);
+	}
+
+	/** Get Immutable Universally Unique Identifier.
+		@return Immutable Universally Unique Identifier
+	  */
+	public String getUUID () 
+	{
+		return (String)get_Value(COLUMNNAME_UUID);
 	}
 
 	/** Set Search Key.

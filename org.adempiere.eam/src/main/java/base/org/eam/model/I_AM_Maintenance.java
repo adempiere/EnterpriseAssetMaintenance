@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for AM_Maintenance
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0
+ *  @version Release 3.9.3
  */
 public interface I_AM_Maintenance 
 {
@@ -42,31 +42,16 @@ public interface I_AM_Maintenance
 
     /** Load Meta Data */
 
-    /** Column name A_Asset_Group_ID */
-    public static final String COLUMNNAME_A_Asset_Group_ID = "A_Asset_Group_ID";
-
-	/** Set Asset Group.
-	  * Group of Assets
-	  */
-	public void setA_Asset_Group_ID (int A_Asset_Group_ID);
-
-	/** Get Asset Group.
-	  * Group of Assets
-	  */
-	public int getA_Asset_Group_ID();
-
-	public org.compiere.model.I_A_Asset_Group getA_Asset_Group() throws RuntimeException;
-
     /** Column name A_Asset_ID */
     public static final String COLUMNNAME_A_Asset_ID = "A_Asset_ID";
 
-	/** Set Asset.
-	  * Asset used internally or by customers
+	/** Set Fixed Asset.
+	  * Fixed Asset used internally or by customers
 	  */
 	public void setA_Asset_ID (int A_Asset_ID);
 
-	/** Get Asset.
-	  * Asset used internally or by customers
+	/** Get Fixed Asset.
+	  * Fixed Asset used internally or by customers
 	  */
 	public int getA_Asset_ID();
 
@@ -111,10 +96,14 @@ public interface I_AM_Maintenance
     /** Column name AM_Area_ID */
     public static final String COLUMNNAME_AM_Area_ID = "AM_Area_ID";
 
-	/** Set Maintenance Area	  */
+	/** Set Maintenance Area.
+	  * Maintenance Area where will be process a work order
+	  */
 	public void setAM_Area_ID (int AM_Area_ID);
 
-	/** Get Maintenance Area	  */
+	/** Get Maintenance Area.
+	  * Maintenance Area where will be process a work order
+	  */
 	public int getAM_Area_ID();
 
 	public org.eam.model.I_AM_Area getAM_Area() throws RuntimeException;
@@ -122,30 +111,27 @@ public interface I_AM_Maintenance
     /** Column name AM_Maintenance_ID */
     public static final String COLUMNNAME_AM_Maintenance_ID = "AM_Maintenance_ID";
 
-	/** Set AM Maintenance ID	  */
+	/** Set Asset Maintenance.
+	  * Define a maintenance program assigned to Asset
+	  */
 	public void setAM_Maintenance_ID (int AM_Maintenance_ID);
 
-	/** Get AM Maintenance ID	  */
+	/** Get Asset Maintenance.
+	  * Define a maintenance program assigned to Asset
+	  */
 	public int getAM_Maintenance_ID();
-
-    /** Column name AM_MaintenanceParent_ID */
-    public static final String COLUMNNAME_AM_MaintenanceParent_ID = "AM_MaintenanceParent_ID";
-
-	/** Set AM Maintenance Parent	  */
-	public void setAM_MaintenanceParent_ID (int AM_MaintenanceParent_ID);
-
-	/** Get AM Maintenance Parent	  */
-	public int getAM_MaintenanceParent_ID();
-
-	public org.eam.model.I_AM_Maintenance getAM_MaintenanceParent() throws RuntimeException;
 
     /** Column name AM_Meter_ID */
     public static final String COLUMNNAME_AM_Meter_ID = "AM_Meter_ID";
 
-	/** Set AM Meter	  */
+	/** Set Meter.
+	  * Asset meter master
+	  */
 	public void setAM_Meter_ID (int AM_Meter_ID);
 
-	/** Get AM Meter	  */
+	/** Get Meter.
+	  * Asset meter master
+	  */
 	public int getAM_Meter_ID();
 
 	public org.eam.model.I_AM_Meter getAM_Meter() throws RuntimeException;
@@ -153,10 +139,14 @@ public interface I_AM_Maintenance
     /** Column name AM_Pattern_ID */
     public static final String COLUMNNAME_AM_Pattern_ID = "AM_Pattern_ID";
 
-	/** Set AM Maintenance Pattern	  */
+	/** Set Maintenance Pattern.
+	  * Maintenance Pattern or template for maintenance
+	  */
 	public void setAM_Pattern_ID (int AM_Pattern_ID);
 
-	/** Get AM Maintenance Pattern	  */
+	/** Get Maintenance Pattern.
+	  * Maintenance Pattern or template for maintenance
+	  */
 	public int getAM_Pattern_ID();
 
 	public org.eam.model.I_AM_Pattern getAM_Pattern() throws RuntimeException;
@@ -164,33 +154,28 @@ public interface I_AM_Maintenance
     /** Column name AverageUse */
     public static final String COLUMNNAME_AverageUse = "AverageUse";
 
-	/** Set Average Use	  */
+	/** Set Average Use.
+	  * Average Use for Asset
+	  */
 	public void setAverageUse (BigDecimal AverageUse);
 
-	/** Get Average Use	  */
+	/** Get Average Use.
+	  * Average Use for Asset
+	  */
 	public BigDecimal getAverageUse();
 
-    /** Column name CalendarType */
-    public static final String COLUMNNAME_CalendarType = "CalendarType";
+    /** Column name Comments */
+    public static final String COLUMNNAME_Comments = "Comments";
 
-	/** Set AM Calendar Type	  */
-	public void setCalendarType (String CalendarType);
-
-	/** Get AM Calendar Type	  */
-	public String getCalendarType();
-
-    /** Column name CopyFrom */
-    public static final String COLUMNNAME_CopyFrom = "CopyFrom";
-
-	/** Set Copy From.
-	  * Copy From Record
+	/** Set Comments.
+	  * Comments or additional information
 	  */
-	public void setCopyFrom (String CopyFrom);
+	public void setComments (String Comments);
 
-	/** Get Copy From.
-	  * Copy From Record
+	/** Get Comments.
+	  * Comments or additional information
 	  */
-	public String getCopyFrom();
+	public String getComments();
 
     /** Column name CostAmt */
     public static final String COLUMNNAME_CostAmt = "CostAmt";
@@ -221,15 +206,6 @@ public interface I_AM_Maintenance
 	  */
 	public int getCreatedBy();
 
-    /** Column name CurrentAM */
-    public static final String COLUMNNAME_CurrentAM = "CurrentAM";
-
-	/** Set CurrentAM	  */
-	public void setCurrentAM (BigDecimal CurrentAM);
-
-	/** Get CurrentAM	  */
-	public BigDecimal getCurrentAM();
-
     /** Column name DateLastRun */
     public static final String COLUMNNAME_DateLastRun = "DateLastRun";
 
@@ -243,23 +219,14 @@ public interface I_AM_Maintenance
 	  */
 	public Timestamp getDateLastRun();
 
-    /** Column name DateLastRunAM */
-    public static final String COLUMNNAME_DateLastRunAM = "DateLastRunAM";
-
-	/** Set Date Last Run AM	  */
-	public void setDateLastRunAM (Timestamp DateLastRunAM);
-
-	/** Get Date Last Run AM	  */
-	public Timestamp getDateLastRunAM();
-
-    /** Column name DateLastSO */
-    public static final String COLUMNNAME_DateLastSO = "DateLastSO";
+    /** Column name DateLastServiceOrder */
+    public static final String COLUMNNAME_DateLastServiceOrder = "DateLastServiceOrder";
 
 	/** Set Date Last Service Order	  */
-	public void setDateLastSO (Timestamp DateLastSO);
+	public void setDateLastServiceOrder (Timestamp DateLastServiceOrder);
 
 	/** Get Date Last Service Order	  */
-	public Timestamp getDateLastSO();
+	public Timestamp getDateLastServiceOrder();
 
     /** Column name DateNextRun */
     public static final String COLUMNNAME_DateNextRun = "DateNextRun";
@@ -287,19 +254,6 @@ public interface I_AM_Maintenance
 	  */
 	public String getDescription();
 
-    /** Column name DocStatus */
-    public static final String COLUMNNAME_DocStatus = "DocStatus";
-
-	/** Set Document Status.
-	  * The current status of the document
-	  */
-	public void setDocStatus (String DocStatus);
-
-	/** Get Document Status.
-	  * The current status of the document
-	  */
-	public String getDocStatus();
-
     /** Column name DocumentNo */
     public static final String COLUMNNAME_DocumentNo = "DocumentNo";
 
@@ -312,6 +266,19 @@ public interface I_AM_Maintenance
 	  * Document sequence number of the document
 	  */
 	public String getDocumentNo();
+
+    /** Column name FrequencyType */
+    public static final String COLUMNNAME_FrequencyType = "FrequencyType";
+
+	/** Set Frequency Type.
+	  * Frequency of event
+	  */
+	public void setFrequencyType (String FrequencyType);
+
+	/** Get Frequency Type.
+	  * Frequency of event
+	  */
+	public String getFrequencyType();
 
     /** Column name Interval */
     public static final String COLUMNNAME_Interval = "Interval";
@@ -335,104 +302,135 @@ public interface I_AM_Maintenance
 	  */
 	public boolean isActive();
 
-    /** Column name IsChild */
-    public static final String COLUMNNAME_IsChild = "IsChild";
+    /** Column name LastMeasuring */
+    public static final String COLUMNNAME_LastMeasuring = "LastMeasuring";
 
-	/** Set Child	  */
-	public void setIsChild (boolean IsChild);
+	/** Set Last Measuring.
+	  * Last Measuring used from last maintenance
+	  */
+	public void setLastMeasuring (BigDecimal LastMeasuring);
 
-	/** Get Child	  */
-	public boolean isChild();
+	/** Get Last Measuring.
+	  * Last Measuring used from last maintenance
+	  */
+	public BigDecimal getLastMeasuring();
 
-    /** Column name IsFriday */
-    public static final String COLUMNNAME_IsFriday = "IsFriday";
+    /** Column name MaintenanceType */
+    public static final String COLUMNNAME_MaintenanceType = "MaintenanceType";
 
-	/** Set Friday	  */
-	public void setIsFriday (boolean IsFriday);
+	/** Set Maintenance Type.
+	  * Maintenance Type define maintenance method for schedule
+	  */
+	public void setMaintenanceType (String MaintenanceType);
 
-	/** Get Friday	  */
-	public boolean isFriday();
+	/** Get Maintenance Type.
+	  * Maintenance Type define maintenance method for schedule
+	  */
+	public String getMaintenanceType();
 
-    /** Column name IsMonday */
-    public static final String COLUMNNAME_IsMonday = "IsMonday";
+    /** Column name NextMeasuring */
+    public static final String COLUMNNAME_NextMeasuring = "NextMeasuring";
 
-	/** Set Monday	  */
-	public void setIsMonday (boolean IsMonday);
+	/** Set Next Measuring.
+	  * Next value for meter of maintenance
+	  */
+	public void setNextMeasuring (BigDecimal NextMeasuring);
 
-	/** Get Monday	  */
-	public boolean isMonday();
+	/** Get Next Measuring.
+	  * Next value for meter of maintenance
+	  */
+	public BigDecimal getNextMeasuring();
 
-    /** Column name IsSaturday */
-    public static final String COLUMNNAME_IsSaturday = "IsSaturday";
+    /** Column name OnFriday */
+    public static final String COLUMNNAME_OnFriday = "OnFriday";
 
-	/** Set Saturday	  */
-	public void setIsSaturday (boolean IsSaturday);
+	/** Set Friday.
+	  * Available on Fridays
+	  */
+	public void setOnFriday (boolean OnFriday);
 
-	/** Get Saturday	  */
-	public boolean isSaturday();
+	/** Get Friday.
+	  * Available on Fridays
+	  */
+	public boolean isOnFriday();
 
-    /** Column name IsSunday */
-    public static final String COLUMNNAME_IsSunday = "IsSunday";
+    /** Column name OnMonday */
+    public static final String COLUMNNAME_OnMonday = "OnMonday";
 
-	/** Set Sunday	  */
-	public void setIsSunday (boolean IsSunday);
+	/** Set Monday.
+	  * Available on Mondays
+	  */
+	public void setOnMonday (boolean OnMonday);
 
-	/** Get Sunday	  */
-	public boolean isSunday();
+	/** Get Monday.
+	  * Available on Mondays
+	  */
+	public boolean isOnMonday();
 
-    /** Column name IsThursday */
-    public static final String COLUMNNAME_IsThursday = "IsThursday";
+    /** Column name OnSaturday */
+    public static final String COLUMNNAME_OnSaturday = "OnSaturday";
 
-	/** Set Thursday	  */
-	public void setIsThursday (boolean IsThursday);
+	/** Set Saturday.
+	  * Available on Saturday
+	  */
+	public void setOnSaturday (boolean OnSaturday);
 
-	/** Get Thursday	  */
-	public boolean isThursday();
+	/** Get Saturday.
+	  * Available on Saturday
+	  */
+	public boolean isOnSaturday();
 
-    /** Column name IsTuesday */
-    public static final String COLUMNNAME_IsTuesday = "IsTuesday";
+    /** Column name OnSunday */
+    public static final String COLUMNNAME_OnSunday = "OnSunday";
 
-	/** Set Tuesday	  */
-	public void setIsTuesday (boolean IsTuesday);
+	/** Set Sunday.
+	  * Available on Sundays
+	  */
+	public void setOnSunday (boolean OnSunday);
 
-	/** Get Tuesday	  */
-	public boolean isTuesday();
+	/** Get Sunday.
+	  * Available on Sundays
+	  */
+	public boolean isOnSunday();
 
-    /** Column name IsWednesday */
-    public static final String COLUMNNAME_IsWednesday = "IsWednesday";
+    /** Column name OnThursday */
+    public static final String COLUMNNAME_OnThursday = "OnThursday";
 
-	/** Set Wednesday	  */
-	public void setIsWednesday (boolean IsWednesday);
+	/** Set Thursday.
+	  * Available on Thursdays
+	  */
+	public void setOnThursday (boolean OnThursday);
 
-	/** Get Wednesday	  */
-	public boolean isWednesday();
+	/** Get Thursday.
+	  * Available on Thursdays
+	  */
+	public boolean isOnThursday();
 
-    /** Column name LastAM */
-    public static final String COLUMNNAME_LastAM = "LastAM";
+    /** Column name OnTuesday */
+    public static final String COLUMNNAME_OnTuesday = "OnTuesday";
 
-	/** Set Last AM	  */
-	public void setLastAM (BigDecimal LastAM);
+	/** Set Tuesday.
+	  * Available on Tuesdays
+	  */
+	public void setOnTuesday (boolean OnTuesday);
 
-	/** Get Last AM	  */
-	public BigDecimal getLastAM();
+	/** Get Tuesday.
+	  * Available on Tuesdays
+	  */
+	public boolean isOnTuesday();
 
-    /** Column name LastRead */
-    public static final String COLUMNNAME_LastRead = "LastRead";
+    /** Column name OnWednesday */
+    public static final String COLUMNNAME_OnWednesday = "OnWednesday";
 
-	/** Set Last Read	  */
-	public void setLastRead (BigDecimal LastRead);
+	/** Set Wednesday.
+	  * Available on Wednesdays
+	  */
+	public void setOnWednesday (boolean OnWednesday);
 
-	/** Get Last Read	  */
-	public BigDecimal getLastRead();
-
-    /** Column name NextAM */
-    public static final String COLUMNNAME_NextAM = "NextAM";
-
-	/** Set NextAM	  */
-	public void setNextAM (BigDecimal NextAM);
-
-	/** Get NextAM	  */
-	public BigDecimal getNextAM();
+	/** Get Wednesday.
+	  * Available on Wednesdays
+	  */
+	public boolean isOnWednesday();
 
     /** Column name PriorityRule */
     public static final String COLUMNNAME_PriorityRule = "PriorityRule";
@@ -447,15 +445,6 @@ public interface I_AM_Maintenance
 	  */
 	public String getPriorityRule();
 
-    /** Column name ProgrammingType */
-    public static final String COLUMNNAME_ProgrammingType = "ProgrammingType";
-
-	/** Set AM Programming Type	  */
-	public void setProgrammingType (String ProgrammingType);
-
-	/** Get AM Programming Type	  */
-	public String getProgrammingType();
-
     /** Column name Range */
     public static final String COLUMNNAME_Range = "Range";
 
@@ -464,6 +453,19 @@ public interface I_AM_Maintenance
 
 	/** Get Range	  */
 	public BigDecimal getRange();
+
+    /** Column name Status */
+    public static final String COLUMNNAME_Status = "Status";
+
+	/** Set Status.
+	  * Status of the currently running check
+	  */
+	public void setStatus (String Status);
+
+	/** Get Status.
+	  * Status of the currently running check
+	  */
+	public String getStatus();
 
     /** Column name Updated */
     public static final String COLUMNNAME_Updated = "Updated";
@@ -480,4 +482,17 @@ public interface I_AM_Maintenance
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
+
+    /** Column name UUID */
+    public static final String COLUMNNAME_UUID = "UUID";
+
+	/** Set Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID);
+
+	/** Get Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public String getUUID();
 }

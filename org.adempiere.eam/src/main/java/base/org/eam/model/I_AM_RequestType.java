@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for AM_RequestType
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0
+ *  @version Release 3.9.3
  */
 public interface I_AM_RequestType 
 {
@@ -66,10 +66,14 @@ public interface I_AM_RequestType
     /** Column name AM_RequestType_ID */
     public static final String COLUMNNAME_AM_RequestType_ID = "AM_RequestType_ID";
 
-	/** Set Request Type	  */
+	/** Set Request Type.
+	  * Request type for make a request of maintenance
+	  */
 	public void setAM_RequestType_ID (int AM_RequestType_ID);
 
-	/** Get Request Type	  */
+	/** Get Request Type.
+	  * Request type for make a request of maintenance
+	  */
 	public int getAM_RequestType_ID();
 
     /** Column name Created */

@@ -26,14 +26,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for AM_ServiceOrder
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0 - $Id$ */
+ *  @version Release 3.9.3 - $Id$ */
 public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20171020L;
+	private static final long serialVersionUID = 20200320L;
 
     /** Standard Constructor */
     public X_AM_ServiceOrder (Properties ctx, int AM_ServiceOrder_ID, String trxName)
@@ -44,9 +44,9 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 			setA_Asset_ID (0);
 			setAM_ServiceOrder_ID (0);
 			setC_DocType_ID (0);
-			setDateStartPlan (new Timestamp( System.currentTimeMillis() ));
-			setDateTrx (new Timestamp( System.currentTimeMillis() ));
+			setDateDoc (new Timestamp( System.currentTimeMillis() ));
 // @#Date@
+			setDateStartPlan (new Timestamp( System.currentTimeMillis() ));
 			setDocAction (null);
 // CO
 			setDocStatus (null);
@@ -55,6 +55,8 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 			setIsApproved (false);
 // N
 			setProcessed (false);
+			setProcessing (false);
+// N
         } */
     }
 
@@ -91,9 +93,9 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 		return (org.compiere.model.I_A_Asset)MTable.get(getCtx(), org.compiere.model.I_A_Asset.Table_Name)
 			.getPO(getA_Asset_ID(), get_TrxName());	}
 
-	/** Set Asset.
+	/** Set Fixed Asset.
 		@param A_Asset_ID 
-		Asset used internally or by customers
+		Fixed Asset used internally or by customers
 	  */
 	public void setA_Asset_ID (int A_Asset_ID)
 	{
@@ -103,8 +105,8 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 			set_Value (COLUMNNAME_A_Asset_ID, Integer.valueOf(A_Asset_ID));
 	}
 
-	/** Get Asset.
-		@return Asset used internally or by customers
+	/** Get Fixed Asset.
+		@return Fixed Asset used internally or by customers
 	  */
 	public int getA_Asset_ID () 
 	{
@@ -148,7 +150,9 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 			.getPO(getAM_Area_ID(), get_TrxName());	}
 
 	/** Set Maintenance Area.
-		@param AM_Area_ID Maintenance Area	  */
+		@param AM_Area_ID 
+		Maintenance Area where will be process a work order
+	  */
 	public void setAM_Area_ID (int AM_Area_ID)
 	{
 		if (AM_Area_ID < 1) 
@@ -158,7 +162,8 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 	}
 
 	/** Get Maintenance Area.
-		@return Maintenance Area	  */
+		@return Maintenance Area where will be process a work order
+	  */
 	public int getAM_Area_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Area_ID);
@@ -172,8 +177,10 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 		return (org.eam.model.I_AM_Maintenance)MTable.get(getCtx(), org.eam.model.I_AM_Maintenance.Table_Name)
 			.getPO(getAM_Maintenance_ID(), get_TrxName());	}
 
-	/** Set AM Maintenance.
-		@param AM_Maintenance_ID AM Maintenance	  */
+	/** Set Asset Maintenance.
+		@param AM_Maintenance_ID 
+		Define a maintenance program assigned to Asset
+	  */
 	public void setAM_Maintenance_ID (int AM_Maintenance_ID)
 	{
 		if (AM_Maintenance_ID < 1) 
@@ -182,8 +189,9 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 			set_Value (COLUMNNAME_AM_Maintenance_ID, Integer.valueOf(AM_Maintenance_ID));
 	}
 
-	/** Get AM Maintenance.
-		@return AM Maintenance	  */
+	/** Get Asset Maintenance.
+		@return Define a maintenance program assigned to Asset
+	  */
 	public int getAM_Maintenance_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Maintenance_ID);
@@ -197,8 +205,10 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 		return (org.eam.model.I_AM_Pattern)MTable.get(getCtx(), org.eam.model.I_AM_Pattern.Table_Name)
 			.getPO(getAM_Pattern_ID(), get_TrxName());	}
 
-	/** Set AM Maintenance Pattern.
-		@param AM_Pattern_ID AM Maintenance Pattern	  */
+	/** Set Maintenance Pattern.
+		@param AM_Pattern_ID 
+		Maintenance Pattern or template for maintenance
+	  */
 	public void setAM_Pattern_ID (int AM_Pattern_ID)
 	{
 		if (AM_Pattern_ID < 1) 
@@ -207,8 +217,9 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 			set_Value (COLUMNNAME_AM_Pattern_ID, Integer.valueOf(AM_Pattern_ID));
 	}
 
-	/** Get AM Maintenance Pattern.
-		@return AM Maintenance Pattern	  */
+	/** Get Maintenance Pattern.
+		@return Maintenance Pattern or template for maintenance
+	  */
 	public int getAM_Pattern_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Pattern_ID);
@@ -217,8 +228,63 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 		return ii.intValue();
 	}
 
-	/** Set AM ServiceOrder ID.
-		@param AM_ServiceOrder_ID AM ServiceOrder ID	  */
+	public org.eam.model.I_AM_Reason getAM_Reason() throws RuntimeException
+    {
+		return (org.eam.model.I_AM_Reason)MTable.get(getCtx(), org.eam.model.I_AM_Reason.Table_Name)
+			.getPO(getAM_Reason_ID(), get_TrxName());	}
+
+	/** Set Maintenance Reason.
+		@param AM_Reason_ID 
+		Maintenance Reason for request order or service order
+	  */
+	public void setAM_Reason_ID (int AM_Reason_ID)
+	{
+		if (AM_Reason_ID < 1) 
+			set_Value (COLUMNNAME_AM_Reason_ID, null);
+		else 
+			set_Value (COLUMNNAME_AM_Reason_ID, Integer.valueOf(AM_Reason_ID));
+	}
+
+	/** Get Maintenance Reason.
+		@return Maintenance Reason for request order or service order
+	  */
+	public int getAM_Reason_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Reason_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	public org.eam.model.I_AM_Schedule getAM_Schedule() throws RuntimeException
+    {
+		return (org.eam.model.I_AM_Schedule)MTable.get(getCtx(), org.eam.model.I_AM_Schedule.Table_Name)
+			.getPO(getAM_Schedule_ID(), get_TrxName());	}
+
+	/** Set Maintenance Schedule.
+		@param AM_Schedule_ID Maintenance Schedule	  */
+	public void setAM_Schedule_ID (int AM_Schedule_ID)
+	{
+		if (AM_Schedule_ID < 1) 
+			set_Value (COLUMNNAME_AM_Schedule_ID, null);
+		else 
+			set_Value (COLUMNNAME_AM_Schedule_ID, Integer.valueOf(AM_Schedule_ID));
+	}
+
+	/** Get Maintenance Schedule.
+		@return Maintenance Schedule	  */
+	public int getAM_Schedule_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_AM_Schedule_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	/** Set Service Order.
+		@param AM_ServiceOrder_ID 
+		Service Order for maintenance
+	  */
 	public void setAM_ServiceOrder_ID (int AM_ServiceOrder_ID)
 	{
 		if (AM_ServiceOrder_ID < 1) 
@@ -227,8 +293,9 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 			set_ValueNoCheck (COLUMNNAME_AM_ServiceOrder_ID, Integer.valueOf(AM_ServiceOrder_ID));
 	}
 
-	/** Get AM ServiceOrder ID.
-		@return AM ServiceOrder ID	  */
+	/** Get Service Order.
+		@return Service Order for maintenance
+	  */
 	public int getAM_ServiceOrder_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_ServiceOrder_ID);
@@ -242,8 +309,10 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 		return (org.eam.model.I_AM_ServiceRequest)MTable.get(getCtx(), org.eam.model.I_AM_ServiceRequest.Table_Name)
 			.getPO(getAM_ServiceRequest_ID(), get_TrxName());	}
 
-	/** Set AM Service Order Request.
-		@param AM_ServiceRequest_ID AM Service Order Request	  */
+	/** Set Service Order Request.
+		@param AM_ServiceRequest_ID 
+		Request for a Service Order
+	  */
 	public void setAM_ServiceRequest_ID (int AM_ServiceRequest_ID)
 	{
 		if (AM_ServiceRequest_ID < 1) 
@@ -252,8 +321,9 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 			set_Value (COLUMNNAME_AM_ServiceRequest_ID, Integer.valueOf(AM_ServiceRequest_ID));
 	}
 
-	/** Get AM Service Order Request.
-		@return AM Service Order Request	  */
+	/** Get Service Order Request.
+		@return Request for a Service Order
+	  */
 	public int getAM_ServiceRequest_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_AM_ServiceRequest_ID);
@@ -318,6 +388,23 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 		return ii.intValue();
 	}
 
+	/** Set Comments.
+		@param Comments 
+		Comments or additional information
+	  */
+	public void setComments (String Comments)
+	{
+		set_Value (COLUMNNAME_Comments, Comments);
+	}
+
+	/** Get Comments.
+		@return Comments or additional information
+	  */
+	public String getComments () 
+	{
+		return (String)get_Value(COLUMNNAME_Comments);
+	}
+
 	/** Set Cost Value.
 		@param CostAmt 
 		Value with Cost
@@ -338,21 +425,21 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 		return bd;
 	}
 
-	/** Set Cost Amt Plan.
-		@param CostAmtPlan Cost Amt Plan	  */
-	public void setCostAmtPlan (BigDecimal CostAmtPlan)
+	/** Set Document Date.
+		@param DateDoc 
+		Date of the Document
+	  */
+	public void setDateDoc (Timestamp DateDoc)
 	{
-		set_Value (COLUMNNAME_CostAmtPlan, CostAmtPlan);
+		set_Value (COLUMNNAME_DateDoc, DateDoc);
 	}
 
-	/** Get Cost Amt Plan.
-		@return Cost Amt Plan	  */
-	public BigDecimal getCostAmtPlan () 
+	/** Get Document Date.
+		@return Date of the Document
+	  */
+	public Timestamp getDateDoc () 
 	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_CostAmtPlan);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
+		return (Timestamp)get_Value(COLUMNNAME_DateDoc);
 	}
 
 	/** Set Finish Date.
@@ -387,23 +474,6 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 	public Timestamp getDateStartPlan () 
 	{
 		return (Timestamp)get_Value(COLUMNNAME_DateStartPlan);
-	}
-
-	/** Set Transaction Date.
-		@param DateTrx 
-		Transaction Date
-	  */
-	public void setDateTrx (Timestamp DateTrx)
-	{
-		set_Value (COLUMNNAME_DateTrx, DateTrx);
-	}
-
-	/** Get Transaction Date.
-		@return Transaction Date
-	  */
-	public Timestamp getDateTrx () 
-	{
-		return (Timestamp)get_Value(COLUMNNAME_DateTrx);
 	}
 
 	/** Set Description.
@@ -590,48 +660,6 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 		return false;
 	}
 
-	/** Set Is From Forecast.
-		@param IsFromForecast Is From Forecast	  */
-	public void setIsFromForecast (boolean IsFromForecast)
-	{
-		set_Value (COLUMNNAME_IsFromForecast, Boolean.valueOf(IsFromForecast));
-	}
-
-	/** Get Is From Forecast.
-		@return Is From Forecast	  */
-	public boolean isFromForecast () 
-	{
-		Object oo = get_Value(COLUMNNAME_IsFromForecast);
-		if (oo != null) 
-		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
-			return "Y".equals(oo);
-		}
-		return false;
-	}
-
-	/** Set Time Real.
-		@param IsTimeReal Time Real	  */
-	public void setIsTimeReal (boolean IsTimeReal)
-	{
-		set_Value (COLUMNNAME_IsTimeReal, Boolean.valueOf(IsTimeReal));
-	}
-
-	/** Get Time Real.
-		@return Time Real	  */
-	public boolean isTimeReal () 
-	{
-		Object oo = get_Value(COLUMNNAME_IsTimeReal);
-		if (oo != null) 
-		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
-			return "Y".equals(oo);
-		}
-		return false;
-	}
-
 	public org.compiere.model.I_M_Warehouse getM_Warehouse() throws RuntimeException
     {
 		return (org.compiere.model.I_M_Warehouse)MTable.get(getCtx(), org.compiere.model.I_M_Warehouse.Table_Name)
@@ -725,45 +753,32 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 		return bd;
 	}
 
-	/** Set Service Order Justification.
-		@param ServiceOrderJustification Service Order Justification	  */
-	public void setServiceOrderJustification (String ServiceOrderJustification)
+	public org.eam.model.I_AM_Reason getServiceOrderVoidingCause() throws RuntimeException
+    {
+		return (org.eam.model.I_AM_Reason)MTable.get(getCtx(), org.eam.model.I_AM_Reason.Table_Name)
+			.getPO(getServiceOrderVoidingCause_ID(), get_TrxName());	}
+
+	/** Set Service Order Voiding Cause.
+		@param ServiceOrderVoidingCause_ID 
+		Voiding cause for Service Order
+	  */
+	public void setServiceOrderVoidingCause_ID (int ServiceOrderVoidingCause_ID)
 	{
-		set_Value (COLUMNNAME_ServiceOrderJustification, ServiceOrderJustification);
+		if (ServiceOrderVoidingCause_ID < 1) 
+			set_Value (COLUMNNAME_ServiceOrderVoidingCause_ID, null);
+		else 
+			set_Value (COLUMNNAME_ServiceOrderVoidingCause_ID, Integer.valueOf(ServiceOrderVoidingCause_ID));
 	}
 
-	/** Get Service Order Justification.
-		@return Service Order Justification	  */
-	public String getServiceOrderJustification () 
+	/** Get Service Order Voiding Cause.
+		@return Voiding cause for Service Order
+	  */
+	public int getServiceOrderVoidingCause_ID () 
 	{
-		return (String)get_Value(COLUMNNAME_ServiceOrderJustification);
-	}
-
-	/** ServiceOrderVoidingCause AD_Reference_ID=53831 */
-	public static final int SERVICEORDERVOIDINGCAUSE_AD_Reference_ID=53831;
-	/** By Production = 1 */
-	public static final String SERVICEORDERVOIDINGCAUSE_ByProduction = "1";
-	/** Lack of person available = 2 */
-	public static final String SERVICEORDERVOIDINGCAUSE_LackOfPersonAvailable = "2";
-	/** Machine out of service = 3 */
-	public static final String SERVICEORDERVOIDINGCAUSE_MachineOutOfService = "3";
-	/** Lack of spare = 4 */
-	public static final String SERVICEORDERVOIDINGCAUSE_LackOfSpare = "4";
-	/** Other = 5 */
-	public static final String SERVICEORDERVOIDINGCAUSE_Other = "5";
-	/** Set Service Order Voiding Cause .
-		@param ServiceOrderVoidingCause Service Order Voiding Cause 	  */
-	public void setServiceOrderVoidingCause (String ServiceOrderVoidingCause)
-	{
-
-		set_Value (COLUMNNAME_ServiceOrderVoidingCause, ServiceOrderVoidingCause);
-	}
-
-	/** Get Service Order Voiding Cause .
-		@return Service Order Voiding Cause 	  */
-	public String getServiceOrderVoidingCause () 
-	{
-		return (String)get_Value(COLUMNNAME_ServiceOrderVoidingCause);
+		Integer ii = (Integer)get_Value(COLUMNNAME_ServiceOrderVoidingCause_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
 	}
 
 	public org.compiere.model.I_C_ElementValue getUser1() throws RuntimeException
@@ -792,5 +807,22 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
+	}
+
+	/** Set Immutable Universally Unique Identifier.
+		@param UUID 
+		Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID)
+	{
+		set_Value (COLUMNNAME_UUID, UUID);
+	}
+
+	/** Get Immutable Universally Unique Identifier.
+		@return Immutable Universally Unique Identifier
+	  */
+	public String getUUID () 
+	{
+		return (String)get_Value(COLUMNNAME_UUID);
 	}
 }

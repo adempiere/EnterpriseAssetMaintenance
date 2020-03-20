@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for AM_ServiceOrder
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0
+ *  @version Release 3.9.3
  */
 public interface I_AM_ServiceOrder 
 {
@@ -45,13 +45,13 @@ public interface I_AM_ServiceOrder
     /** Column name A_Asset_ID */
     public static final String COLUMNNAME_A_Asset_ID = "A_Asset_ID";
 
-	/** Set Asset.
-	  * Asset used internally or by customers
+	/** Set Fixed Asset.
+	  * Fixed Asset used internally or by customers
 	  */
 	public void setA_Asset_ID (int A_Asset_ID);
 
-	/** Get Asset.
-	  * Asset used internally or by customers
+	/** Get Fixed Asset.
+	  * Fixed Asset used internally or by customers
 	  */
 	public int getA_Asset_ID();
 
@@ -96,10 +96,14 @@ public interface I_AM_ServiceOrder
     /** Column name AM_Area_ID */
     public static final String COLUMNNAME_AM_Area_ID = "AM_Area_ID";
 
-	/** Set Maintenance Area	  */
+	/** Set Maintenance Area.
+	  * Maintenance Area where will be process a work order
+	  */
 	public void setAM_Area_ID (int AM_Area_ID);
 
-	/** Get Maintenance Area	  */
+	/** Get Maintenance Area.
+	  * Maintenance Area where will be process a work order
+	  */
 	public int getAM_Area_ID();
 
 	public org.eam.model.I_AM_Area getAM_Area() throws RuntimeException;
@@ -107,10 +111,14 @@ public interface I_AM_ServiceOrder
     /** Column name AM_Maintenance_ID */
     public static final String COLUMNNAME_AM_Maintenance_ID = "AM_Maintenance_ID";
 
-	/** Set AM Maintenance	  */
+	/** Set Asset Maintenance.
+	  * Define a maintenance program assigned to Asset
+	  */
 	public void setAM_Maintenance_ID (int AM_Maintenance_ID);
 
-	/** Get AM Maintenance	  */
+	/** Get Asset Maintenance.
+	  * Define a maintenance program assigned to Asset
+	  */
 	public int getAM_Maintenance_ID();
 
 	public org.eam.model.I_AM_Maintenance getAM_Maintenance() throws RuntimeException;
@@ -118,30 +126,68 @@ public interface I_AM_ServiceOrder
     /** Column name AM_Pattern_ID */
     public static final String COLUMNNAME_AM_Pattern_ID = "AM_Pattern_ID";
 
-	/** Set AM Maintenance Pattern	  */
+	/** Set Maintenance Pattern.
+	  * Maintenance Pattern or template for maintenance
+	  */
 	public void setAM_Pattern_ID (int AM_Pattern_ID);
 
-	/** Get AM Maintenance Pattern	  */
+	/** Get Maintenance Pattern.
+	  * Maintenance Pattern or template for maintenance
+	  */
 	public int getAM_Pattern_ID();
 
 	public org.eam.model.I_AM_Pattern getAM_Pattern() throws RuntimeException;
 
+    /** Column name AM_Reason_ID */
+    public static final String COLUMNNAME_AM_Reason_ID = "AM_Reason_ID";
+
+	/** Set Maintenance Reason.
+	  * Maintenance Reason for request order or service order
+	  */
+	public void setAM_Reason_ID (int AM_Reason_ID);
+
+	/** Get Maintenance Reason.
+	  * Maintenance Reason for request order or service order
+	  */
+	public int getAM_Reason_ID();
+
+	public org.eam.model.I_AM_Reason getAM_Reason() throws RuntimeException;
+
+    /** Column name AM_Schedule_ID */
+    public static final String COLUMNNAME_AM_Schedule_ID = "AM_Schedule_ID";
+
+	/** Set Maintenance Schedule	  */
+	public void setAM_Schedule_ID (int AM_Schedule_ID);
+
+	/** Get Maintenance Schedule	  */
+	public int getAM_Schedule_ID();
+
+	public org.eam.model.I_AM_Schedule getAM_Schedule() throws RuntimeException;
+
     /** Column name AM_ServiceOrder_ID */
     public static final String COLUMNNAME_AM_ServiceOrder_ID = "AM_ServiceOrder_ID";
 
-	/** Set AM ServiceOrder ID	  */
+	/** Set Service Order.
+	  * Service Order for maintenance
+	  */
 	public void setAM_ServiceOrder_ID (int AM_ServiceOrder_ID);
 
-	/** Get AM ServiceOrder ID	  */
+	/** Get Service Order.
+	  * Service Order for maintenance
+	  */
 	public int getAM_ServiceOrder_ID();
 
     /** Column name AM_ServiceRequest_ID */
     public static final String COLUMNNAME_AM_ServiceRequest_ID = "AM_ServiceRequest_ID";
 
-	/** Set AM Service Order Request	  */
+	/** Set Service Order Request.
+	  * Request for a Service Order
+	  */
 	public void setAM_ServiceRequest_ID (int AM_ServiceRequest_ID);
 
-	/** Get AM Service Order Request	  */
+	/** Get Service Order Request.
+	  * Request for a Service Order
+	  */
 	public int getAM_ServiceRequest_ID();
 
 	public org.eam.model.I_AM_ServiceRequest getAM_ServiceRequest() throws RuntimeException;
@@ -176,6 +222,19 @@ public interface I_AM_ServiceOrder
 
 	public org.compiere.model.I_C_DocType getC_DocType() throws RuntimeException;
 
+    /** Column name Comments */
+    public static final String COLUMNNAME_Comments = "Comments";
+
+	/** Set Comments.
+	  * Comments or additional information
+	  */
+	public void setComments (String Comments);
+
+	/** Get Comments.
+	  * Comments or additional information
+	  */
+	public String getComments();
+
     /** Column name CostAmt */
     public static final String COLUMNNAME_CostAmt = "CostAmt";
 
@@ -188,15 +247,6 @@ public interface I_AM_ServiceOrder
 	  * Value with Cost
 	  */
 	public BigDecimal getCostAmt();
-
-    /** Column name CostAmtPlan */
-    public static final String COLUMNNAME_CostAmtPlan = "CostAmtPlan";
-
-	/** Set Cost Amt Plan	  */
-	public void setCostAmtPlan (BigDecimal CostAmtPlan);
-
-	/** Get Cost Amt Plan	  */
-	public BigDecimal getCostAmtPlan();
 
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
@@ -213,6 +263,19 @@ public interface I_AM_ServiceOrder
 	  * User who created this records
 	  */
 	public int getCreatedBy();
+
+    /** Column name DateDoc */
+    public static final String COLUMNNAME_DateDoc = "DateDoc";
+
+	/** Set Document Date.
+	  * Date of the Document
+	  */
+	public void setDateDoc (Timestamp DateDoc);
+
+	/** Get Document Date.
+	  * Date of the Document
+	  */
+	public Timestamp getDateDoc();
 
     /** Column name DateFinish */
     public static final String COLUMNNAME_DateFinish = "DateFinish";
@@ -239,19 +302,6 @@ public interface I_AM_ServiceOrder
 	  * Planned Start Date
 	  */
 	public Timestamp getDateStartPlan();
-
-    /** Column name DateTrx */
-    public static final String COLUMNNAME_DateTrx = "DateTrx";
-
-	/** Set Transaction Date.
-	  * Transaction Date
-	  */
-	public void setDateTrx (Timestamp DateTrx);
-
-	/** Get Transaction Date.
-	  * Transaction Date
-	  */
-	public Timestamp getDateTrx();
 
     /** Column name Description */
     public static final String COLUMNNAME_Description = "Description";
@@ -357,24 +407,6 @@ public interface I_AM_ServiceOrder
 	  */
 	public boolean isApproved();
 
-    /** Column name IsFromForecast */
-    public static final String COLUMNNAME_IsFromForecast = "IsFromForecast";
-
-	/** Set Is From Forecast	  */
-	public void setIsFromForecast (boolean IsFromForecast);
-
-	/** Get Is From Forecast	  */
-	public boolean isFromForecast();
-
-    /** Column name IsTimeReal */
-    public static final String COLUMNNAME_IsTimeReal = "IsTimeReal";
-
-	/** Set Time Real	  */
-	public void setIsTimeReal (boolean IsTimeReal);
-
-	/** Get Time Real	  */
-	public boolean isTimeReal();
-
     /** Column name M_Warehouse_ID */
     public static final String COLUMNNAME_M_Warehouse_ID = "M_Warehouse_ID";
 
@@ -425,23 +457,20 @@ public interface I_AM_ServiceOrder
 	  */
 	public BigDecimal getQtyPlan();
 
-    /** Column name ServiceOrderJustification */
-    public static final String COLUMNNAME_ServiceOrderJustification = "ServiceOrderJustification";
+    /** Column name ServiceOrderVoidingCause_ID */
+    public static final String COLUMNNAME_ServiceOrderVoidingCause_ID = "ServiceOrderVoidingCause_ID";
 
-	/** Set Service Order Justification	  */
-	public void setServiceOrderJustification (String ServiceOrderJustification);
+	/** Set Service Order Voiding Cause.
+	  * Voiding cause for Service Order
+	  */
+	public void setServiceOrderVoidingCause_ID (int ServiceOrderVoidingCause_ID);
 
-	/** Get Service Order Justification	  */
-	public String getServiceOrderJustification();
+	/** Get Service Order Voiding Cause.
+	  * Voiding cause for Service Order
+	  */
+	public int getServiceOrderVoidingCause_ID();
 
-    /** Column name ServiceOrderVoidingCause */
-    public static final String COLUMNNAME_ServiceOrderVoidingCause = "ServiceOrderVoidingCause";
-
-	/** Set Service Order Voiding Cause 	  */
-	public void setServiceOrderVoidingCause (String ServiceOrderVoidingCause);
-
-	/** Get Service Order Voiding Cause 	  */
-	public String getServiceOrderVoidingCause();
+	public org.eam.model.I_AM_Reason getServiceOrderVoidingCause() throws RuntimeException;
 
     /** Column name Updated */
     public static final String COLUMNNAME_Updated = "Updated";
@@ -473,4 +502,17 @@ public interface I_AM_ServiceOrder
 	public int getUser1_ID();
 
 	public org.compiere.model.I_C_ElementValue getUser1() throws RuntimeException;
+
+    /** Column name UUID */
+    public static final String COLUMNNAME_UUID = "UUID";
+
+	/** Set Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID);
+
+	/** Get Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public String getUUID();
 }

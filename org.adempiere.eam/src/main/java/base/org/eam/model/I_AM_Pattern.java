@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for AM_Pattern
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0
+ *  @version Release 3.9.3
  */
 public interface I_AM_Pattern 
 {
@@ -60,13 +60,13 @@ public interface I_AM_Pattern
     /** Column name A_Asset_ID */
     public static final String COLUMNNAME_A_Asset_ID = "A_Asset_ID";
 
-	/** Set Asset.
-	  * Asset used internally or by customers
+	/** Set Fixed Asset.
+	  * Fixed Asset used internally or by customers
 	  */
 	public void setA_Asset_ID (int A_Asset_ID);
 
-	/** Get Asset.
-	  * Asset used internally or by customers
+	/** Get Fixed Asset.
+	  * Fixed Asset used internally or by customers
 	  */
 	public int getA_Asset_ID();
 
@@ -96,10 +96,14 @@ public interface I_AM_Pattern
     /** Column name AM_Area_ID */
     public static final String COLUMNNAME_AM_Area_ID = "AM_Area_ID";
 
-	/** Set Maintenance Area	  */
+	/** Set Maintenance Area.
+	  * Maintenance Area where will be process a work order
+	  */
 	public void setAM_Area_ID (int AM_Area_ID);
 
-	/** Get Maintenance Area	  */
+	/** Get Maintenance Area.
+	  * Maintenance Area where will be process a work order
+	  */
 	public int getAM_Area_ID();
 
 	public org.eam.model.I_AM_Area getAM_Area() throws RuntimeException;
@@ -107,19 +111,27 @@ public interface I_AM_Pattern
     /** Column name AM_Pattern_ID */
     public static final String COLUMNNAME_AM_Pattern_ID = "AM_Pattern_ID";
 
-	/** Set AM Maintenance Pattern ID	  */
+	/** Set Maintenance Pattern.
+	  * Maintenance Pattern or template for maintenance
+	  */
 	public void setAM_Pattern_ID (int AM_Pattern_ID);
 
-	/** Get AM Maintenance Pattern ID	  */
+	/** Get Maintenance Pattern.
+	  * Maintenance Pattern or template for maintenance
+	  */
 	public int getAM_Pattern_ID();
 
     /** Column name AM_PatternType_ID */
     public static final String COLUMNNAME_AM_PatternType_ID = "AM_PatternType_ID";
 
-	/** Set Maintenance Pattern Type	  */
+	/** Set Maintenance Pattern Type.
+	  * Pattern Type used for asset
+	  */
 	public void setAM_PatternType_ID (int AM_PatternType_ID);
 
-	/** Get Maintenance Pattern Type	  */
+	/** Get Maintenance Pattern Type.
+	  * Pattern Type used for asset
+	  */
 	public int getAM_PatternType_ID();
 
 	public org.eam.model.I_AM_PatternType getAM_PatternType() throws RuntimeException;
@@ -207,6 +219,19 @@ public interface I_AM_Pattern
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
+
+    /** Column name UUID */
+    public static final String COLUMNNAME_UUID = "UUID";
+
+	/** Set Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID);
+
+	/** Get Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public String getUUID();
 
     /** Column name Value */
     public static final String COLUMNNAME_Value = "Value";

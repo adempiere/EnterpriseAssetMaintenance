@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for AM_PatternTask
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0
+ *  @version Release 3.9.3
  */
 public interface I_AM_PatternTask 
 {
@@ -66,10 +66,14 @@ public interface I_AM_PatternTask
     /** Column name AM_Pattern_ID */
     public static final String COLUMNNAME_AM_Pattern_ID = "AM_Pattern_ID";
 
-	/** Set AM Maintenance Pattern	  */
+	/** Set Maintenance Pattern.
+	  * Maintenance Pattern or template for maintenance
+	  */
 	public void setAM_Pattern_ID (int AM_Pattern_ID);
 
-	/** Get AM Maintenance Pattern	  */
+	/** Get Maintenance Pattern.
+	  * Maintenance Pattern or template for maintenance
+	  */
 	public int getAM_Pattern_ID();
 
 	public org.eam.model.I_AM_Pattern getAM_Pattern() throws RuntimeException;
@@ -77,10 +81,14 @@ public interface I_AM_PatternTask
     /** Column name AM_PatternTask_ID */
     public static final String COLUMNNAME_AM_PatternTask_ID = "AM_PatternTask_ID";
 
-	/** Set AM Maintenance Pattern Task ID	  */
+	/** Set Maintenance Pattern Task.
+	  * Pattern Task defined for a asset
+	  */
 	public void setAM_PatternTask_ID (int AM_PatternTask_ID);
 
-	/** Get AM Maintenance Pattern Task ID	  */
+	/** Get Maintenance Pattern Task.
+	  * Pattern Task defined for a asset
+	  */
 	public int getAM_PatternTask_ID();
 
     /** Column name CostAmt */
@@ -207,4 +215,17 @@ public interface I_AM_PatternTask
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
+
+    /** Column name UUID */
+    public static final String COLUMNNAME_UUID = "UUID";
+
+	/** Set Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID);
+
+	/** Get Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public String getUUID();
 }

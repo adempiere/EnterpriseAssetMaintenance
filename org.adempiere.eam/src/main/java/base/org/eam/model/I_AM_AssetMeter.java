@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for AM_AssetMeter
  *  @author Adempiere (generated) 
- *  @version Release 3.9.0
+ *  @version Release 3.9.3
  */
 public interface I_AM_AssetMeter 
 {
@@ -45,13 +45,13 @@ public interface I_AM_AssetMeter
     /** Column name A_Asset_ID */
     public static final String COLUMNNAME_A_Asset_ID = "A_Asset_ID";
 
-	/** Set Asset.
-	  * Asset used internally or by customers
+	/** Set Fixed Asset.
+	  * Fixed Asset used internally or by customers
 	  */
 	public void setA_Asset_ID (int A_Asset_ID);
 
-	/** Get Asset.
-	  * Asset used internally or by customers
+	/** Get Fixed Asset.
+	  * Fixed Asset used internally or by customers
 	  */
 	public int getA_Asset_ID();
 
@@ -81,19 +81,27 @@ public interface I_AM_AssetMeter
     /** Column name AM_AssetMeter_ID */
     public static final String COLUMNNAME_AM_AssetMeter_ID = "AM_AssetMeter_ID";
 
-	/** Set AM Asset Meter ID	  */
+	/** Set Asset Meter.
+	  * Asset Meter
+	  */
 	public void setAM_AssetMeter_ID (int AM_AssetMeter_ID);
 
-	/** Get AM Asset Meter ID	  */
+	/** Get Asset Meter.
+	  * Asset Meter
+	  */
 	public int getAM_AssetMeter_ID();
 
     /** Column name AM_Meter_ID */
     public static final String COLUMNNAME_AM_Meter_ID = "AM_Meter_ID";
 
-	/** Set AM Meter ID	  */
+	/** Set Meter.
+	  * Asset meter master
+	  */
 	public void setAM_Meter_ID (int AM_Meter_ID);
 
-	/** Get AM Meter ID	  */
+	/** Get Meter.
+	  * Asset meter master
+	  */
 	public int getAM_Meter_ID();
 
 	public org.eam.model.I_AM_Meter getAM_Meter() throws RuntimeException;
@@ -194,6 +202,19 @@ public interface I_AM_AssetMeter
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
+
+    /** Column name UUID */
+    public static final String COLUMNNAME_UUID = "UUID";
+
+	/** Set Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public void setUUID (String UUID);
+
+	/** Get Immutable Universally Unique Identifier.
+	  * Immutable Universally Unique Identifier
+	  */
+	public String getUUID();
 
     /** Column name Value */
     public static final String COLUMNNAME_Value = "Value";
