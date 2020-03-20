@@ -58,4 +58,10 @@ public class MAMSchedule extends X_AM_Schedule {
 			setComments(maintenance.getComments());
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "MAMSchedule [getAM_Schedule_ID()=" + getAM_Schedule_ID() + ", isClosed()=" + isClosed()
+				+ ", isProcessed()=" + isProcessed() + ", getValue()=" + getValue() + "]";
+	}
 }

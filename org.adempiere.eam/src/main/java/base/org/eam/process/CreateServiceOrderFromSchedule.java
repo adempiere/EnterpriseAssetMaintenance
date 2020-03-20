@@ -20,8 +20,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import org.adempiere.exceptions.AdempiereException;
-import org.eam.model.MAMMaintenance;
-import org.eam.model.MAMPattern;
+import org.eam.model.MAMSchedule;
 import org.eam.model.MAMServiceOrder;
 
 /** 
@@ -36,32 +35,17 @@ public class CreateServiceOrderFromSchedule extends CreateServiceOrderFromSchedu
 	@Override
 	protected String doIt() throws Exception {
 		getSelectionKeys().stream().forEach(scheduleId -> {
-			int maintenanceId = getSelectionAsInt(scheduleId, "SC_AM_Maintenance_ID");
-			int assetId = getSelectionAsInt(scheduleId, "MA_A_Asset_ID");
-			int serviceRequestId = getSelectionAsInt(scheduleId, "MF_AM_ServiceRequest_ID");
-			int patternId = getSelectionAsInt(scheduleId, "MA_AM_Pattern_ID");
 			Timestamp maintenanceDate = getSelectionAsTimestamp(scheduleId, "SC_MaintenanceDate");
-//			BigDecimal amount = getSelectionAsBigDecimal(key, "MF_Amt");
-//			BigDecimal average = getSelectionAsBigDecimal(key, "MF_Average");
-//			BigDecimal range = getSelectionAsBigDecimal(key, "MF_Range");
-			//	Create ServiceOrder
-			MAMMaintenance maintenance = MAMMaintenance.get(getCtx(), maintenanceId);
-			MAMPattern pattern = MAMPattern.get(getCtx(), patternId);
+			MAMSchedule schedule = new MAMSchedule(getCtx(), scheduleId, get_TrxName());
 			MAMServiceOrder serviceOrder = new MAMServiceOrder(getCtx(), 0, get_TrxName());
 			//	Set Document Type
 			if(getDocTypeTargetId() != 0) {
 				serviceOrder.setC_DocType_ID(getDocTypeTargetId());
 			}
 			//	
+			serviceOrder.setSchedule(schedule);
 			serviceOrder.setDateDoc(getDateDoc());
 			serviceOrder.setDateStartPlan(maintenanceDate);
-			serviceOrder.setA_Asset_ID(assetId);
-			serviceOrder.setMaintenance(maintenance);
-			serviceOrder.setPattern(pattern);
-			//	Validate if is from forecast
-			if(serviceRequestId != 0) {
-				serviceOrder.setAM_ServiceRequest_ID(serviceRequestId);
-			}
 			serviceOrder.setDocAction(getDocAction());
 			serviceOrder.saveEx();
 			//	Add to list

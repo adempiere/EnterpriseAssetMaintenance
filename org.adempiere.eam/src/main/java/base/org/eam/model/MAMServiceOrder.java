@@ -35,6 +35,7 @@ import org.compiere.process.DocumentEngine;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.compiere.util.Msg;
+import org.compiere.util.Util;
 
 /**
  * Service Order (Work Order)
@@ -58,7 +59,10 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 	private String				m_processMsg		= null;
 	/** Just Prepared Flag */
 	private boolean				m_justPrepared		= false;
-
+	/**	Document base type for service order	*/
+	private final String DOCUMENT_BASE_TYPE = "MSO";
+	
+	
 	public MAMServiceOrder(Properties ctx, int AM_ServiceOrder_ID, String trxName)
 	{
 		super(ctx, AM_ServiceOrder_ID, trxName);
@@ -208,11 +212,18 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 	protected boolean beforeSave(boolean newRecord) {
 		if(newRecord) {
 			if(getC_DocType_ID() == 0) {
-				MDocType [] documentType = MDocType.getOfDocBaseType(Env.getCtx(), "MSO");
+				MDocType [] documentType = MDocType.getOfDocBaseType(Env.getCtx(), DOCUMENT_BASE_TYPE);
 				if(documentType.length > 0) {
 					setC_DocType_ID(documentType[0].getC_DocType_ID());
 				}
 			}
+		}
+		//	Set processed
+		if(is_ValueChanged(COLUMNNAME_AM_Schedule_ID)
+				&& getAM_Schedule_ID() != 0) {
+			MAMSchedule schedule = new MAMSchedule(getCtx(), getAM_Schedule_ID(), get_TrxName());
+			schedule.setProcessed(true);
+			schedule.saveEx();
 		}
 		return super.beforeSave(newRecord);
 	}
@@ -294,62 +305,25 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 		}
 		return DocAction.STATUS_Completed;
 	} // completeIt	
+	
+	@Override
+	public void setProcessed(boolean Processed) {
+		super.setProcessed(Processed);
+		//	TODO: Implemente processed for resources and task
+	}
 
 	/**
-	 * Close Document. Cancel not delivered Quantities
-	 * 
-	 * @return true if success
+	 * 	Void Document.
+	 * 	Same as Close.
+	 * 	@return true if success 
 	 */
-	public boolean closeIt()
+	public boolean voidIt()
 	{
-		log.info("closeIt - " + toString());
-
-		setDocAction(DOCACTION_None);
-		return true;
-	} // closeIt
-
-	/**
-	 * Reverse Correction
-	 * 
-	 * @return false
-	 */
-	public boolean reverseCorrectIt()
-	{
-		log.info("reverseCorrectIt - " + toString());
-		return false;
-	} // reverseCorrectionIt
-
-	/**
-	 * Reverse Accrual - none
-	 * 
-	 * @returif(getAM_Maintenance_ID() == 0) {
-			//	Change Programmed Maintenance
-			if(getDocStatus().equals(DOCSTATUS_Completed)) {
-				n false
-	 */
-	public boolean reverseAccrualIt()
-	{
-		log.info("reverseAccrualIt - " + toString());
-		return false;
-	} // reverseAccrualIt
-
-	/**
-	 * Re-activate
-	 * 
-	 * @return false
-	 */
-	public boolean reActivateIt()
-	{
-		log.info("reActivateIt - " + toString());
-		return false;
-	} // reActivateIt
-
-	/**
-	 * Void Document.
-	 * 
-	 * @return false
-	 */
-	public boolean voidIt() {
+		log.info("voidIt - " + toString());
+		// Before Void
+		m_processMsg = ModelValidationEngine.get().fireDocValidate(this,ModelValidator.TIMING_BEFORE_VOID);
+		if (m_processMsg != null)
+			return false;
 		log.info("voidIt - " + toString());
 		if(getAM_Maintenance_ID() == 0) {
 			if(getDocStatus().equals(DOCSTATUS_Completed)) {
@@ -365,9 +339,99 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 				maintenance.saveEx();
 			}
 		}
-		//	
+		addDescription(Msg.getMsg(getCtx(), "Voided"));
+		// After Void
+		m_processMsg = ModelValidationEngine.get().fireDocValidate(this,ModelValidator.TIMING_AFTER_VOID);
+		if (m_processMsg != null)
+			return false;
+
+		setProcessed(true);
+        setDocAction(DOCACTION_None);
 		return true;
-	} // voidIt
+	}	//	voidIt
+	
+	/**
+	 * 	Close Document.
+	 * 	Cancel not delivered Qunatities
+	 * 	@return true if success 
+	 */
+	public boolean closeIt() {
+		log.info("closeIt - " + toString());
+		// Before Close
+		m_processMsg = ModelValidationEngine.get().fireDocValidate(this,ModelValidator.TIMING_BEFORE_CLOSE);
+		if (m_processMsg != null)
+			return false;
+		
+		setProcessed(true);
+		setDocAction(DOCACTION_None);
+		
+		// After Close
+		m_processMsg = ModelValidationEngine.get().fireDocValidate(this,ModelValidator.TIMING_AFTER_CLOSE);
+		if (m_processMsg != null)
+			return false;
+
+		return true;
+	}	//	closeIt
+	
+	/**
+	 * 	Reverse Correction
+	 * 	@return true if success 
+	 */
+	public boolean reverseCorrectIt() {
+		log.info("reverseCorrectIt - " + toString());
+		// Before reverseCorrect
+		m_processMsg = ModelValidationEngine.get().fireDocValidate(this,ModelValidator.TIMING_BEFORE_REVERSECORRECT);
+		if (m_processMsg != null)
+			return false;
+		//	Void It
+		voidIt();
+		// After reverseCorrect
+		m_processMsg = ModelValidationEngine.get().fireDocValidate(this,ModelValidator.TIMING_AFTER_REVERSECORRECT);
+		if (m_processMsg != null)
+			return false;
+
+		return false;
+	}	//	reverseCorrectionIt
+	
+	/**
+	 * 	Reverse Accrual - none
+	 * 	@return true if success 
+	 */
+	public boolean reverseAccrualIt() {
+		log.info("reverseAccrualIt - " + toString());
+		// Before reverseAccrual
+		m_processMsg = ModelValidationEngine.get().fireDocValidate(this,ModelValidator.TIMING_BEFORE_REVERSEACCRUAL);
+		if (m_processMsg != null)
+			return false;
+		//	Void It
+		voidIt();
+		// After reverseAccrual
+		m_processMsg = ModelValidationEngine.get().fireDocValidate(this,ModelValidator.TIMING_AFTER_REVERSEACCRUAL);
+		if (m_processMsg != null)
+			return false;
+
+		return false;
+	}	//	reverseAccrualIt
+	
+	/** 
+	 * 	Re-activate
+	 * 	@return true if success 
+	 */
+	public boolean reActivateIt() {
+		log.info("reActivateIt - " + toString());
+		// Before reActivate
+		m_processMsg = ModelValidationEngine.get().fireDocValidate(this,ModelValidator.TIMING_BEFORE_REACTIVATE);
+		if (m_processMsg != null)
+			return false;
+		// After reActivate
+		m_processMsg = ModelValidationEngine.get().fireDocValidate(this,ModelValidator.TIMING_AFTER_REACTIVATE);
+		if (m_processMsg != null)
+			return false;
+		
+		setDocAction(DOCACTION_Complete);
+		setProcessed(false);
+		return true;
+	}	//	reActivateIt
 
 	/*************************************************************************
 	 * Get Summary
@@ -577,7 +641,38 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 			setAM_Pattern_ID(maintenance.getAM_Pattern_ID());
 		}
 		setAD_User_ID(maintenance.getAD_User_ID());
+		setA_Asset_ID(maintenance.getA_Asset_ID());
 		addDescription(maintenance.getDescription());
+		if(!Util.isEmpty(maintenance.getComments())) {
+			setComments(maintenance.getComments());
+		}
+	}
+	
+	/**
+	 * Set values from schedule
+	 * @param schedule
+	 */
+	public void setSchedule(MAMSchedule schedule) {
+		if(schedule == null) {
+			return;
+		}
+		setAM_Schedule_ID(schedule.getAM_Schedule_ID());
+		setDateDoc(schedule.getMaintenanceDate());
+		setDateStartPlan(schedule.getMaintenanceDate());
+		setDateFinish(schedule.getMaintenanceDate());
+		if(schedule.getAM_ServiceRequest_ID() != 0) {
+			setAM_ServiceRequest_ID(schedule.getAM_ServiceRequest_ID());
+		}
+		//	Set maintenance
+		setMaintenance(MAMMaintenance.get(getCtx(), schedule.getAM_Maintenance_ID()));
+		//	Set description
+		if(!Util.isEmpty(schedule.getDescription())) {
+			setDescription(schedule.getDescription());
+		}
+		//	Set comments
+		if(!Util.isEmpty(schedule.getComments())) {
+			setComments(schedule.getComments());
+		}
 	}
 	
 	/**
