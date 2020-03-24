@@ -20,7 +20,9 @@ jobs:
     - stage: Compilation
       script: ./gradlew build
     - stage: Prepare Release
-      script: ./gradlew release
+      script:
+         - ./gradlew build 
+         - ./gradlew release
       on:
        tags: true
 deploy:

@@ -28,9 +28,7 @@ jar {
 //	Create release for project
 task release(type: Zip) {
    from 'build/libs/'
-   from 'xml/migration'
-   from 'xml/translation'
-   from 'xml/packin'
+   from 'xml/'
    include '*'
    include '*/*' 
    archiveName project.name + '.zip'
