@@ -28,6 +28,6 @@ deploy:
   token: $GITHUB_TOKEN_KEY
   skip_cleanup: true
   file: 
-    - "$TRAVIS_BUILD_DIR/build/libs/EnterpriseAssetMaintenance.zip"
+    - "$TRAVIS_BUILD_DIR/build/release/EnterpriseAssetMaintenance.zip"
   on:
     tags: true
