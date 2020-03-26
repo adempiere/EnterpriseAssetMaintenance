@@ -60,8 +60,8 @@
     </Step>
     <Step SeqNo="90" StepType="AD">
       <PO AD_Table_ID="101" Action="U" Record_ID="80009" Table="AD_Column">
-        <Data AD_Column_ID="92542" Column="NameOldValue" isOldNull="true">M_BOM_ID</Data>
         <Data AD_Column_ID="227" Column="AD_Reference_Value_ID" isOldNull="true">54204</Data>
+        <Data AD_Column_ID="92542" Column="NameOldValue" isOldNull="true">M_BOM_ID</Data>
         <Data AD_Column_ID="226" Column="AD_Reference_ID" oldValue="19">30</Data>
         <Data AD_Column_ID="92541" Column="RequiresSync" oldValue="false">true</Data>
       </PO>
@@ -141,8 +141,8 @@
     </Step>
     <Step SeqNo="170" StepType="AD">
       <PO AD_Table_ID="104" Action="I" Record_ID="55465" Table="AD_Ref_List">
-        <Data AD_Column_ID="563" Column="IsActive">true</Data>
         <Data AD_Column_ID="84390" Column="UUID">627e4fbf-4536-4ebf-bf88-76cea1ecff13</Data>
+        <Data AD_Column_ID="563" Column="IsActive">true</Data>
         <Data AD_Column_ID="564" Column="Created">2020-03-20 18:28:23.329</Data>
         <Data AD_Column_ID="566" Column="Updated">2020-03-20 18:28:23.329</Data>
         <Data AD_Column_ID="200" Column="Value">MRO</Data>
@@ -248,6 +248,66 @@
       <PO AD_Table_ID="103" Action="U" Record_ID="54202" Table="AD_Ref_Table">
         <Data AD_Column_ID="2377" Column="IsValueDisplayed" oldValue="true">false</Data>
         <Data AD_Column_ID="145" Column="AD_Display" oldValue="96102">96108</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="320" StepType="AD">
+      <PO AD_Table_ID="101" Action="U" Record_ID="80108" Table="AD_Column">
+        <Data AD_Column_ID="3360" Column="IsUpdateable" oldValue="true">false</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="330" StepType="AD">
+      <PO AD_Table_ID="101" Action="U" Record_ID="80111" Table="AD_Column">
+        <Data AD_Column_ID="3360" Column="IsUpdateable" oldValue="true">false</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="340" StepType="AD">
+      <PO AD_Table_ID="101" Action="U" Record_ID="80112" Table="AD_Column">
+        <Data AD_Column_ID="3360" Column="IsUpdateable" oldValue="true">false</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="350" StepType="AD">
+      <PO AD_Table_ID="101" Action="U" Record_ID="80118" Table="AD_Column">
+        <Data AD_Column_ID="3360" Column="IsUpdateable" oldValue="true">false</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="360" StepType="AD">
+      <PO AD_Table_ID="101" Action="U" Record_ID="80120" Table="AD_Column">
+        <Data AD_Column_ID="3360" Column="IsUpdateable" oldValue="true">false</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="370" StepType="AD">
+      <PO AD_Table_ID="101" Action="U" Record_ID="80122" Table="AD_Column">
+        <Data AD_Column_ID="3360" Column="IsUpdateable" oldValue="true">false</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="380" StepType="AD">
+      <PO AD_Table_ID="101" Action="U" Record_ID="80121" Table="AD_Column">
+        <Data AD_Column_ID="3360" Column="IsUpdateable" oldValue="true">false</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="390" StepType="AD">
+      <PO AD_Table_ID="101" Action="U" Record_ID="80118" Table="AD_Column">
+        <Data AD_Column_ID="3360" Column="IsUpdateable" oldValue="false">true</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="400" StepType="AD">
+      <PO AD_Table_ID="107" Action="U" Record_ID="79249" Table="AD_Field">
+        <Data AD_Column_ID="181" Column="SeqNo" oldValue="120">110</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="410" StepType="AD">
+      <PO AD_Table_ID="107" Action="U" Record_ID="79253" Table="AD_Field">
+        <Data AD_Column_ID="181" Column="SeqNo" oldValue="110">120</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="440" StepType="AD">
+      <PO AD_Table_ID="107" Action="U" Record_ID="79253" Table="AD_Field">
+        <Data AD_Column_ID="183" Column="IsSameLine" oldValue="false">true</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="450" StepType="AD">
+      <PO AD_Table_ID="107" Action="U" Record_ID="79253" Table="AD_Field">
+        <Data AD_Column_ID="177" Column="DisplayLogic" oldValue="@ResourceType@=CO  | @ResourceType@=HH |  @ResourceType@=TT">@ResourceType@ ! BT  &amp; @ResourceType@ ! TT</Data>
       </PO>
     </Step>
   </Migration>

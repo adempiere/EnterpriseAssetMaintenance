@@ -45,11 +45,10 @@ import org.compiere.util.Util;
  * @contributor Adaxa http://www.adaxa.com
  * @contributor Deepak Pansheriya, Loglite Technologies, http://logilite.com
  * @contributor Victor Perez, victor.perez@e-evolution.com, eEvolution http://www.e-evolution.com
- * @contributor Yamel Senih, ysenih@erpcya.com, ERPCyA http://www.erpcya.com
+ * @contributor Yamel Senih, ysenih@erpya.com, ERPCyA http://www.erpya.com
  * @contributor Sachin Bhimani
  */
-public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, DocOptions
-{
+public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, DocOptions {
 
 	/**
 	 * 
@@ -278,11 +277,12 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 
 		// User Validation
 		String valid = ModelValidationEngine.get().fireDocValidate(this, ModelValidator.TIMING_AFTER_COMPLETE);
-		if (valid != null)
-		{
+		if (valid != null) {
 			m_processMsg = valid;
 			return DocAction.STATUS_Invalid;
 		}
+		//	Validate Internal Use
+		
 		//	Set Definitive Document No
 		setDefiniteDocumentNo();
 		//	
