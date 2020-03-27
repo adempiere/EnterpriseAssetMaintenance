@@ -80,17 +80,13 @@ public class MAMServiceOrderTask extends X_AM_ServiceOrderTask
 	 * @return List with Resources
 	 */
 	public List<MAMServiceOrderResource> getResources() {
-		String whereClause = COLUMNNAME_AM_ServiceOrderTask_ID + "=? ";
-		
-		List<MAMServiceOrderResource> list = new Query(getCtx(), I_AM_ServiceOrderResource.Table_Name,
-				whereClause, get_TrxName())
+		return new Query(getCtx(), I_AM_ServiceOrderResource.Table_Name,
+				COLUMNNAME_AM_ServiceOrderTask_ID + " = ?", get_TrxName())
 						.setClient_ID()
 						.setParameters(getAM_ServiceOrderTask_ID())
 						.setOnlyActiveRecords(true)
 						.list();
-
-		return list;
-	} // getJSTaskResources
+	}
 	
 	/**
 	 * Set task from Pattern Task
@@ -117,6 +113,15 @@ public class MAMServiceOrderTask extends X_AM_ServiceOrderTask
 		setLine(task.getLine());
 		setDescription(task.getDescription());
 		setStatus(STATUS_NotStarted);
+	}
+	
+	@Override
+	public void setProcessed(boolean processed) {
+		super.setProcessed(processed);
+		getResources().forEach(resource -> {
+			resource.setProcessed(processed);
+			resource.saveEx();
+		});
 	}
 	
 	@Override

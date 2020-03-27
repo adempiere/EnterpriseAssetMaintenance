@@ -26,6 +26,7 @@ import java.util.Properties;
 import org.compiere.model.MAsset;
 import org.compiere.model.MDocType;
 import org.compiere.model.MPeriod;
+import org.compiere.model.MProduct;
 import org.compiere.model.ModelValidationEngine;
 import org.compiere.model.ModelValidator;
 import org.compiere.model.Query;
@@ -33,9 +34,11 @@ import org.compiere.process.DocAction;
 import org.compiere.process.DocOptions;
 import org.compiere.process.DocumentEngine;
 import org.compiere.util.DB;
+import org.compiere.util.DisplayType;
 import org.compiere.util.Env;
 import org.compiere.util.Msg;
 import org.compiere.util.Util;
+
 
 /**
  * Service Order (Work Order)
@@ -282,7 +285,11 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 			return DocAction.STATUS_Invalid;
 		}
 		//	Validate Internal Use
-		
+		valid = validateServiceOrder();
+		if(valid != null) {
+			m_processMsg = valid;
+			return DocAction.STATUS_Invalid;
+		}
 		//	Set Definitive Document No
 		setDefiniteDocumentNo();
 		//	
@@ -306,10 +313,66 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 		return DocAction.STATUS_Completed;
 	} // completeIt	
 	
+	/**
+	 * Validate if a service order is completely delivered
+	 * @return
+	 */
+	private String validateServiceOrder() {
+		StringBuffer validationError = new StringBuffer();
+		StringBuffer taskError = new StringBuffer();
+		StringBuffer resourceError = new StringBuffer();
+		getTasks().forEach(task -> {
+			if(!task.getStatus().equals(MAMServiceOrderTask.STATUS_Completed)) {
+				if(taskError.length() > 0) {
+					taskError.append(Env.NL);
+				} else {
+					taskError.append("@UnfinishedTasks@").append(Env.NL);
+				}
+				taskError.append(task.getLine() + " - ").append(task.getName());
+			}
+			//	Resource
+			task.getResources().stream()
+			.filter(resource -> resource.getResourceType().equals(MAMServiceOrderResource.RESOURCETYPE_Consumption) 
+					|| resource.getResourceType().equals(MAMServiceOrderResource.RESOURCETYPE_Part))
+			.filter(resource -> !resource.isCompletedResource())
+			.forEach(resource -> {
+				if(resourceError.length() > 0) {
+					resourceError.append(Env.NL);
+				} else {
+					resourceError.append("@UnfinishedResources@").append(Env.NL);
+				}
+				MProduct product = MProduct.get(getCtx(), resource.getM_Product_ID());
+				resourceError.append(task.getLine() + " - ").append(task.getName()).append(" - ")
+				.append(product.getValue() + " - " + product.getName())
+				.append(" @QtyToDeliver@ " + DisplayType.getNumberFormat(DisplayType.Amount).format(resource.getRemainingQuantity(true)));
+			});
+		});
+		//	For task
+		if(taskError.length() > 0) {
+			validationError.append(taskError);
+		}
+		//	For resource
+		if(resourceError.length() > 0) {
+			if(validationError.length() > 0) {
+				validationError.append(Env.NL);
+			}
+			validationError.append(resourceError);
+		}
+		//	Return
+		if(validationError.length() > 0) {
+			return validationError.toString();
+		}
+		//	Default
+		return null;
+	}
+	
 	@Override
-	public void setProcessed(boolean Processed) {
-		super.setProcessed(Processed);
-		//	TODO: Implemente processed for resources and task
+	public void setProcessed(boolean processed) {
+		super.setProcessed(processed);
+		getTasks().forEach(task -> {
+			task.setProcessed(processed);
+			task.saveEx();
+		});
 	}
 
 	/**
@@ -530,6 +593,7 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 					options[index++] = DocumentEngine.ACTION_Close;
 					options[index++] = DocumentEngine.ACTION_Complete;
 			} else if(docStatus.equals(DocumentEngine.STATUS_Completed)){
+				options[index++] = DocumentEngine.ACTION_ReActivate;
 				options[index++] = DocumentEngine.ACTION_Close;
 				options[index++] = DocumentEngine.ACTION_Void;
 			} else {

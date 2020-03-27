@@ -78,4 +78,11 @@ public class MAMMaintenanceResource extends X_AM_MaintenanceResource {
 		setS_Resource_ID(resource.getS_Resource_ID());
 		setC_UOM_ID(resource.getC_UOM_ID());
 	}
+
+	@Override
+	public String toString() {
+		return "MAMMaintenanceResource [getAM_MaintenanceResource_ID()=" + getAM_MaintenanceResource_ID()
+				+ ", getC_UOM_ID()=" + getC_UOM_ID() + ", getM_Product_ID()=" + getM_Product_ID()
+				+ ", getResourceType()=" + getResourceType() + "]";
+	}
 }

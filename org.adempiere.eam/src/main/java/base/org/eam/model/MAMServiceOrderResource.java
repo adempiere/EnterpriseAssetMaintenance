@@ -16,8 +16,13 @@
  *****************************************************************************/
 package org.eam.model;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.Properties;
+
+import org.compiere.model.MUOM;
+import org.compiere.util.DB;
+import org.compiere.util.Env;
 
 /**
  * Service Order (Work Order) Resource
@@ -74,9 +79,50 @@ public class MAMServiceOrderResource extends X_AM_ServiceOrderResource
 		setC_UOM_ID(resource.getC_UOM_ID());
 	}
 	
+	/**
+	 * Get quantity remaining for maintenance
+	 * @param onlyCompleted only completed internal use
+	 * @return
+	 */
+	public BigDecimal getRemainingQuantity(boolean onlyCompleted) {
+		String whereClauseForCompleted = " AND EXISTS(SELECT 1 FROM M_Inventory i WHERE i.M_Inventory_ID = il.M_Inventory_ID AND i.DocStatus IN('CO', 'CL'))";
+		BigDecimal resourceQuantity = getResourceQuantity();
+		BigDecimal quantityInternalUse = DB.getSQLValueBD(get_TrxName(), "SELECT SUM(il.QtyInternalUse) "
+				+ "FROM M_InventoryLine il "
+				+ "WHERE il.AM_ServiceOrderResource_ID = ?" + (onlyCompleted? whereClauseForCompleted: ""), getAM_ServiceOrderResource_ID());
+		//	Get current
+		if(quantityInternalUse == null) {
+			quantityInternalUse = Env.ZERO;
+		}
+		if(resourceQuantity == null) {
+			resourceQuantity = Env.ZERO;
+		}
+		//	Return remaining
+		return resourceQuantity.subtract(quantityInternalUse);
+	}
+	
+	/**
+	 * Get remaining quantity for service order
+	 * @return
+	 */
+	public BigDecimal getRemainingQuantity() {
+		return getRemainingQuantity(false);
+	}
+	
+	/**
+	 * Return true if resource is completely delivered
+	 * @return
+	 */
+	public boolean isCompletedResource() {
+		MUOM uom = MUOM.get(getCtx(), getC_UOM_ID());
+		return getRemainingQuantity(true).setScale(uom.getStdPrecision(), BigDecimal.ROUND_HALF_UP).equals(Env.ZERO);
+	}
+
 	@Override
 	public String toString() {
 		return "MAMServiceOrderResource [getAM_ServiceOrderResource_ID()=" + getAM_ServiceOrderResource_ID()
-				+ ", getCostAmt()=" + getCostAmt() + "]";
+				+ ", getC_UOM_ID()=" + getC_UOM_ID() + ", getM_Product_ID()=" + getM_Product_ID() + ", getQtyPlan()="
+				+ getQtyPlan() + ", getResourceQuantity()=" + getResourceQuantity() + ", getResourceType()="
+				+ getResourceType() + "]";
 	}
 }
