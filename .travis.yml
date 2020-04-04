@@ -18,11 +18,10 @@ before_script:
 jobs:
   include:
     - stage: Compilation
-      script: ./gradlew build
+      script: gradle build
     - stage: Prepare Release
-      script:
-         - ./gradlew build 
-         - ./gradlew release
+      script: 
+         - gradle createRelease
       on:
        tags: true
 deploy:
@@ -31,5 +30,6 @@ deploy:
   skip_cleanup: true
   file: 
     - "$TRAVIS_BUILD_DIR/build/release/EnterpriseAssetMaintenance.zip"
+    - "$TRAVIS_BUILD_DIR/build/release/EnterpriseAssetMaintenance.zip.MD5"
   on:
     tags: true

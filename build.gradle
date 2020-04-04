@@ -26,11 +26,19 @@ jar {
 }
 
 //	Create release for project
-task release(type: Zip) {
+task createRelease(type: Zip) {
+   dependsOn build
    from 'build/libs/'
    from 'xml/'
    include '*'
-   include '*/*' 
+   include '*/*'
    archiveName project.name + '.zip'
    destinationDir(file('build/release/'))
+   doLast {
+        file('build/release/')
+        	.listFiles({file -> file.isFile()} as FileFilter).sort()
+        	.each { File file ->
+            ant.checksum file: file
+        }
+   	}
 }
