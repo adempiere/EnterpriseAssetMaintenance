@@ -5,10 +5,12 @@ install: gradle wrapper
 os:
 - linux
 sudo: required
-addons:
-  apt:
-    packages:
-      gradle
+before_install:
+  - wget https://services.gradle.org/distributions/gradle-6.1.1-bin.zip
+  - unzip -qq gradle-6.1.1-bin.zip
+  - export GRADLE_HOME=$PWD/gradle-6.1.1
+  - export PATH=$GRADLE_HOME/bin:$PATH
+  - gradle -v
 before_script:
   - mkdir dependences
   - wget http://github.com/erpcya/adempiere/releases/latest/download/Adempiere_393LTS.tar.gz -c -O Adempiere.tar.gz
