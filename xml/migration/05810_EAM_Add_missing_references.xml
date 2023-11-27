@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Migrations>
+  <Migration EntityType="EAM" Name="EAM: Add missing references" ReleaseNo="3.9.4" SeqNo="5810">
+    <Step SeqNo="10" StepType="AD">
+      <PO AD_Table_ID="104" Action="I" Record_ID="55840" Table="AD_Ref_List">
+        <Data AD_Column_ID="200" Column="Value">MRO</Data>
+        <Data AD_Column_ID="153" Column="ValidTo" isNewNull="true"/>
+        <Data AD_Column_ID="152" Column="ValidFrom" isNewNull="true"/>
+        <Data AD_Column_ID="84390" Column="UUID">f6df2cbf-1539-4353-b4f7-26cebb1fe0dd</Data>
+        <Data AD_Column_ID="567" Column="UpdatedBy">100</Data>
+        <Data AD_Column_ID="566" Column="Updated">2023-11-27 14:42:13.863</Data>
+        <Data AD_Column_ID="149" Column="Name">Request Service Order</Data>
+        <Data AD_Column_ID="563" Column="IsActive">true</Data>
+        <Data AD_Column_ID="7712" Column="EntityType">EAM</Data>
+        <Data AD_Column_ID="150" Column="Description" isNewNull="true"/>
+        <Data AD_Column_ID="565" Column="CreatedBy">100</Data>
+        <Data AD_Column_ID="564" Column="Created">2023-11-27 14:42:13.863</Data>
+        <Data AD_Column_ID="148" Column="AD_Ref_List_ID">55840</Data>
+        <Data AD_Column_ID="151" Column="AD_Reference_ID">183</Data>
+        <Data AD_Column_ID="372" Column="AD_Org_ID">0</Data>
+        <Data AD_Column_ID="371" Column="AD_Client_ID">0</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="20" StepType="AD">
+      <PO AD_Table_ID="136" Action="I" Record_ID="0" Table="AD_Ref_List_Trl">
+        <Data AD_Column_ID="84391" Column="UUID">69824d9f-3762-4fc2-9172-de77178755f4</Data>
+        <Data AD_Column_ID="710" Column="UpdatedBy">100</Data>
+        <Data AD_Column_ID="709" Column="Updated">2023-11-27 14:42:15.32</Data>
+        <Data AD_Column_ID="338" Column="Name">Request Service Order</Data>
+        <Data AD_Column_ID="340" Column="IsTranslated">false</Data>
+        <Data AD_Column_ID="706" Column="IsActive">true</Data>
+        <Data AD_Column_ID="339" Column="Description" isNewNull="true"/>
+        <Data AD_Column_ID="708" Column="CreatedBy">100</Data>
+        <Data AD_Column_ID="707" Column="Created">2023-11-27 14:42:15.32</Data>
+        <Data AD_Column_ID="336" Column="AD_Ref_List_ID">55840</Data>
+        <Data AD_Column_ID="1216" Column="AD_Org_ID">0</Data>
+        <Data AD_Column_ID="337" Column="AD_Language">es_MX</Data>
+        <Data AD_Column_ID="1215" Column="AD_Client_ID">0</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="30" StepType="AD">
+      <PO AD_Table_ID="104" Action="I" Record_ID="55841" Table="AD_Ref_List">
+        <Data AD_Column_ID="200" Column="Value">MSO</Data>
+        <Data AD_Column_ID="153" Column="ValidTo" isNewNull="true"/>
+        <Data AD_Column_ID="152" Column="ValidFrom" isNewNull="true"/>
+        <Data AD_Column_ID="84390" Column="UUID">a040eb8d-e39a-4fa1-9f91-c7df9ffd07e0</Data>
+        <Data AD_Column_ID="567" Column="UpdatedBy">100</Data>
+        <Data AD_Column_ID="566" Column="Updated">2023-11-27 14:42:32.327</Data>
+        <Data AD_Column_ID="149" Column="Name">Service Order (Maintenance)</Data>
+        <Data AD_Column_ID="563" Column="IsActive">true</Data>
+        <Data AD_Column_ID="7712" Column="EntityType">EAM</Data>
+        <Data AD_Column_ID="150" Column="Description" isNewNull="true"/>
+        <Data AD_Column_ID="565" Column="CreatedBy">100</Data>
+        <Data AD_Column_ID="564" Column="Created">2023-11-27 14:42:32.327</Data>
+        <Data AD_Column_ID="148" Column="AD_Ref_List_ID">55841</Data>
+        <Data AD_Column_ID="151" Column="AD_Reference_ID">183</Data>
+        <Data AD_Column_ID="372" Column="AD_Org_ID">0</Data>
+        <Data AD_Column_ID="371" Column="AD_Client_ID">0</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="40" StepType="AD">
+      <PO AD_Table_ID="136" Action="I" Record_ID="0" Table="AD_Ref_List_Trl">
+        <Data AD_Column_ID="84391" Column="UUID">714630e9-c5de-4eee-914c-2565cae2a5cf</Data>
+        <Data AD_Column_ID="710" Column="UpdatedBy">100</Data>
+        <Data AD_Column_ID="709" Column="Updated">2023-11-27 14:42:32.946</Data>
+        <Data AD_Column_ID="338" Column="Name">Service Order (Maintenance)</Data>
+        <Data AD_Column_ID="340" Column="IsTranslated">false</Data>
+        <Data AD_Column_ID="706" Column="IsActive">true</Data>
+        <Data AD_Column_ID="339" Column="Description" isNewNull="true"/>
+        <Data AD_Column_ID="708" Column="CreatedBy">100</Data>
+        <Data AD_Column_ID="707" Column="Created">2023-11-27 14:42:32.946</Data>
+        <Data AD_Column_ID="336" Column="AD_Ref_List_ID">55841</Data>
+        <Data AD_Column_ID="1216" Column="AD_Org_ID">0</Data>
+        <Data AD_Column_ID="337" Column="AD_Language">es_MX</Data>
+        <Data AD_Column_ID="1215" Column="AD_Client_ID">0</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="50" StepType="AD">
+      <PO AD_Table_ID="104" Action="U" Record_ID="55840" Table="AD_Ref_List">
+        <Data AD_Column_ID="149" Column="Name" oldValue="Request Service Order">Request Service Order (Maintenance)</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="60" StepType="AD">
+      <PO AD_Table_ID="136" Action="U" Record_ID="0" Table="AD_Ref_List_Trl">
+        <Data AD_Column_ID="338" Column="Name" oldValue="Request Service Order">Solicitud de Orden de Servicio (Mantenimiento)</Data>
+        <Data AD_Column_ID="336" Column="AD_Ref_List_ID" oldValue="55840">55840</Data>
+        <Data AD_Column_ID="337" Column="AD_Language" oldValue="es_MX">es_MX</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="70" StepType="AD">
+      <PO AD_Table_ID="136" Action="U" Record_ID="0" Table="AD_Ref_List_Trl">
+        <Data AD_Column_ID="338" Column="Name" oldValue="Service Order (Maintenance)">Orden de Servicio (Mantenimiento)</Data>
+        <Data AD_Column_ID="336" Column="AD_Ref_List_ID" oldValue="55841">55841</Data>
+        <Data AD_Column_ID="337" Column="AD_Language" oldValue="es_MX">es_MX</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="80" StepType="AD">
+      <PO AD_Table_ID="54810" Action="I" Record_ID="50045" Table="C_DocBaseType">
+        <Data AD_Column_ID="97955" Column="UUID">d7f02c6b-9f35-4e5b-bdac-61cbcf7028c3</Data>
+        <Data AD_Column_ID="97957" Column="UpdatedBy">100</Data>
+        <Data AD_Column_ID="97956" Column="Updated">2023-11-27 14:49:19.265</Data>
+        <Data AD_Column_ID="97954" Column="Name">Service Order (Maintenance)</Data>
+        <Data AD_Column_ID="97953" Column="IsDefault">false</Data>
+        <Data AD_Column_ID="97952" Column="IsActive">true</Data>
+        <Data AD_Column_ID="97951" Column="Help" isNewNull="true"/>
+        <Data AD_Column_ID="97950" Column="EntityType">EAM</Data>
+        <Data AD_Column_ID="97949" Column="DocBaseType">MSO</Data>
+        <Data AD_Column_ID="97948" Column="Description">A service Order allows apply a service to Asset</Data>
+        <Data AD_Column_ID="97947" Column="CreatedBy">100</Data>
+        <Data AD_Column_ID="97946" Column="Created">2023-11-27 14:49:19.265</Data>
+        <Data AD_Column_ID="97945" Column="C_DocBaseType_ID">50045</Data>
+        <Data AD_Column_ID="97943" Column="AD_Table_ID">54115</Data>
+        <Data AD_Column_ID="97942" Column="AD_Org_ID">0</Data>
+        <Data AD_Column_ID="97941" Column="AD_Client_ID">11</Data>
+        <Data AD_Column_ID="97944" Column="AccountingClassname" isNewNull="true"/>
+      </PO>
+    </Step>
+    <Step SeqNo="90" StepType="AD">
+      <PO AD_Table_ID="54811" Action="I" Record_ID="0" Table="C_DocBaseType_Trl">
+        <Data AD_Column_ID="97969" Column="UUID">25ef8386-415c-4589-89cb-2b60eadf5e6a</Data>
+        <Data AD_Column_ID="97971" Column="UpdatedBy">100</Data>
+        <Data AD_Column_ID="97970" Column="Updated">2023-11-27 14:49:20.323</Data>
+        <Data AD_Column_ID="97968" Column="Name">Service Order (Maintenance)</Data>
+        <Data AD_Column_ID="97967" Column="IsTranslated">false</Data>
+        <Data AD_Column_ID="97966" Column="IsActive">true</Data>
+        <Data AD_Column_ID="97965" Column="Help" isNewNull="true"/>
+        <Data AD_Column_ID="97964" Column="Description">A service Order allows apply a service to Asset</Data>
+        <Data AD_Column_ID="97963" Column="CreatedBy">100</Data>
+        <Data AD_Column_ID="97962" Column="Created">2023-11-27 14:49:20.323</Data>
+        <Data AD_Column_ID="97961" Column="C_DocBaseType_ID">50045</Data>
+        <Data AD_Column_ID="97960" Column="AD_Org_ID">0</Data>
+        <Data AD_Column_ID="97959" Column="AD_Language">es_MX</Data>
+        <Data AD_Column_ID="97958" Column="AD_Client_ID">11</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="100" StepType="AD">
+      <PO AD_Table_ID="54810" Action="I" Record_ID="50046" Table="C_DocBaseType">
+        <Data AD_Column_ID="97955" Column="UUID">3d36d88e-af30-4f90-a92c-7fe1ccf51e45</Data>
+        <Data AD_Column_ID="97957" Column="UpdatedBy">100</Data>
+        <Data AD_Column_ID="97956" Column="Updated">2023-11-27 14:50:11.027</Data>
+        <Data AD_Column_ID="97954" Column="Name">Request Service Order (Maintenance)</Data>
+        <Data AD_Column_ID="97953" Column="IsDefault">false</Data>
+        <Data AD_Column_ID="97952" Column="IsActive">true</Data>
+        <Data AD_Column_ID="97951" Column="Help" isNewNull="true"/>
+        <Data AD_Column_ID="97950" Column="EntityType">EAM</Data>
+        <Data AD_Column_ID="97949" Column="DocBaseType">MRO</Data>
+        <Data AD_Column_ID="97948" Column="Description">A request for service Order allows request a service and schedule it</Data>
+        <Data AD_Column_ID="97947" Column="CreatedBy">100</Data>
+        <Data AD_Column_ID="97946" Column="Created">2023-11-27 14:50:11.027</Data>
+        <Data AD_Column_ID="97945" Column="C_DocBaseType_ID">50046</Data>
+        <Data AD_Column_ID="97943" Column="AD_Table_ID">54114</Data>
+        <Data AD_Column_ID="97942" Column="AD_Org_ID">0</Data>
+        <Data AD_Column_ID="97941" Column="AD_Client_ID">11</Data>
+        <Data AD_Column_ID="97944" Column="AccountingClassname" isNewNull="true"/>
+      </PO>
+    </Step>
+    <Step SeqNo="110" StepType="AD">
+      <PO AD_Table_ID="54811" Action="I" Record_ID="0" Table="C_DocBaseType_Trl">
+        <Data AD_Column_ID="97969" Column="UUID">0f0b33b7-be1e-4121-8d3f-625514137556</Data>
+        <Data AD_Column_ID="97971" Column="UpdatedBy">100</Data>
+        <Data AD_Column_ID="97970" Column="Updated">2023-11-27 14:50:11.784</Data>
+        <Data AD_Column_ID="97968" Column="Name">Request Service Order (Maintenance)</Data>
+        <Data AD_Column_ID="97967" Column="IsTranslated">false</Data>
+        <Data AD_Column_ID="97966" Column="IsActive">true</Data>
+        <Data AD_Column_ID="97965" Column="Help" isNewNull="true"/>
+        <Data AD_Column_ID="97964" Column="Description">A request for service Order allows request a service and schedule it</Data>
+        <Data AD_Column_ID="97963" Column="CreatedBy">100</Data>
+        <Data AD_Column_ID="97962" Column="Created">2023-11-27 14:50:11.784</Data>
+        <Data AD_Column_ID="97961" Column="C_DocBaseType_ID">50046</Data>
+        <Data AD_Column_ID="97960" Column="AD_Org_ID">0</Data>
+        <Data AD_Column_ID="97959" Column="AD_Language">es_MX</Data>
+        <Data AD_Column_ID="97958" Column="AD_Client_ID">11</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="120" StepType="AD">
+      <PO AD_Table_ID="116" Action="I" Record_ID="54905" Table="AD_Menu">
+        <Data AD_Column_ID="84344" Column="UUID">d6c96e42-839e-43e5-8ac6-fd2c84cfc3f9</Data>
+        <Data AD_Column_ID="602" Column="UpdatedBy">100</Data>
+        <Data AD_Column_ID="601" Column="Updated">2023-11-27 15:15:04.889</Data>
+        <Data AD_Column_ID="229" Column="Name">Create Internal Use from Service Order</Data>
+        <Data AD_Column_ID="1169" Column="IsSummary">false</Data>
+        <Data AD_Column_ID="4426" Column="IsSOTrx">false</Data>
+        <Data AD_Column_ID="6651" Column="IsReadOnly">false</Data>
+        <Data AD_Column_ID="59134" Column="IsCentrallyMaintained">true</Data>
+        <Data AD_Column_ID="598" Column="IsActive">true</Data>
+        <Data AD_Column_ID="7721" Column="EntityType">EAM</Data>
+        <Data AD_Column_ID="230" Column="Description" isNewNull="true"/>
+        <Data AD_Column_ID="600" Column="CreatedBy">100</Data>
+        <Data AD_Column_ID="599" Column="Created">2023-11-27 15:15:04.889</Data>
+        <Data AD_Column_ID="234" Column="AD_Workflow_ID" isNewNull="true"/>
+        <Data AD_Column_ID="6297" Column="AD_Workbench_ID" isNewNull="true"/>
+        <Data AD_Column_ID="233" Column="AD_Window_ID" isNewNull="true"/>
+        <Data AD_Column_ID="235" Column="AD_Task_ID" isNewNull="true"/>
+        <Data AD_Column_ID="3375" Column="AD_Process_ID" isNewNull="true"/>
+        <Data AD_Column_ID="400" Column="AD_Org_ID">0</Data>
+        <Data AD_Column_ID="228" Column="AD_Menu_ID">54905</Data>
+        <Data AD_Column_ID="4621" Column="AD_Form_ID" isNewNull="true"/>
+        <Data AD_Column_ID="399" Column="AD_Client_ID">0</Data>
+        <Data AD_Column_ID="57960" Column="AD_Browse_ID">50209</Data>
+        <Data AD_Column_ID="232" Column="Action">S</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="130" StepType="AD">
+      <PO AD_Table_ID="120" Action="I" Record_ID="0" Table="AD_Menu_Trl">
+        <Data AD_Column_ID="84345" Column="UUID">ca12f9e9-ff37-48c8-ba7c-0b587b5920b0</Data>
+        <Data AD_Column_ID="640" Column="UpdatedBy">100</Data>
+        <Data AD_Column_ID="639" Column="Updated">2023-11-27 15:15:05.778</Data>
+        <Data AD_Column_ID="247" Column="Name">Create Internal Use from Service Order</Data>
+        <Data AD_Column_ID="249" Column="IsTranslated">false</Data>
+        <Data AD_Column_ID="636" Column="IsActive">true</Data>
+        <Data AD_Column_ID="248" Column="Description" isNewNull="true"/>
+        <Data AD_Column_ID="638" Column="CreatedBy">100</Data>
+        <Data AD_Column_ID="637" Column="Created">2023-11-27 15:15:05.778</Data>
+        <Data AD_Column_ID="1195" Column="AD_Org_ID">0</Data>
+        <Data AD_Column_ID="245" Column="AD_Menu_ID">54905</Data>
+        <Data AD_Column_ID="246" Column="AD_Language">es_MX</Data>
+        <Data AD_Column_ID="1194" Column="AD_Client_ID">0</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="140" StepType="AD">
+      <PO AD_Table_ID="452" Action="I" Record_ID="10" Table="AD_TreeNodeMM">
+        <Data AD_Column_ID="84442" Column="UUID">92f8ce98-49e4-4871-b67b-90c6fb7e3672</Data>
+        <Data AD_Column_ID="6154" Column="UpdatedBy">100</Data>
+        <Data AD_Column_ID="6153" Column="Updated">2023-11-27 15:15:05.946</Data>
+        <Data AD_Column_ID="6157" Column="SeqNo">999</Data>
+        <Data AD_Column_ID="6155" Column="Parent_ID">0</Data>
+        <Data AD_Column_ID="6161" Column="Node_ID">54905</Data>
+        <Data AD_Column_ID="6150" Column="IsActive">true</Data>
+        <Data AD_Column_ID="6152" Column="CreatedBy">100</Data>
+        <Data AD_Column_ID="6151" Column="Created">2023-11-27 15:15:05.946</Data>
+        <Data AD_Column_ID="6160" Column="AD_Tree_ID">10</Data>
+        <Data AD_Column_ID="6149" Column="AD_Org_ID">0</Data>
+        <Data AD_Column_ID="6162" Column="AD_Client_ID">0</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="150" StepType="AD">
+      <PO AD_Table_ID="452" Action="U" Record_ID="10" Table="AD_TreeNodeMM">
+        <Data AD_Column_ID="6157" Column="SeqNo" oldValue="999">4</Data>
+        <Data AD_Column_ID="6155" Column="Parent_ID" oldValue="0">54050</Data>
+        <Data AD_Column_ID="6161" Column="Node_ID" oldValue="54905">54905</Data>
+        <Data AD_Column_ID="6160" Column="AD_Tree_ID" oldValue="10">10</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="160" StepType="AD">
+      <PO AD_Table_ID="452" Action="U" Record_ID="10" Table="AD_TreeNodeMM">
+        <Data AD_Column_ID="6157" Column="SeqNo" oldValue="4">5</Data>
+        <Data AD_Column_ID="6161" Column="Node_ID" oldValue="54587">54587</Data>
+        <Data AD_Column_ID="6160" Column="AD_Tree_ID" oldValue="10">10</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="170" StepType="AD">
+      <PO AD_Table_ID="452" Action="U" Record_ID="10" Table="AD_TreeNodeMM">
+        <Data AD_Column_ID="6157" Column="SeqNo" oldValue="5">6</Data>
+        <Data AD_Column_ID="6161" Column="Node_ID" oldValue="54208">54208</Data>
+        <Data AD_Column_ID="6160" Column="AD_Tree_ID" oldValue="10">10</Data>
+      </PO>
+    </Step>
+    <Step SeqNo="180" StepType="AD">
+      <PO AD_Table_ID="452" Action="U" Record_ID="10" Table="AD_TreeNodeMM">
+        <Data AD_Column_ID="6157" Column="SeqNo" oldValue="6">7</Data>
+        <Data AD_Column_ID="6161" Column="Node_ID" oldValue="54051">54051</Data>
+        <Data AD_Column_ID="6160" Column="AD_Tree_ID" oldValue="10">10</Data>
+      </PO>
+    </Step>
+  </Migration>
+</Migrations>

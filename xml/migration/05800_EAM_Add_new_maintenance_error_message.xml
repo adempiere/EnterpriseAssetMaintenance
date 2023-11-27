@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Migrations>
-  <Migration EntityType="D" Name="Add new maintenance error message" ReleaseNo="3.9.4" SeqNo="5800">
+  <Migration EntityType="EAM" Name="EAM: Add new maintenance error message" ReleaseNo="3.9.4" SeqNo="5800">
     <Step SeqNo="10" StepType="AD">
       <PO AD_Table_ID="109" Action="I" Record_ID="53658" Table="AD_Message">
         <Data AD_Column_ID="588" Column="IsActive">true</Data>
