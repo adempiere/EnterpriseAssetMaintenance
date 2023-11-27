@@ -23,7 +23,7 @@ import java.sql.Timestamp;
 import java.util.List;
 import java.util.Properties;
 
-import org.compiere.model.MAsset;
+import org.compiere.asset.model.MAsset;
 import org.compiere.model.MDocType;
 import org.compiere.model.MPeriod;
 import org.compiere.model.MProduct;
@@ -177,7 +177,7 @@ public class MAMServiceOrder extends X_AM_ServiceOrder implements DocAction, Doc
 		
 		MDocType dt = MDocType.get(getCtx(), getC_DocType_ID());
 		//	Std Period open?
-		if (!MPeriod.isOpen(getCtx(), getDateDoc(), dt.getDocBaseType(), getAD_Org_ID())) {
+		if (!MPeriod.isOpen(getCtx(), getDateDoc(), dt.getDocBaseType(), getAD_Org_ID(), get_TrxName())) {
 			m_processMsg = "@PeriodClosed@";
 			return DocAction.STATUS_Invalid;
 		}

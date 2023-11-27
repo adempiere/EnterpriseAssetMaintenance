@@ -76,11 +76,6 @@ public class X_AM_AssetMeterLog extends PO implements I_AM_AssetMeterLog, I_Pers
       return sb.toString();
     }
 
-	public org.compiere.model.I_AD_User getAD_User() throws RuntimeException
-    {
-		return (org.compiere.model.I_AD_User)MTable.get(getCtx(), org.compiere.model.I_AD_User.Table_Name)
-			.getPO(getAD_User_ID(), get_TrxName());	}
-
 	/** Set User/Contact.
 		@param AD_User_ID 
 		User within the system - Internal or Business Partner Contact

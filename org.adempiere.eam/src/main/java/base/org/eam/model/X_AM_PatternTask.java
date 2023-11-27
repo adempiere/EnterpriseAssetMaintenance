@@ -146,11 +146,6 @@ public class X_AM_PatternTask extends PO implements I_AM_PatternTask, I_Persiste
 		return bd;
 	}
 
-	public org.compiere.model.I_C_UOM getC_UOM() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_UOM)MTable.get(getCtx(), org.compiere.model.I_C_UOM.Table_Name)
-			.getPO(getC_UOM_ID(), get_TrxName());	}
-
 	/** Set UOM.
 		@param C_UOM_ID 
 		Unit of Measure

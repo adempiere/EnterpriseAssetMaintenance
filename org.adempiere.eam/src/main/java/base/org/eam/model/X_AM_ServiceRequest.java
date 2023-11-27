@@ -93,12 +93,6 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
         .append(get_ID()).append("]");
       return sb.toString();
     }
-
-	public org.compiere.model.I_A_Asset getA_Asset() throws RuntimeException
-    {
-		return (org.compiere.model.I_A_Asset)MTable.get(getCtx(), org.compiere.model.I_A_Asset.Table_Name)
-			.getPO(getA_Asset_ID(), get_TrxName());	}
-
 	/** Set Fixed Asset.
 		@param A_Asset_ID 
 		Fixed Asset used internally or by customers
@@ -121,11 +115,6 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 			 return 0;
 		return ii.intValue();
 	}
-
-	public org.compiere.model.I_AD_User getAD_User() throws RuntimeException
-    {
-		return (org.compiere.model.I_AD_User)MTable.get(getCtx(), org.compiere.model.I_AD_User.Table_Name)
-			.getPO(getAD_User_ID(), get_TrxName());	}
 
 	/** Set User/Contact.
 		@param AD_User_ID 
@@ -229,11 +218,6 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 		return ii.intValue();
 	}
 
-	public org.compiere.model.I_C_Currency getC_Currency() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Currency)MTable.get(getCtx(), org.compiere.model.I_C_Currency.Table_Name)
-			.getPO(getC_Currency_ID(), get_TrxName());	}
-
 	/** Set Currency.
 		@param C_Currency_ID 
 		The Currency for this record
@@ -256,11 +240,6 @@ public class X_AM_ServiceRequest extends PO implements I_AM_ServiceRequest, I_Pe
 			 return 0;
 		return ii.intValue();
 	}
-
-	public org.compiere.model.I_C_DocType getC_DocType() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_DocType)MTable.get(getCtx(), org.compiere.model.I_C_DocType.Table_Name)
-			.getPO(getC_DocType_ID(), get_TrxName());	}
 
 	/** Set Document Type.
 		@param C_DocType_ID 

@@ -76,8 +76,6 @@ public interface I_AM_AssetMeterLog
 	  */
 	public int getAD_User_ID();
 
-	public org.compiere.model.I_AD_User getAD_User() throws RuntimeException;
-
     /** Column name AM_AssetMeter_ID */
     public static final String COLUMNNAME_AM_AssetMeter_ID = "AM_AssetMeter_ID";
 

@@ -55,8 +55,6 @@ public interface I_AM_Maintenance
 	  */
 	public int getA_Asset_ID();
 
-	public org.compiere.model.I_A_Asset getA_Asset() throws RuntimeException;
-
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
@@ -90,8 +88,6 @@ public interface I_AM_Maintenance
 	  * User within the system - Internal or Business Partner Contact
 	  */
 	public int getAD_User_ID();
-
-	public org.compiere.model.I_AD_User getAD_User() throws RuntimeException;
 
     /** Column name AM_Area_ID */
     public static final String COLUMNNAME_AM_Area_ID = "AM_Area_ID";

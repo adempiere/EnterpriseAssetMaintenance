@@ -88,11 +88,6 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
       return sb.toString();
     }
 
-	public org.compiere.model.I_A_Asset getA_Asset() throws RuntimeException
-    {
-		return (org.compiere.model.I_A_Asset)MTable.get(getCtx(), org.compiere.model.I_A_Asset.Table_Name)
-			.getPO(getA_Asset_ID(), get_TrxName());	}
-
 	/** Set Fixed Asset.
 		@param A_Asset_ID 
 		Fixed Asset used internally or by customers
@@ -115,11 +110,6 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 			 return 0;
 		return ii.intValue();
 	}
-
-	public org.compiere.model.I_AD_User getAD_User() throws RuntimeException
-    {
-		return (org.compiere.model.I_AD_User)MTable.get(getCtx(), org.compiere.model.I_AD_User.Table_Name)
-			.getPO(getAD_User_ID(), get_TrxName());	}
 
 	/** Set User/Contact.
 		@param AD_User_ID 
@@ -332,11 +322,6 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 		return ii.intValue();
 	}
 
-	public org.compiere.model.I_C_Activity getC_Activity() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Activity)MTable.get(getCtx(), org.compiere.model.I_C_Activity.Table_Name)
-			.getPO(getC_Activity_ID(), get_TrxName());	}
-
 	/** Set Activity.
 		@param C_Activity_ID 
 		Business Activity
@@ -359,11 +344,6 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 			 return 0;
 		return ii.intValue();
 	}
-
-	public org.compiere.model.I_C_DocType getC_DocType() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_DocType)MTable.get(getCtx(), org.compiere.model.I_C_DocType.Table_Name)
-			.getPO(getC_DocType_ID(), get_TrxName());	}
 
 	/** Set Document Type.
 		@param C_DocType_ID 
@@ -660,11 +640,6 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 		return false;
 	}
 
-	public org.compiere.model.I_M_Warehouse getM_Warehouse() throws RuntimeException
-    {
-		return (org.compiere.model.I_M_Warehouse)MTable.get(getCtx(), org.compiere.model.I_M_Warehouse.Table_Name)
-			.getPO(getM_Warehouse_ID(), get_TrxName());	}
-
 	/** Set Warehouse.
 		@param M_Warehouse_ID 
 		Storage Warehouse and Service Point
@@ -780,11 +755,6 @@ public class X_AM_ServiceOrder extends PO implements I_AM_ServiceOrder, I_Persis
 			 return 0;
 		return ii.intValue();
 	}
-
-	public org.compiere.model.I_C_ElementValue getUser1() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_ElementValue)MTable.get(getCtx(), org.compiere.model.I_C_ElementValue.Table_Name)
-			.getPO(getUser1_ID(), get_TrxName());	}
 
 	/** Set User List 1.
 		@param User1_ID 

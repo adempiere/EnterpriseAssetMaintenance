@@ -20,7 +20,7 @@ import java.sql.Timestamp;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.adempiere.exceptions.AdempiereException;
-import org.compiere.model.I_AD_Ref_List;
+import org.adempiere.core.domains.models.I_AD_Ref_List;
 import org.compiere.model.MRefList;
 import org.compiere.model.Query;
 import org.compiere.util.Env;

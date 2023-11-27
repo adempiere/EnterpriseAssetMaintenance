@@ -148,8 +148,6 @@ public interface I_AM_ServiceOrderTask
 	  */
 	public int getC_UOM_ID();
 
-	public org.compiere.model.I_C_UOM getC_UOM() throws RuntimeException;
-
     /** Column name Description */
     public static final String COLUMNNAME_Description = "Description";
 

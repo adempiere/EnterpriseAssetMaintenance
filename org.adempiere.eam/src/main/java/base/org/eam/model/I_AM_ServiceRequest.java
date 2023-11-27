@@ -55,8 +55,6 @@ public interface I_AM_ServiceRequest
 	  */
 	public int getA_Asset_ID();
 
-	public org.compiere.model.I_A_Asset getA_Asset() throws RuntimeException;
-
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
@@ -90,8 +88,6 @@ public interface I_AM_ServiceRequest
 	  * User within the system - Internal or Business Partner Contact
 	  */
 	public int getAD_User_ID();
-
-	public org.compiere.model.I_AD_User getAD_User() throws RuntimeException;
 
     /** Column name AM_Reason_ID */
     public static final String COLUMNNAME_AM_Reason_ID = "AM_Reason_ID";
@@ -149,8 +145,6 @@ public interface I_AM_ServiceRequest
 	  */
 	public int getC_Currency_ID();
 
-	public org.compiere.model.I_C_Currency getC_Currency() throws RuntimeException;
-
     /** Column name C_DocType_ID */
     public static final String COLUMNNAME_C_DocType_ID = "C_DocType_ID";
 
@@ -163,8 +157,6 @@ public interface I_AM_ServiceRequest
 	  * Document type or rules
 	  */
 	public int getC_DocType_ID();
-
-	public org.compiere.model.I_C_DocType getC_DocType() throws RuntimeException;
 
     /** Column name ContactDescription */
     public static final String COLUMNNAME_ContactDescription = "ContactDescription";

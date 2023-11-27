@@ -17,6 +17,7 @@
 package org.eam.process;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.adempiere.exceptions.AdempiereException;
@@ -110,7 +111,7 @@ public class InternalUseCreateFromServiceOrder extends InternalUseCreateFromServ
 					+ " @C_UOM_To_ID@ " + productUOM.getUOMSymbol() + "]");
 				}
 			}
-			quantityToDeliver = quantityToDeliver.setScale(precision, BigDecimal.ROUND_HALF_UP);
+			quantityToDeliver = quantityToDeliver.setScale(precision, RoundingMode.HALF_UP);
 			inventoryLine.setQtyInternalUse(quantityToDeliver);
 			inventoryLine.setC_Charge_ID(getChargeId());
 			//	Set reference

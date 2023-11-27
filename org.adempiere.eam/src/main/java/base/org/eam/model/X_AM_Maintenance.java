@@ -79,11 +79,6 @@ public class X_AM_Maintenance extends PO implements I_AM_Maintenance, I_Persiste
       return sb.toString();
     }
 
-	public org.compiere.model.I_A_Asset getA_Asset() throws RuntimeException
-    {
-		return (org.compiere.model.I_A_Asset)MTable.get(getCtx(), org.compiere.model.I_A_Asset.Table_Name)
-			.getPO(getA_Asset_ID(), get_TrxName());	}
-
 	/** Set Fixed Asset.
 		@param A_Asset_ID 
 		Fixed Asset used internally or by customers
@@ -106,11 +101,6 @@ public class X_AM_Maintenance extends PO implements I_AM_Maintenance, I_Persiste
 			 return 0;
 		return ii.intValue();
 	}
-
-	public org.compiere.model.I_AD_User getAD_User() throws RuntimeException
-    {
-		return (org.compiere.model.I_AD_User)MTable.get(getCtx(), org.compiere.model.I_AD_User.Table_Name)
-			.getPO(getAD_User_ID(), get_TrxName());	}
 
 	/** Set User/Contact.
 		@param AD_User_ID 

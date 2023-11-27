@@ -1,9 +1,38 @@
 plugins {
-    id 'java-library'
+	id 'java-library'
+	id 'maven-publish'
+	id 'signing'
 }
 
+sourceCompatibility = 1.11
+def baseVersion = '3.9.4'
+def baseGroupId = 'io.github.adempiere'
+
 repositories {
+    mavenLocal()
     mavenCentral()
+}
+
+allprojects {
+    tasks.withType(Javadoc) {
+    	options.addStringOption('Xdoclint:none', '-quiet')
+   	}
+}
+
+dependencies {
+   api fileTree(
+        dir: 'lib',
+        include: [
+            '*.jar'
+        ]
+    )
+	//	Libraries
+	api "org.scala-lang:scala3-library_3:3.0.1"
+	api "commons-collections:commons-collections:3.2.2"
+	//	ADempiere Core
+	api "${baseGroupId}:base:${baseVersion}"
+	api "${baseGroupId}:manufacturing:${baseVersion}"
+	api "${baseGroupId}:asset:${baseVersion}"
 }
 
 sourceSets {
@@ -14,31 +43,91 @@ sourceSets {
     }
 }
 
-dependencies {
-    implementation fileTree(dir: 'dependences', include: ['*.jar'])
+java {
+    withJavadocJar()
+    withSourcesJar()
 }
 
+
+def entityType = 'D'
+group = "io.github.adempiere"
+version = System.getenv("ADEMPIERE_LIBRARY_VERSION") ?: "local-1.0.0"
+
 jar {
-    manifest {
-        attributes('Implementation-Title': project.name,
-                   'Implementation-Version': project.version)
+	manifest {
+		attributes(
+			"Implementation-Title": "ADempiere JSON Web Token",
+			"Implementation-Version": version,
+			"EntityType": entityType
+		)
     }
 }
 
-//	Create release for project
-task createRelease(type: Zip) {
-   dependsOn build
-   from 'build/libs/'
-   from 'xml/'
-   include '*'
-   include '*/*'
-   archiveName project.name + '.zip'
-   destinationDir(file('build/release/'))
-   doLast {
-        file('build/release/')
-        	.listFiles({file -> file.isFile()} as FileFilter).sort()
-        	.each { File file ->
-            ant.checksum file: file
+publishing {
+    repositories {
+		mavenLocal()
+
+        maven {
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = findProperty("sonatypeUsername")
+                password = findProperty("sonatypePassword")
+            }
         }
-   	}
+    }
+    publications {
+        mavenJava(MavenPublication) {
+			groupId = group
+			artifactId = 'enterprise-asset-maintenance'
+			version = version
+           	from components.java
+           	pom {
+				name = 'ADempiere Maintenance Service'
+				description = 'Enterprise asset management (EAM) is the optimal lifecycle management of the physical assets of an organization. It covers subjects including the design, construction, commissioning, operations, maintenance and decommissioning/replacement of plant, equipment and facilities.'
+                url = 'http://adempiere.io/'
+                licenses {
+                    license {
+                        name = 'GNU General Public License, version 2'
+                        url = 'https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'yamelsenih'
+                        name = 'Yamel Senih'
+                        email = 'ysenih@erpya.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/adempiere/org.eevolution.service.git'
+                    developerConnection = 'scm:git:ssh://github.com/adempiere/org.eevolution.service.git'
+                    url = 'http://github.com/adempiere/org.eevolution.service'
+                }
+            }
+		}
+	}
+}
+
+
+task cleanBuildPublishLocal(type: GradleBuild) {
+	tasks = ['clean', 'build', 'publishToMavenLocal']
+}
+
+
+signing {
+	def isReleaseVersion = !version.toString().startsWith("local") && !version.toString().endsWith("-SNAPSHOT")
+
+	sign configurations.archives
+
+	setRequired {
+		// signing is required if this is a release version and the artifacts are to be published
+		// do not use hasTask() as this require realization of the tasks that maybe are not necessary
+		(isReleaseVersion || version.toString().equals("build")) && gradle.taskGraph.allTasks.any {
+			it.equals(PublishToMavenRepository)
+		}
+	}
+	def signingKey = findProperty("signingKey")
+    def signingPassword = findProperty("signingPassword")
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign publishing.publications.mavenJava
 }

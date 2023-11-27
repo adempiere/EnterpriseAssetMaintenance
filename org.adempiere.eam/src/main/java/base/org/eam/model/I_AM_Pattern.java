@@ -55,8 +55,6 @@ public interface I_AM_Pattern
 	  */
 	public int getA_Asset_Group_ID();
 
-	public org.compiere.model.I_A_Asset_Group getA_Asset_Group() throws RuntimeException;
-
     /** Column name A_Asset_ID */
     public static final String COLUMNNAME_A_Asset_ID = "A_Asset_ID";
 
@@ -69,8 +67,6 @@ public interface I_AM_Pattern
 	  * Fixed Asset used internally or by customers
 	  */
 	public int getA_Asset_ID();
-
-	public org.compiere.model.I_A_Asset getA_Asset() throws RuntimeException;
 
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";

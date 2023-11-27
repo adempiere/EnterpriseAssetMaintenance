@@ -98,11 +98,6 @@ public class X_AM_Meter extends PO implements I_AM_Meter, I_Persistent
 		return ii.intValue();
 	}
 
-	public org.compiere.model.I_C_UOM getC_UOM() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_UOM)MTable.get(getCtx(), org.compiere.model.I_C_UOM.Table_Name)
-			.getPO(getC_UOM_ID(), get_TrxName());	}
-
 	/** Set UOM.
 		@param C_UOM_ID 
 		Unit of Measure

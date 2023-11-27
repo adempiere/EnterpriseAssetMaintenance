@@ -75,11 +75,6 @@ public class X_AM_Pattern extends PO implements I_AM_Pattern, I_Persistent
       return sb.toString();
     }
 
-	public org.compiere.model.I_A_Asset_Group getA_Asset_Group() throws RuntimeException
-    {
-		return (org.compiere.model.I_A_Asset_Group)MTable.get(getCtx(), org.compiere.model.I_A_Asset_Group.Table_Name)
-			.getPO(getA_Asset_Group_ID(), get_TrxName());	}
-
 	/** Set Asset Group.
 		@param A_Asset_Group_ID 
 		Group of Assets
@@ -102,11 +97,6 @@ public class X_AM_Pattern extends PO implements I_AM_Pattern, I_Persistent
 			 return 0;
 		return ii.intValue();
 	}
-
-	public org.compiere.model.I_A_Asset getA_Asset() throws RuntimeException
-    {
-		return (org.compiere.model.I_A_Asset)MTable.get(getCtx(), org.compiere.model.I_A_Asset.Table_Name)
-			.getPO(getA_Asset_ID(), get_TrxName());	}
 
 	/** Set Fixed Asset.
 		@param A_Asset_ID 

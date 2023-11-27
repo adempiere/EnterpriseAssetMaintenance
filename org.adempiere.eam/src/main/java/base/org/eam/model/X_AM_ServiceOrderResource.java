@@ -146,11 +146,6 @@ public class X_AM_ServiceOrderResource extends PO implements I_AM_ServiceOrderRe
 		return bd;
 	}
 
-	public org.compiere.model.I_C_UOM getC_UOM() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_UOM)MTable.get(getCtx(), org.compiere.model.I_C_UOM.Table_Name)
-			.getPO(getC_UOM_ID(), get_TrxName());	}
-
 	/** Set UOM.
 		@param C_UOM_ID 
 		Unit of Measure
@@ -174,11 +169,6 @@ public class X_AM_ServiceOrderResource extends PO implements I_AM_ServiceOrderRe
 		return ii.intValue();
 	}
 
-	public org.compiere.model.I_M_BOM getM_BOM() throws RuntimeException
-    {
-		return (org.compiere.model.I_M_BOM)MTable.get(getCtx(), org.compiere.model.I_M_BOM.Table_Name)
-			.getPO(getM_BOM_ID(), get_TrxName());	}
-
 	/** Set BOM.
 		@param M_BOM_ID 
 		Bill of Material
@@ -201,11 +191,6 @@ public class X_AM_ServiceOrderResource extends PO implements I_AM_ServiceOrderRe
 			 return 0;
 		return ii.intValue();
 	}
-
-	public org.compiere.model.I_M_Product getM_Product() throws RuntimeException
-    {
-		return (org.compiere.model.I_M_Product)MTable.get(getCtx(), org.compiere.model.I_M_Product.Table_Name)
-			.getPO(getM_Product_ID(), get_TrxName());	}
 
 	/** Set Product.
 		@param M_Product_ID 
@@ -385,11 +370,6 @@ public class X_AM_ServiceOrderResource extends PO implements I_AM_ServiceOrderRe
 			 return 0;
 		return ii.intValue();
 	}
-
-	public org.compiere.model.I_S_Resource getS_Resource() throws RuntimeException
-    {
-		return (org.compiere.model.I_S_Resource)MTable.get(getCtx(), org.compiere.model.I_S_Resource.Table_Name)
-			.getPO(getS_Resource_ID(), get_TrxName());	}
 
 	/** Set Resource.
 		@param S_Resource_ID 

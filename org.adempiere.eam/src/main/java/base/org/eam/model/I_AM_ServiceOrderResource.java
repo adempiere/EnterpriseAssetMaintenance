@@ -133,8 +133,6 @@ public interface I_AM_ServiceOrderResource
 	  */
 	public int getC_UOM_ID();
 
-	public org.compiere.model.I_C_UOM getC_UOM() throws RuntimeException;
-
     /** Column name IsActive */
     public static final String COLUMNNAME_IsActive = "IsActive";
 
@@ -161,8 +159,6 @@ public interface I_AM_ServiceOrderResource
 	  */
 	public int getM_BOM_ID();
 
-	public org.compiere.model.I_M_BOM getM_BOM() throws RuntimeException;
-
     /** Column name M_Product_ID */
     public static final String COLUMNNAME_M_Product_ID = "M_Product_ID";
 
@@ -175,8 +171,6 @@ public interface I_AM_ServiceOrderResource
 	  * Product, Service, Item
 	  */
 	public int getM_Product_ID();
-
-	public org.compiere.model.I_M_Product getM_Product() throws RuntimeException;
 
     /** Column name Processed */
     public static final String COLUMNNAME_Processed = "Processed";
@@ -277,8 +271,6 @@ public interface I_AM_ServiceOrderResource
 	  * Resource
 	  */
 	public int getS_Resource_ID();
-
-	public org.compiere.model.I_S_Resource getS_Resource() throws RuntimeException;
 
     /** Column name Updated */
     public static final String COLUMNNAME_Updated = "Updated";
